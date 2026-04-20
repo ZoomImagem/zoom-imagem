@@ -97,15 +97,9 @@ const ApplicationsComponent = () => {
                 </div>
                 <div className={styles.descriptionCard}>
                   <span>{item.texto}</span>
-                  <div className={styles.btnCta}>
-                    <ButtonTag
-                      label="Fale com a Zoom"
-                      size="sm"
-                      variant="secondary"
-                      icon={<FiArrowRight size={24} color="#EE0874" />}
-                      onClick={() => handleClick("/portfolio")}
-                    />
-                  </div>
+                </div>
+                <div className={styles.btnMore}>
+                  <FiArrowRight />
                 </div>
               </div>
             </li>

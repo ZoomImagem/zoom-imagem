@@ -104,13 +104,6 @@
   overflow: hidden;
   transition: all 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0.7;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  .btnSeta {
-    display: none;
-  }
 
   @include respond-to("l") {
     cursor: pointer;
@@ -150,7 +143,7 @@
         display: flex;
       }
 
-      .btnCta {
+      .btnMore {
         display: flex;
       }
     }
@@ -162,14 +155,15 @@
   height: 100%;
   padding: 12px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
   gap: 1.5rem;
   align-items: center;
 }
 
-.iconCard {
-  width: 50px;
-}
+// .iconCard {
+//   width: 50px;
+// }
 
 .descriptionCard {
   display: flex;
@@ -188,13 +182,12 @@
       margin-bottom: 8px;
     }
   }
+}
 
-  .btnCta {
-    width: 100%;
-    margin-top: 80px;
-    display: none;
-    justify-content: center;
-  }
+.btnMore {
+  width: 40px;
+  display: none;
+  justify-content: center;
 }
 
 .icone {
@@ -239,18 +232,19 @@
 
 .modalContent {
   position: relative;
-  background: #13172a;
+  justify-content: center;
+  background: $bg;
   border: 1px solid rgba($ice, 0.12);
   border-radius: 20px;
   overflow: hidden;
   width: 100%;
-  max-width: 1100px;
-  height: 90vh;
+  max-width: 920px;
+  // height: 520px;
   display: flex;
   flex-direction: column;
   animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
 
-  @include respond-to("m") {
+  @include respond-to("l") {
     flex-direction: row;
     max-height: 520px;
   }
@@ -298,13 +292,14 @@
 .modalImageWrap {
   position: relative;
   width: 100%;
+  overflow: hidden;
+  position: relative;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
-  overflow: hidden;
 
   @include respond-to("l") {
-    width: 55%;
-    aspect-ratio: unset;
+    // width: 55%;
+    aspect-ratio: 16 / 9;
     min-height: 100%;
   }
 }
@@ -313,71 +308,71 @@
   object-fit: cover;
 }
 
-.modalTag {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  background: $pink;
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 100px;
-}
+// .modalTag {
+//   position: absolute;
+//   bottom: 1rem;
+//   left: 1rem;
+//   background: $pink;
+//   color: #fff;
+//   font-size: 0.72rem;
+//   font-weight: 600;
+//   letter-spacing: 0.06em;
+//   text-transform: uppercase;
+//   padding: 4px 12px;
+//   border-radius: 100px;
+// }
 
-.modalBody {
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  overflow-y: auto;
+// .modalBody {
+//   padding: 1.75rem;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   overflow-y: auto;
 
-  @include respond-to("l") {
-    padding: 2rem;
-    justify-content: center;
-  }
-}
+//   @include respond-to("l") {
+//     padding: 2rem;
+//     justify-content: center;
+//   }
+// }
 
-.modalTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.25;
-}
+// .modalTitle {
+//   font-size: 1.4rem;
+//   font-weight: 700;
+//   color: #fff;
+//   line-height: 1.25;
+// }
 
-.modalCategory {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: $yellow;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5rem;
-}
+// .modalCategory {
+//   font-size: 0.82rem;
+//   font-weight: 500;
+//   color: $yellow;
+//   text-transform: uppercase;
+//   letter-spacing: 0.06em;
+//   margin-bottom: 0.5rem;
+// }
 
-.modalDescription {
-  font-size: 0.92rem;
-  color: rgba(#fff, 0.55);
-  line-height: 1.7;
+// .modalDescription {
+//   font-size: 0.92rem;
+//   color: rgba(#fff, 0.55);
+//   line-height: 1.7;
 
-  @include respond-to("l") {
-    margin-bottom: 42px;
-  }
+//   @include respond-to("l") {
+//     margin-bottom: 42px;
+//   }
 
-  strong {
-    color: rgba(#fff, 0.8);
-    font-weight: 500;
-  }
-}
+//   strong {
+//     color: rgba(#fff, 0.8);
+//     font-weight: 500;
+//   }
+// }
 
-.buttonCta {
-  display: flex;
-  width: 100%;
-  height: 80px;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
+// .buttonCta {
+//   display: flex;
+//   width: 100%;
+//   height: 80px;
+//   align-items: flex-end;
+//   justify-content: flex-end;
+// }
 
 // ── Carousel ──────────────────────────────────────────────────────────────
 

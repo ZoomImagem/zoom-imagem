@@ -21,7 +21,7 @@ export const items: AmbienteItem[] = [
     icon: FiMap,
     texto: "Metrôs e trens",
     image: "/images/trem1.png",
-    images: ["/images/trem1.png"],
+    images: ["/images/projects/Chevrolet-01.webp","/images/projects/intelbras1.webp" ],
   },
   {
     icon: FiNavigation,
