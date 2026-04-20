@@ -1,90 +1,17 @@
 "use client";
 
 import { ButtonTag } from "@/components";
-import { Expand, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./projects.module.scss";
+import { Project, projects } from "./constants/projects.constants";
 
 type Props = {
-  tag: string
-}
-
-interface Project {
-  id: number;
-  title: string;
-  aplication: string;
-  image: string;
   tag: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Linha ECO",
-    aplication: "Eventos e ativações",
-    image: "/images/senna.jpg",
-    tag: "Linha ECO",
-  },
-  {
-    id: 2,
-    title: "Out of home",
-    aplication: "Mobiliario urbano",
-    image: "/images/senna.jpg",
-    tag: "OOH",
-  },
-  {
-    id: 3,
-    title: "Pontos de venda - PDV",
-    aplication: "Pontos de venda",
-    image: "/images/senna.jpg",
-    tag: "PDV",
-  },
-  {
-    id: 4,
-    title: "Pontos de venda",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    tag: "PDV",
-  },
-  {
-    id: 5,
-    title: "Projeto Personalizado",
-    aplication: "Campanhas especiais",
-    image: "/images/senna.jpg",
-    tag: "OOH",
-  },
-  {
-    id: 6,
-    title: "Stopper de Prateleira",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    tag: "Projetos especiais",
-  },
-  {
-    id: 7,
-    title: "Stopper de Prateleira",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    tag: "Projetos especiais",
-  },
-  {
-    id: 8,
-    title: "Stopper de Prateleira",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    tag: "Projetos especiais",
-  },
-  {
-    id: 9,
-    title: "Stopper de Prateleira",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    tag: "Projetos especiais",
-  },
-];
+};
 
 const categories = ["Todos", "OOH", "PDV", "Projetos especiais", "Linha ECO"];
 
@@ -92,8 +19,24 @@ export default function Projects({ tag }: Props) {
   const [activeFilter, setActiveFilter] = useState(tag ?? "Todos");
   const [inView, setInView] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const getImages = (project: Project): string[] =>
+    project.images && project.images.length > 0
+      ? project.images
+      : [project.image];
 
+  const handlePrev = () => {
+    if (!selectedProject) return;
+    const imgs = getImages(selectedProject);
+    setCarouselIndex((prev) => (prev - 1 + imgs.length) % imgs.length);
+  };
+
+  const handleNext = () => {
+    if (!selectedProject) return;
+    const imgs = getImages(selectedProject);
+    setCarouselIndex((prev) => (prev + 1) % imgs.length);
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -105,10 +48,11 @@ export default function Projects({ tag }: Props) {
     return () => observer.disconnect();
   }, []);
 
- 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelectedProject(null);
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
     };
     if (selectedProject) {
       document.addEventListener("keydown", handleKey);
@@ -120,12 +64,18 @@ export default function Projects({ tag }: Props) {
       document.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
     };
-  }, [selectedProject]);
+  }, [selectedProject, carouselIndex]);
+
+  // Reset carousel index when a new project is selected
+  const openProject = (project: Project) => {
+    setCarouselIndex(0);
+    setSelectedProject(project);
+  };
 
   const filtered =
-  activeFilter === "Todos"
-    ? projects
-    : projects.filter((project) => project.tag === activeFilter);
+    activeFilter === "Todos"
+      ? projects
+      : projects.filter((project) => project.tag === activeFilter);
 
   const router = useRouter();
 
@@ -138,7 +88,6 @@ export default function Projects({ tag }: Props) {
       <section className={styles.projects} ref={sectionRef}>
         <div className={styles.projectsContainer}>
           <div className={styles.projectsHeader}>
-
             <h2 className={styles.projectsTitle}>
               Confira alguns dos nossos trabalhos
             </h2>
@@ -168,7 +117,7 @@ export default function Projects({ tag }: Props) {
                 key={project.id}
                 className={styles.projectsCard}
                 style={{ animationDelay: `${i * 80}ms` }}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => openProject(project)}
                 aria-label={`Expandir projeto ${project.title}`}
               >
                 <div className={styles.projectsImageWrap}>
@@ -206,9 +155,7 @@ export default function Projects({ tag }: Props) {
                       {project.aplication}
                     </p>
                   </div>
-                  <span className={styles.projectsCardTag}>
-                    {project.tag}
-                  </span>
+                  <span className={styles.projectsCardTag}>{project.tag}</span>
                 </div>
               </div>
             ))}
@@ -232,63 +179,133 @@ export default function Projects({ tag }: Props) {
               onClick={() => handleClick("/portfolio")}
             />
             <ButtonTag
-          label="Ver mais projetos"
-          size="lg"
-          variant="glass"
-          icon={<FiArrowRight size={24} color="#EE0874" />}
-          onClick={() => handleClick("/portfolio")}
-        />
+              label="Ver mais projetos"
+              size="lg"
+              variant="glass"
+              icon={<FiArrowRight size={24} color="#EE0874" />}
+              onClick={() => handleClick("/portfolio")}
+            />
           </div>
         </div>
       </section>
 
-      {selectedProject && (
-        <div
-          className={styles.modal}
-          onClick={() => setSelectedProject(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedProject.title}
-        >
-          <div
-            className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className={styles.modalClose}
+      {selectedProject &&
+        (() => {
+          const imgs = getImages(selectedProject);
+          const hasMultiple = imgs.length > 1;
+
+          return (
+            <div
+              className={styles.modal}
               onClick={() => setSelectedProject(null)}
-              aria-label="Fechar modal"
+              role="dialog"
+              aria-modal="true"
+              aria-label={selectedProject.title}
             >
-              <X size={20} />
-            </button>
+              <div
+                className={styles.modalContent}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className={styles.modalClose}
+                  onClick={() => setSelectedProject(null)}
+                  aria-label="Fechar modal"
+                >
+                  <X size={20} />
+                </button>
 
-            <div className={styles.modalImageWrap}>
-              <Image
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                fill
-                className={styles.modalImage}
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-              <span className={styles.modalTag}>{selectedProject.tag}</span>
-            </div>
+                {/* ── Carousel ── */}
+                <div className={styles.modalImageWrap}>
+                  {imgs.map((src, idx) => (
+                    <div
+                      key={idx}
+                      className={`${styles.modalSlide} ${idx === carouselIndex ? styles["modalSlide--active"] : ""}`}
+                      aria-hidden={idx !== carouselIndex}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${selectedProject.title} – imagem ${idx + 1}`}
+                        fill
+                        className={styles.modalImage}
+                        sizes="(max-width: 768px) 100vw, 55vw"
+                        priority={idx === 0}
+                      />
+                    </div>
+                  ))}
 
-            <div className={styles.modalBody}>
-              <h3 className={styles.modalTitle}>{selectedProject.title}</h3>
-              <p className={styles.modalCategory}>
-                {selectedProject.aplication}
-              </p>
-              <p className={styles.modalDescription}>
-                Projeto desenvolvido pela equipe Zoom para aplicação em{" "}
-                <strong>{selectedProject.aplication.toLowerCase()}</strong>. Uma
-                solução criativa e impactante que une design, tecnologia e
-                sustentabilidade para destacar a marca no ponto de contato com o
-                consumidor.
-              </p>
+                  {/* Tag */}
+                  <span className={styles.modalTag}>{selectedProject.tag}</span>
+
+                  {/* Prev / Next buttons */}
+                  {hasMultiple && (
+                    <>
+                      <button
+                        className={`${styles.carouselBtn} ${styles["carouselBtn--prev"]}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePrev();
+                        }}
+                        aria-label="Imagem anterior"
+                      >
+                        <ChevronLeft size={20} />
+                      </button>
+                      <button
+                        className={`${styles.carouselBtn} ${styles["carouselBtn--next"]}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleNext();
+                        }}
+                        aria-label="Próxima imagem"
+                      >
+                        <ChevronRight size={20} />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Dot indicators */}
+                  {hasMultiple && (
+                    <div className={styles.carouselDots}>
+                      {imgs.map((_, idx) => (
+                        <button
+                          key={idx}
+                          className={`${styles.carouselDot} ${idx === carouselIndex ? styles["carouselDot--active"] : ""}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCarouselIndex(idx);
+                          }}
+                          aria-label={`Ir para imagem ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className={styles.modalBody}>
+                  <h3 className={styles.modalTitle}>{selectedProject.title}</h3>
+                  <p className={styles.modalCategory}>
+                    {selectedProject.aplication}
+                  </p>
+                  <p className={styles.modalDescription}>
+                    Projeto desenvolvido pela equipe Zoom para aplicação em{" "}
+                    <strong>{selectedProject.aplication.toLowerCase()}</strong>.
+                    Uma solução criativa e impactante que une design, tecnologia
+                    e sustentabilidade para destacar a marca no ponto de contato
+                    com o consumidor.
+                  </p>
+                  <div className={styles.buttonCta}>
+                    <ButtonTag
+                      label="Falar com a Zoom"
+                      size="lg"
+                      variant="glass"
+                      onClick={() => handleClick("/contato")}
+                      icon={<FiArrowRight size={24} color="#EE0874" />}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          );
+        })()}
     </>
   );
 }
