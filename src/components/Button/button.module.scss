@@ -25,11 +25,11 @@
   }
 }
 .primary {
-  background: linear-gradient(225deg, #fdd200  0%, $pink 75%);
+  background: linear-gradient(225deg, $yellow 0%, $pink 75%);
   color: #000;
 
   &:hover {
-    border: 2px solid $yellow;
+    transform: scale(1.05);
   }
 }
 
@@ -40,16 +40,16 @@
   &:hover {
     background: linear-gradient(225deg, #3e5f44 20%, #111d13 80%);
     color: #e5e6fa;
-  } 
+  }
 }
 
 .secondary {
-  border: 3px solid #b6f09c;
-  background-color: #1a1d21;
-  color: #b6f09c;
+  border: 1px solid $ice;
+  background-color: $bg;
+  color: $ice;
 
   &:hover {
-    border: 3px solid #c8f4b4;
+    border: 2px solid $pink;
   }
 }
 
@@ -83,6 +83,22 @@
 
 .sizeLg {
   max-width: 327px;
+
+  @include respond-to("l") {
+    margin: none;
+  }
+}
+
+.sizeMd {
+  max-width: 268px;
+
+  @include respond-to("l") {
+    margin: none;
+  }
+}
+
+.sizeSm {
+  max-width: 186px;
 
   @include respond-to("l") {
     margin: none;

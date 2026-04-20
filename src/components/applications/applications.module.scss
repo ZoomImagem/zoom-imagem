@@ -12,8 +12,6 @@
   height: 100%;
   padding: 12px 0 0;
 
-  
-  
   @include respond-to("l") {
     overflow: auto;
     min-width: 260px;
@@ -27,8 +25,6 @@
     display: flex;
     padding: 12px;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-radius: 20px;
     border: 1px solid $ice;
     text-align: center;
@@ -36,8 +32,8 @@
     box-shadow: 0px 2px 2px $ice;
 
     @include respond-to("l") {
-      width: 575px;
-      height: 368px;
+      width: 48%;
+      height: 168px;
       padding: 24px;
     }
 
@@ -45,18 +41,6 @@
       margin-bottom: 16px;
 
       @include respond-to("l") {
-        margin-bottom: 8px;
-      }
-    }
-
-    span {
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 110%;
-      color: #ffffff;
-
-      @include respond-to("l") {
-        font-size: 24px;
         margin-bottom: 8px;
       }
     }
@@ -116,7 +100,6 @@
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   position: relative;
   overflow: hidden;
   transition: all 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -124,6 +107,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  .btnSeta {
+    display: none;
+  }
 
   @include respond-to("l") {
     cursor: pointer;
@@ -144,7 +131,6 @@
     }
 
     &:hover {
-      // border-color: rgba(255, 255, 255, 0.14);
       transform: translateY(-4px);
       box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.5),
@@ -159,7 +145,55 @@
       .icone {
         transform: scale(1.15) rotate(-4deg);
       }
+
+      .btnSeta {
+        display: flex;
+      }
+
+      .btnCta {
+        display: flex;
+      }
     }
+  }
+}
+
+.contentCard {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.iconCard {
+  width: 50px;
+}
+
+.descriptionCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    color: #ffffff;
+
+    @include respond-to("l") {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .btnCta {
+    width: 100%;
+    margin-top: 80px;
+    display: none;
+    justify-content: center;
   }
 }
 
@@ -170,25 +204,269 @@
   transition: transform 0.28s ease;
 }
 
-.imageCard {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+// .imageCard {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   inset: 0;
+//   opacity: 1;
+//   transition: opacity 0.45s ease;
+//   object-fit: cover;
+// }
+
+// Modal
+.modal {
+  position: fixed;
   inset: 0;
-  opacity: 1;
-  transition: opacity 0.45s ease;
+  z-index: 1000;
+  background: rgba(#000, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.25s ease both;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  position: relative;
+  background: #13172a;
+  border: 1px solid rgba($ice, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  @include respond-to("m") {
+    flex-direction: row;
+    max-height: 520px;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(#000, 0.4);
+  border: 1px solid rgba(#fff, 0.15);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  backdrop-filter: blur(4px);
+
+  @include respond-to("l") {
+    width: 40px;
+    height: 40px;
+    &:hover {
+      background: rgba($pink, 0.8);
+      border-color: $pink;
+    }
+  }
+}
+
+.modalImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  overflow: hidden;
+
+  @include respond-to("l") {
+    width: 55%;
+    aspect-ratio: unset;
+    min-height: 100%;
+  }
+}
+
+.modalImage {
   object-fit: cover;
 }
 
-// .texto {
-//   // font-size: 0.95rem;
-//   // font-weight: 400;
-//   letter-spacing: -0.01em;
-//   color: #f0f0f0;
-//   line-height: 1.4;
-//   transition: color 0.28s ease;
+.modalTag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: $pink;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
 
-//   @include respond-to ("l" ){
-//     font-weight: 600;
-//   }
-// }
+.modalBody {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+
+  @include respond-to("l") {
+    padding: 2rem;
+    justify-content: center;
+  }
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.modalCategory {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: $yellow;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.modalDescription {
+  font-size: 0.92rem;
+  color: rgba(#fff, 0.55);
+  line-height: 1.7;
+
+  @include respond-to("l") {
+    margin-bottom: 42px;
+  }
+
+  strong {
+    color: rgba(#fff, 0.8);
+    font-weight: 500;
+  }
+}
+
+.buttonCta {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+// ── Carousel ──────────────────────────────────────────────────────────────
+
+.modalSlide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Prev / Next buttons
+.carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(#000, 0.45);
+  border: 1px solid rgba(#fff, 0.18);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+
+  &--prev {
+    left: 0.75rem;
+  }
+
+  &--next {
+    right: 0.75rem;
+  }
+
+  @include respond-to("l") {
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      background: rgba($pink, 0.75);
+      border-color: $pink;
+      transform: translateY(-50%) scale(1.08);
+    }
+  }
+}
+
+// Dot indicators
+.carouselDots {
+  position: absolute;
+  bottom: 2.75rem; // sit above the tag pill
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.carouselDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(#fff, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  @include respond-to("l") {
+    &:hover {
+      background: rgba(#fff, 0.65);
+    }
+  }
+
+  &--active {
+    background: $pink;
+    transform: scale(1.35);
+  }
+}
