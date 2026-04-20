@@ -139,10 +139,6 @@
         transform: scale(1.15) rotate(-4deg);
       }
 
-      .btnSeta {
-        display: flex;
-      }
-
       .btnMore {
         display: flex;
       }
@@ -160,10 +156,6 @@
   gap: 1.5rem;
   align-items: center;
 }
-
-// .iconCard {
-//   width: 50px;
-// }
 
 .descriptionCard {
   display: flex;
@@ -197,15 +189,6 @@
   transition: transform 0.28s ease;
 }
 
-// .imageCard {
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   inset: 0;
-//   opacity: 1;
-//   transition: opacity 0.45s ease;
-//   object-fit: cover;
-// }
 
 // Modal
 .modal {
@@ -239,7 +222,6 @@
   overflow: hidden;
   width: 100%;
   max-width: 920px;
-  // height: 520px;
   display: flex;
   flex-direction: column;
   animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;

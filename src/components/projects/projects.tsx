@@ -171,7 +171,7 @@ export default function Projects({ tag }: Props) {
             </p>
             <ButtonTag
               label="Falar com a Zoom"
-              size="sm"
+              size="lg"
               variant="glass"
               icon={<FiArrowRight size={24} color="#EE0874" />}
               onClick={() => handleClick("/portfolio")}

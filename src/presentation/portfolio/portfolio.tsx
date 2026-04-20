@@ -9,11 +9,23 @@ export const PortfolioComponent = () => {
     <div className={styles.portfolioWrapper}>
       <PortfolofioHall />
 
-      <ApplicationsTag />
+      <div className={styles.introductionWrapper}>
+        <div className={styles.descIntroduction}>
+          <h2>
+            Cada projeto responde a uma necessidade específica de <br /> marca,
+            ambiente e operação
+          </h2>
+          <p>
+            Execuções em OOH, PDV, projetos especiais, mobiliário urbano,
+            eventos e outras aplicações
+          </p>
+        </div>
+      </div>
 
       <ContentTag colorTopPosition="right">
         <Projects tag="Todos" />
       </ContentTag>
+      <ApplicationsTag />
     </div>
   );
 };

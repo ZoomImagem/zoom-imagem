@@ -17,6 +17,7 @@ const ApplicationsComponent = () => {
     null,
   );
   const [carouselIndex, setCarouselIndex] = useState(0);
+  
   function handleClick(link: string) {
     router.push(link);
   }

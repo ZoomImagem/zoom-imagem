@@ -26,7 +26,7 @@ export default function PortfolofioHall() {
             <ButtonTag
               label="Fale com a Zoom"
               size="lg"
-              variant="primary"
+              variant="secondary"
               icon={<FiArrowRight size={24} color="#EE0874" />}
               onClick={() => handleClick("/portfolio")}
             />

@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "@/styles/mixins.scss" as *;
+
 .portfolioWrapper {
   width: 100%;
   display: flex;
@@ -5,4 +8,46 @@
   gap: 16px;
   padding: 0 16px;
   position: relative;
+}
+
+.introductionWrapper {
+  width: 100%;
+}
+
+.descIntroduction {
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at center, $bg 0%, #000 45%),
+    conic-gradient(from 0deg at 10% 10%, $bg 0%, $pink 50%, $pink 100%);
+
+  h2 {
+    font-size: 23px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $ice;
+  }
+
+  @include respond-to("l") {
+    padding: 220px 128px;
+
+    h2 {
+      font-size: 38px;
+      margin-bottom: 32px;
+    }
+
+    p {
+      font-size: 18px;
+      color: $ice;
+    }
+  }
 }
