@@ -40,7 +40,7 @@ const AboutHomeComponent = () => {
 
         <ul className={styles.contentSkills}>
           <li>
-            <FiSettings size={32} color="#ED0874" className={styles.icons}/>
+            <FiSettings size={32} color="#ED0874" className={styles.icons} />
 
             <h3>Produção própria </h3>
 
@@ -50,7 +50,7 @@ const AboutHomeComponent = () => {
             </p>
           </li>
           <li>
-            <FiMap size={32} color="#ED0874" className={styles.icons}/>
+            <FiMap size={32} color="#ED0874" className={styles.icons} />
 
             <h3>Cobertura nacional</h3>
 
@@ -60,7 +60,7 @@ const AboutHomeComponent = () => {
             </p>
           </li>
           <li>
-            <FiClock size={32} color="#ED0874" className={styles.icons}/>
+            <FiClock size={32} color="#ED0874" className={styles.icons} />
 
             <h3>Agilidade na entrega</h3>
 
@@ -69,7 +69,7 @@ const AboutHomeComponent = () => {
             </p>
           </li>
           <li>
-            <FiCheckCircle size={32} color="#ED0874" className={styles.icons}/>
+            <FiCheckCircle size={32} color="#ED0874" className={styles.icons} />
 
             <h3>Qualidade de ponta a ponta</h3>
 
@@ -84,9 +84,7 @@ const AboutHomeComponent = () => {
             Confira nossos projetos
           </button>
           <button onClick={() => handleClick("/contato")}>
-            
             Entre em contato
-             
           </button>
         </div>
 
@@ -107,28 +105,32 @@ const AboutHomeComponent = () => {
         </div>
         <ul className={styles.contentNumberServices}>
           <li>
-            <LuBriefcaseBusiness size={40} color="#EE0874" className={styles.icons} />
+            <LuBriefcaseBusiness
+              size={40}
+              color="#EE0874"
+              className={styles.icons}
+            />
 
             <span>+2.000</span>
 
             <p>projetos executados</p>
           </li>
           <li>
-            <LuMapPinCheck size={40} color="#EE0874" className={styles.icons}/>
+            <LuMapPinCheck size={40} color="#EE0874" className={styles.icons} />
 
             <span>+120</span>
 
             <p>cidades atendidas</p>
           </li>
           <li>
-            <LuWrench size={40} color="#EE0874" className={styles.icons}/>
+            <LuWrench size={40} color="#EE0874" className={styles.icons} />
 
             <span>+15.000</span>
 
             <p>pontos instalados</p>
           </li>
           <li>
-            <LuAward size={40} color="#EE0874" className={styles.icons}/>
+            <LuAward size={40} color="#EE0874" className={styles.icons} />
 
             <span>+24</span>
 
@@ -148,7 +150,6 @@ const AboutHomeComponent = () => {
             </p>
 
             <ButtonTag
-             
               label="Entrar em contato"
               size="lg"
               variant="tertiary"

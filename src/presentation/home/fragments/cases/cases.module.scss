@@ -166,12 +166,18 @@
 }
 
 .step:hover .iconWrapper {
-  border-color: $yellow;
-  transform: scale(1.05);
+  @include respond-to("l") {
+    border-color: $yellow;
+    transform: scale(1.05);
+  }
 }
 
 .content {
   margin-top: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
 
   h4 {
     font-size: 14px;
@@ -197,7 +203,6 @@
 
   @include respond-to("l") {
     padding: 64px;
-
     flex-direction: row;
   }
 
@@ -241,6 +246,7 @@
     width: 100%;
     max-width: 511px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 16px;
 

@@ -23,13 +23,11 @@
 
   h2 {
     width: 100%;
-    // max-width: 925 px;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 110%;
     color: #fafafab2;
-    margin-bottom: 32px;
-    display: none;
+    margin: 32px 0;
 
     @include respond-to("l") {
       font-size: 36px;
@@ -44,14 +42,14 @@
   }
 }
 
-.icons:hover{
-  display: inline-flex;
-  transition: transform 0.2s ease; 
-  cursor: pointer;
-  transform: scale(1.2);
+.icons:hover {
+  @include respond-to("l") {
+    display: inline-flex;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }
-  
-
 
 .subtitleMob {
   @include respond-to("l") {
@@ -69,18 +67,19 @@
 
 .contentSkills {
   width: 100%;
-  display: none;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   padding: 40px 32px;
   gap: 40px;
-  // margin-bottom: 100px;
   border: 1px solid rgba(196, 196, 196, 0.1);
   border-radius: 16px;
   position: relative;
 
   @include respond-to("l") {
     display: flex;
+    flex-direction: row;
   }
 
   &::after {
@@ -94,7 +93,6 @@
   }
 
   li {
-
     text-align: center;
     line-height: 1.5rem;
     svg {
@@ -122,27 +120,33 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 32px 0 100px;
+  margin-top: 32px;
   gap: 32px;
 
-  button{
+  @include respond-to("l") {
+    margin: 32px 0 100px;
+  }
+
+  button {
     cursor: pointer;
     border: none;
-    max-width:  327px;
+    width: 327px;
     font-size: 18px;
     background: transparent;
     color: $ice;
+    padding: 0 00%;
+    display: none;
 
     &:hover {
       color: $pink;
       transform: scale(1.2);
     }
 
-    
-
     @include respond-to("l") {
-      max-width: 268px;
       margin: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
