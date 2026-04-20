@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonTag } from "@/components";
+import { ButtonTag, CenterTag } from "@/components";
 import { useRouter } from "next/navigation";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import styles from "./hall.module.scss";
@@ -17,9 +17,7 @@ export default function PortfolofioHall() {
     <>
       <section className={styles.contentHall}>
         <div className={styles.contentLeft}>
-          <h1>
-            Projetos que mostram nossa capacidade de execução.
-          </h1>
+          <h1>Projetos que mostram nossa capacidade de execução.</h1>
           <p>
             Da mídia exterior ao ponto de venda, reunimos projetos executados{" "}
             <br /> em diferentes formatos, escalas e contextos.
@@ -57,6 +55,7 @@ export default function PortfolofioHall() {
           </div>
         </div>
       </section>
+     
     </>
   );
 }
