@@ -174,7 +174,7 @@ export default function Projects({ tag }: Props) {
               size="lg"
               variant="glass"
               icon={<FiArrowRight size={24} color="#EE0874" />}
-              onClick={() => handleClick("/portfolio")}
+              onClick={() => handleClick("/contato")}
             />
             <ButtonTag
               label="Ver mais projetos"

@@ -28,7 +28,7 @@ export default function PortfolofioHall() {
               size="lg"
               variant="secondary"
               icon={<FiArrowRight size={24} color="#EE0874" />}
-              onClick={() => handleClick("/portfolio")}
+              onClick={() => handleClick("/contato")}
             />
           </div>
         </div>
