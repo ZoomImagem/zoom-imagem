@@ -74,20 +74,21 @@
   transition: all 0.2s;
   font-family: inherit;
 
-  &:hover {
-    border-color: rgba(#fff, 0.3);
-    color: rgba(#fff, 0.8);
-  }
-
-  &--active {
-    background: $pink;
-    border-color: $pink;
-    color: #fff;
-
+  @include respond-to("l") {
     &:hover {
-      background: color.adjust($pink, $lightness: -16%);
-      border-color: color.adjust($pink, $lightness: -8%);
+      border-color: rgba(#fff, 0.3);
+      color: rgba(#fff, 0.8);
+    }
+    &--active {
+      background: $pink;
+      border-color: $pink;
       color: #fff;
+
+      &:hover {
+        background: color.adjust($pink, $lightness: -16%);
+        border-color: color.adjust($pink, $lightness: -8%);
+        color: #fff;
+      }
     }
   }
 }
@@ -135,15 +136,17 @@
     transform 0.3s;
   opacity: 0;
 
-  &:hover {
-    transform: translateY(-4px);
+  @include respond-to("l") {
+    &:hover {
+      transform: translateY(-4px);
 
-    .projectsImage {
-      transform: scale(1.06);
-    }
+      .projectsImage {
+        transform: scale(1.06);
+      }
 
-    .projectsOverlay {
-      opacity: 1;
+      .projectsOverlay {
+        opacity: 1;
+      }
     }
   }
 }
@@ -309,13 +312,14 @@
   svg {
     transition: transform 0.2s;
   }
+  @include respond-to("l") {
+    &:hover {
+      background: darken($pink, 8%);
+      transform: translateY(-2px);
 
-  &:hover {
-    background: darken($pink, 8%);
-    transform: translateY(-2px);
-
-    svg {
-      transform: translateX(4px);
+      svg {
+        transform: translateX(4px);
+      }
     }
   }
 }
@@ -378,8 +382,8 @@
   top: 1rem;
   right: 1rem;
   z-index: 10;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(#000, 0.4);
   border: 1px solid rgba(#fff, 0.15);
@@ -391,9 +395,13 @@
   transition: background 0.2s;
   backdrop-filter: blur(4px);
 
-  &:hover {
-    background: rgba($pink, 0.8);
-    border-color: $pink;
+  @include respond-to("l") {
+    width: 40px;
+    height: 40px;
+    &:hover {
+      background: rgba($pink, 0.8);
+      border-color: $pink;
+    }
   }
 }
 
@@ -483,7 +491,6 @@
 
 // ── Carousel ──────────────────────────────────────────────────────────────
 
-// Each slide is stacked absolutely inside .modalImageWrap
 .modalSlide {
   position: absolute;
   inset: 0;
@@ -503,8 +510,8 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(#000, 0.45);
   border: 1px solid rgba(#fff, 0.18);
@@ -519,18 +526,23 @@
     border-color 0.2s,
     transform 0.2s;
 
-  &:hover {
-    background: rgba($pink, 0.75);
-    border-color: $pink;
-    transform: translateY(-50%) scale(1.08);
-  }
-
   &--prev {
     left: 0.75rem;
   }
 
   &--next {
     right: 0.75rem;
+  }
+
+  @include respond-to("l") {
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      background: rgba($pink, 0.75);
+      border-color: $pink;
+      transform: translateY(-50%) scale(1.08);
+    }
   }
 }
 
@@ -557,9 +569,10 @@
   transition:
     background 0.2s,
     transform 0.2s;
-
-  &:hover {
-    background: rgba(#fff, 0.65);
+  @include respond-to("l") {
+    &:hover {
+      background: rgba(#fff, 0.65);
+    }
   }
 
   &--active {

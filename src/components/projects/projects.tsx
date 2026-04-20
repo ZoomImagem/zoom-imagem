@@ -7,13 +7,11 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./projects.module.scss";
-import { Project, projects } from "./constants/projects.constants";
+import { categories, Project, projects } from "./constants/projects.constants";
 
 type Props = {
   tag: string;
 };
-
-const categories = ["Todos", "OOH", "PDV", "Projetos especiais", "Linha ECO"];
 
 export default function Projects({ tag }: Props) {
   const [activeFilter, setActiveFilter] = useState(tag ?? "Todos");

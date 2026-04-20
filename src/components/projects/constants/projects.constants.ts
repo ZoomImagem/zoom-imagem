@@ -7,6 +7,8 @@ export interface Project {
   tag: string;
 }
 
+export const categories = ["Todos", "OOH", "PDV", "Projetos especiais", "Linha ECO"];
+
 export const projects: Project[] = [
   {
     id: 1,
