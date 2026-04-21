@@ -33,6 +33,7 @@ $bp-lg: 1024px;
 // ====================== GERAL
 
 .sectionModal {
+  margin-bottom: 4rem;
   h2 {
     font-size: 32px;
     font-weight: 600;
@@ -59,7 +60,7 @@ $bp-lg: 1024px;
 .imageBox {
   border-radius: $radius-lg;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .image {
@@ -206,11 +207,9 @@ $bp-lg: 1024px;
   justify-content: space-between;
   margin-bottom: 64px;
 
-@include respond-to("l") {
+  @include respond-to("l") {
     flex-direction: row;
-  
-}
-
+  }
 }
 
 .citiesBlock {
@@ -225,8 +224,8 @@ $bp-lg: 1024px;
   padding: 8px 18px;
   min-width: 180px;
   border-radius: 999px;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font-size: 12px;
   cursor: pointer;
@@ -243,7 +242,7 @@ $bp-lg: 1024px;
   border-color: $pink;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(238, 8, 116,0.35);
+  box-shadow: 0 6px 18px rgba(238, 8, 116, 0.35);
 }
 
 .cityTag:active {
@@ -276,7 +275,7 @@ $bp-lg: 1024px;
   @include respond-to("l") {
     flex: 1 1 calc(33.333% - 0.667rem);
     max-width: calc(33.333% - 0.667rem);
-}
+  }
   &:hover .projectImage {
     transform: scale(1.05);
   }
@@ -316,7 +315,6 @@ $bp-lg: 1024px;
 .btnMore {
   display: flex;
   justify-content: flex-end;
- 
 }
 
 // // ─── CTA section ─────────────────────────────────────────────────────────────

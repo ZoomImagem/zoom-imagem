@@ -94,6 +94,11 @@ export const OohDescription = () => {
         </div>
       </section>
 
+      {/* Projetos */}
+      <section className={styles.sectionModal}>
+        <Projects tag="OOH"/>
+      </section>
+
       {/* O que a Zoom faz */}
       <section className={styles.sectionModal}>
         <div className={styles.contentAtuation}>
@@ -184,20 +189,9 @@ export const OohDescription = () => {
         </div>
       </section>
 
-      {/* Projetos */}
-      <section className={styles.sectionModal}>
-        <Projects tag="OOH"/>
-      </section>
+      
 
-      <div className={styles.btnMore}>
-        <ButtonTag 
-                label="Ver mais projetos"
-                size="lg"
-                variant="glass"
-                icon={<FiArrowRight size={24} color="#EE0874" />}
-                onClick={() => handleClick("/portfolio")}
-              />
-      </div>
+     
     </>
   );
 };

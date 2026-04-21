@@ -1,49 +1,84 @@
 @use "@/styles/mixins.scss" as *;
 
-// Hero 
+@use "@/styles/mixins.scss" as *;
 
-.hero {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  min-height: 60vh;
-}
-
-.heroContent {
+.heroSectionContainer {
   display: flex;
   flex-direction: column;
-
-  
-}
-
-.heroTitle {
-  color: #fafafa;
-  font-size: 50px;
-  line-height: 100%;
-  font-weight: 600;
-  margin-bottom: 32px;
-  display: none;
+  align-items: center;
+  gap: 1.5rem;
 
   @include respond-to("l") {
-    font-size: 72px;
-    display: block;
+    width: 100%;
+    align-items: center;
   }
 }
 
-.heroHighlight {
-  color: $pink;
-}
-
-.heroSubtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #d1d5db;
-  max-width: 690px;
-  margin-bottom: 2.5rem;
-  line-height: 1.75;
-}
-
-.heroCtas {
+.heroContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to("l") {
+    width: 100%;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.heroButtons {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+// ── Esquerda ─────────────────────────────────────────────────
+.heroLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heroText {
+  font-size: 0.95rem;
+  color: rgba(#fff, 0.5);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-top: 24px;
+}
+
+// ── Direita ───────────────────────────────────────────────────
+.heroRight {
+  flex: 1;
+  width: 100%;
+
+  @include respond-to("l") {
+    max-width: 560px;
+  }
+}
+
+.heroImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(#fff, 0.04);
+}
+
+.heroImg {
+  object-fit: cover;
 }

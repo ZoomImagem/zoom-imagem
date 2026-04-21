@@ -2,9 +2,10 @@
 
 import styles from "./hall-ooh.module.scss";
 import { ButtonTag } from "@/components";
-import { FiArrowDownRight } from "react-icons/fi";
+import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { Folder } from "lucide-react";
+import Image from "next/image";
 
 export const OohHall = () => {
   const router = useRouter();
@@ -14,33 +15,46 @@ export const OohHall = () => {
   }
   return (
     <>
-      {/* Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            Produção e execução de OOH em{" "}
-            <span className={styles.heroHighlight}>todo o Brasil</span>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Planejamos, produzimos e instalamos campanhas de mídia exterior com
-            qualidade, escala e controle em cada etapa.
-          </p>
-          <div className={styles.heroCtas}>
-            <ButtonTag
-              label="Falar com a Zoom"
-              size="lg"
-              variant="tertiary"
-              icon={<FiArrowDownRight size={24} color="#EE0874" />}
-              onClick={() => handleClick("/contato")}
-            />
-            <ButtonTag
-              label="Ver projetos"
-              size="lg"
-              variant="tertiary"
-              icon={<Folder size={20} color="#EE0874" />}
-              onClick={() => handleClick("/portfolio")}
-            />
+      <section className={styles.heroSectionContainer}>
+        <div className={styles.heroContainer}>
+          <div className={styles.heroLeft}>
+            <h1 className={styles.heroTitle}>
+              Produção e execução de OOH em todo o Brasil
+            </h1>
+            <p className={styles.heroText}>
+              Planejamos, produzimos e instalamos campanhas de mídia exterior
+              com qualidade, escala e controle em cada etapa.
+            </p>
           </div>
+
+          <div className={styles.heroRight}>
+            <div className={styles.heroImgWrap}>
+              <Image
+                src="/images/senna.jpg"
+                alt="Materiais de PDV"
+                fill
+                className={styles.heroImg}
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.heroButtons}>
+          <ButtonTag
+            label="Ver mais projetos"
+            size="sm"
+            variant="glass"
+            icon={<FiArrowRight size={24} color="#EE0874" />}
+            onClick={() => handleClick("/portfolio")}
+          />
+          <ButtonTag
+            label="Falar com a zoom"
+            size="sm"
+            variant="glass"
+            icon={<FiArrowRight size={24} color="#EE0874" />}
+            onClick={() => handleClick("/contato")}
+          />
         </div>
       </section>
     </>
