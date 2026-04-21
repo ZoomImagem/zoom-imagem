@@ -22,7 +22,7 @@ export const HeaderTag = () => {
   function handleClick(link: string) {
     router.push(link);
     setMenuOpen((prev) => !prev);
-  } 
+  }
 
   return (
     <>
@@ -43,14 +43,14 @@ export const HeaderTag = () => {
               className={styles.listMenuLi}
               // ref={dropRef}
             >
-              Soluções
-                <ul className={styles.dropMenu}>
-                  {solucoes.map((s) => (
-                    <li onClick={() => setMenuOpen(false)} key={s.slug}>
-                      <Link href={`/solucoes/${s.slug}`}>{s.label}</Link>
-                    </li>
-                  ))}
-                </ul>
+              <Link href={`/solucoes`}>Soluções</Link>
+              <ul className={styles.dropMenu}>
+                {solucoes.map((s) => (
+                  <li onClick={() => setMenuOpen(false)} key={s.slug}>
+                    <Link href={`/solucoes/${s.slug}`}>{s.label}</Link>
+                  </li>
+                ))}
+              </ul>
             </li>
             <li
               className={styles.listMenuLi}
