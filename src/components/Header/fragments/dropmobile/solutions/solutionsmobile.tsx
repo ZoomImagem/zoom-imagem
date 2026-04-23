@@ -17,10 +17,11 @@ export const DropSolutionsMobile = ({ onClose }: Props) => {
   const clickMenuMobile = () => {
     setMenuDropOpen(prev => !prev);
   };
+
   return (
     <>
-      {menuDropOpen && (
-        <div className={styles.headerMobileOpen}>
+      
+        <div className={`${styles.headerMobileOpen} ${!menuDropOpen ? styles.isVisible : ""}`}>
           <div className={styles.headerContent}>
             <Image
               alt="Zoom"
@@ -29,7 +30,7 @@ export const DropSolutionsMobile = ({ onClose }: Props) => {
               height={100}
             />
 
-            <FiX size={32} color="#C4C4C4" onClick={clickMenuMobile} />
+            <FiX size={36} color="#C4C4C4" onClick={clickMenuMobile} />
           </div>
           <p className={styles.titleSolutions}>Soluções</p>
 
@@ -37,7 +38,7 @@ export const DropSolutionsMobile = ({ onClose }: Props) => {
             <li className={styles.dropItem}>
               <ul>
                 {solucoes.map((s) => (
-                  <li onClick={onClose} key={s.slug}>
+                  <li className={menuDropOpen ? styles.isOpen : ""} onClick={onClose} key={s.slug} >
                     <Link href={`/solucoes/${s.slug}`}>{s.label}</Link>
                   </li>
                 ))}
@@ -45,7 +46,7 @@ export const DropSolutionsMobile = ({ onClose }: Props) => {
             </li>
           </ul>
         </div>
-      )}
+
     </>
   );
 };

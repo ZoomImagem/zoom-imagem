@@ -1,4 +1,6 @@
 @use "@/styles/mixins.scss" as *;
+@use "sass:color";
+
 
 .headerWrapper {
   width: 100%;
@@ -102,10 +104,13 @@
   }
 }
 
+// mobile
+
 .headerMobile {
   width: 100%;
   height: 80px;
   display: flex;
+  
   align-items: center;
   justify-content: space-between;
 
@@ -128,22 +133,35 @@
   position: fixed;
   z-index: 999;
   inset: 0;
-  background: #2c2c2c;
+  background: $bg;
   flex-direction: column;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 300ms ease,
+              visibility 300ms ease,
+              transform 300ms ease;
 
   @include respond-to("l") {
     display: none;
   }
 }
 
+.headerMobileOpen.isVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .headerContent {
   width: 100%;
-  height: 80px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #ffffff0d;
-  padding: 0 16px;
+  padding: 0 24px;
 }
 
 .headerContent > img {
@@ -152,6 +170,7 @@
 
 .headerContent > svg {
   cursor: pointer;
+  margin-right: 16px;
 }
 
 .listMenuMobile {
@@ -176,6 +195,19 @@
   text-transform: uppercase;
   font-size: 21px;
   color: #ffffff;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 300ms ease,
+              visibility 300ms ease,
+              transform 300ms ease;
+}
+
+.listMenuMobile li.isOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropItem {
@@ -230,4 +262,31 @@
       align-items: center;
     }
   }
+}
+
+// solutions menu
+
+.solutionsOpen {
+  display: flex; // era display: block, mas precisa de flex pra herdar o layout
+  position: fixed;
+  z-index: 1000; // maior que o headerMobileOpen (999)
+  inset: 0;
+  background: $bg;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 300ms ease,
+              visibility 300ms ease,
+              transform 300ms ease;
+
+  @include respond-to("l") {
+    display: none;
+  }
+}
+
+.solutionsOpen.isVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

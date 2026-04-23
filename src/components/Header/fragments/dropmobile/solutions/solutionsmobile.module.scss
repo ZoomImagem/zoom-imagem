@@ -114,17 +114,41 @@
   cursor: pointer;
 }
 
+// .headerMobileOpen {
+//   display: flex;
+//   position: fixed;
+//   z-index: 999;
+//   inset: 0;
+//   background: #2c2c2c;
+//   flex-direction: column;
+
+//   @include respond-to("l") {
+//     display: none;
+//   }
+// }
+
+
 .headerMobileOpen {
   display: flex;
   position: fixed;
   z-index: 999;
   inset: 0;
-  background: #2c2c2c;
-  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity 300ms ease,
+              visibility 300ms ease,
+              transform 300ms ease;
 
   @include respond-to("l") {
     display: none;
   }
+}
+
+.headerMobileOpen.isVisible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .headerContent {
@@ -155,15 +179,21 @@
   margin-top: 116px;
 }
 
-.listMenuMobile li {
-  width: 100%;
-  max-width: 343px;
-  height: 52px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 21px;
-  color: #ffffff;
+.listMenuMobile li.isOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
+
+// .listMenuMobile li {
+//   width: 100%;
+//   max-width: 343px;
+//   height: 52px;
+//   text-align: center;
+//   text-transform: uppercase;
+//   font-size: 21px;
+//   color: #ffffff;
+// }
 
 .dropItem {
   position: relative;
@@ -175,6 +205,27 @@
   font-weight: 400;
   text-align: center;
 }
+
+.listMenuMobile li {
+  width: 100%;
+  max-width: 343px;
+  height: 52px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 21px;
+  color: #ffffff;
+  position: relative;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 300ms ease,
+              visibility 300ms ease,
+              transform 300ms ease;
+}
+
 
 .dropMenu {
   position: absolute;
