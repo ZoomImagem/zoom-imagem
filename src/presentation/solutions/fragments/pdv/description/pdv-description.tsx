@@ -1,10 +1,8 @@
 "use client";
 
-import { ButtonTag } from "@/components";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FiArrowRight } from "react-icons/fi";
 import styles from "./pdv-description.module.scss";
 
 const pdvTypes = [
@@ -224,21 +222,12 @@ export const PdvDescription = () => {
         </div>
       </section>
 
-      {/* Projetos */}
       <section className={styles.sectionModal}>
         <Projects tag="PDV" />
       </section>
 
-      {/* Botão Ver mais */}
-      <div className={styles.btnMore}>
-        <ButtonTag
-          label="Ver mais projetos"
-          size="lg"
-          variant="glass"
-          icon={<FiArrowRight size={24} color="#EE0874" />}
-          onClick={() => handleClick("/portfolio")}
-        />
-      </div>
+     
+      
     </>
   );
 };
