@@ -70,9 +70,9 @@ export const HeaderTag = () => {
         </ul>
       </div>
 
-      <div className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}>
+      {/* <div className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}>
         <DropSolutionsMobile onClose={() => setSolutionsMenu(false)} />
-      </div>
+      </div> */}
     </>
   );
 };
