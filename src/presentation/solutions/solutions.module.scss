@@ -8,6 +8,7 @@
   gap: 16px;
   padding: 0 16px;
   position: relative;
+  
 }
 
 .solutionsContent {
@@ -17,13 +18,17 @@
   text-align: center;
   align-items: center;
   gap: 42px;
-  padding: 64px;
+  padding: 14px;
   background:
     radial-gradient(circle at left, $bg 0%, #000 100%),
     conic-gradient(from 0deg at 10% 10%, $bg 0%, $pink 50%, $pink 100%);
 
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  
+
+  @include respond-to("l") {
+    padding: 64px;
+    
+  }
 }
 
 .solutionsTitle {
@@ -31,6 +36,15 @@
   flex-direction: column;
   gap: 16px;
   h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $ice;
+  }
+  @include respond-to("l") {
+    h2 {
     font-size: 42px;
   }
 
@@ -38,6 +52,8 @@
     font-size: 20px;
     color: $ice;
   }
+  }
+  
 }
 
 .solutionsItems {
@@ -53,20 +69,23 @@
   width: 100%;
   height: 368px;
   max-width: 565px;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
   display: flex;
+  border-radius: 16px;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
   background-size: cover;
   cursor: pointer;
+  transition: transform 250ms ease-out;
 
   @include respond-to("l") {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     &:hover {
-      transform: scale(1.01);
+      transform: translateY(-8px);
       .itemContent {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -78,18 +97,21 @@
 }
 
 .itemContent {
-  display: none;
+  display: flex;
+  
+  
   width: 100%;
   height: 80px;
   background: rgba(10, 10, 10, 0.95);
-  transition: transform 250ms ease-out;
-
+  
   border-bottom-right-radius: 16px;
-
   justify-content: center;
   align-items: center;
 
   @include respond-to("l") {
-    // display: flex;
+    transition: opacity 300ms ease,
+              visibility 300ms ease;
+    opacity: 0; 
+    visibility: hidden;
   }
 }
