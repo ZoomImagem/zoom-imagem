@@ -31,9 +31,13 @@
 .heroButtons {
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
   gap: 1.5rem;
+
+  @include respond-to("l") {
+    flex-direction: row;
+  }
 }
 
 // ── Esquerda ─────────────────────────────────────────────────
@@ -54,10 +58,15 @@
 
 .heroText {
   font-size: 0.95rem;
-  color: rgba(#fff, 0.5);
+  color: rgba(#fff, .7);
   line-height: 1.8;
   max-width: 520px;
   margin-top: 24px;
+
+  @include respond-to("l") {
+    
+    color: rgba(#fff, 0.5);
+  }
 }
 
 // ── Direita ───────────────────────────────────────────────────
@@ -77,6 +86,12 @@
   border-radius: 16px;
   overflow: hidden;
   background: rgba(#fff, 0.04);
+
+  margin-top: 16px;
+@include respond-to("l") {
+    margin-top: 0;
+  }
+
 }
 
 .heroImg {

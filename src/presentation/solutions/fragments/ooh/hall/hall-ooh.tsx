@@ -2,7 +2,7 @@
 
 import styles from "./hall-ooh.module.scss";
 import { ButtonTag } from "@/components";
-import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { Folder } from "lucide-react";
 import Image from "next/image";
@@ -43,15 +43,15 @@ export const OohHall = () => {
         <div className={styles.heroButtons}>
           <ButtonTag
             label="Ver mais projetos"
-            size="sm"
-            variant="glass"
-            icon={<FiArrowRight size={24} color="#EE0874" />}
+            size="lg"
+            variant="secondary"
+            icon={<Folder size={24} color="#EE0874" />}
             onClick={() => handleClick("/portfolio")}
           />
           <ButtonTag
             label="Falar com a zoom"
-            size="sm"
-            variant="glass"
+            size="lg"
+            variant="secondary"
             icon={<FiArrowRight size={24} color="#EE0874" />}
             onClick={() => handleClick("/contato")}
           />
