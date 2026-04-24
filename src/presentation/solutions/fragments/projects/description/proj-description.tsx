@@ -6,93 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./proj-description.module.scss";
-
-const projectTypes = [
-  {
-    icon: "✦",
-    title: "Ativações de marca",
-    desc: "Projetos que criam interação e presença em pontos estratégicos.",
-  },
-  {
-    icon: "🏛️",
-    title: "Instalações especiais",
-    desc: "Estruturas desenvolvidas sob medida para campanhas específicas.",
-  },
-  {
-    icon: "🎭",
-    title: "Ambientações e cenografia",
-    desc: "Criação de ambientes que reforçam identidade e experiência da marca.",
-  },
-  {
-    icon: "🗂️",
-    title: "Projetos híbridos",
-    desc: "Integração de OOH, PDV e ações especiais em uma única execução.",
-  },
-];
-
-const steps = [
-  {
-    n: "01",
-    title: "Diagnóstico",
-    desc: "Entendimento do objetivo e definição do melhor formato.",
-  },
-  {
-    n: "02",
-    title: "Desenvolvimento",
-    desc: "Criação da solução com foco em viabilidade técnica.",
-  },
-  {
-    n: "03",
-    title: "Produção",
-    desc: "Execução com controle de qualidade e materiais adequados.",
-  },
-  {
-    n: "04",
-    title: "Implementação",
-    desc: "Instalação e ativação no local definido.",
-  },
-];
-
-const cities = [
-  "São Paulo - SP",
-  "Rio de Janeiro - RJ",
-  "Belo Horizonte - MG",
-  "Fortaleza - CE",
-  "Curitiba - PR",
-];
-
-const projects = [
-  {
-    brand: "Marca A",
-    type: "Ativação de Marca",
-    img: "/images/senna.jpg",
-  },
-  {
-    brand: "Marca B",
-    type: "Instalação Especial",
-    img: "/images/senna.jpg",
-  },
-  {
-    brand: "Marca C",
-    type: "Ambientação",
-    img: "/images/senna.jpg",
-  },
-  {
-    brand: "Marca D",
-    type: "Projeto Híbrido",
-    img: "/images/senna.jpg",
-  },
-  {
-    brand: "Marca E",
-    type: "Ativação de Marca",
-    img: "/images/senna.jpg",
-  },
-  {
-    brand: "Marca F",
-    type: "Cenografia",
-    img: "/images/senna.jpg",
-  },
-];
+import { cities, projectTypes, steps } from "./constants/proj-desc.constants";
 
 export const ProjDescription = () => {
   const router = useRouter();
@@ -103,7 +17,7 @@ export const ProjDescription = () => {
 
   return (
     <>
-      {/* O que são projetos especiais */}
+    
       <section className={styles.sectionModal}>
         <div className={styles.contentWhat}>
           <div className={styles.textBlock}>
@@ -132,7 +46,6 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      {/* O que a Zoom faz */}
       <section className={styles.sectionModal}>
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
@@ -159,7 +72,6 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      {/* Tipos de projetos */}
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
           <div className={styles.sectionHeader}>
@@ -178,7 +90,6 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      {/* Como funciona */}
       <section className={styles.sectionModal}>
         <div className={styles.contentHow}>
           <div className={styles.sectionHeader}>
@@ -199,7 +110,6 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      {/* Capacidade de execução */}
       <section className={styles.sectionModal}>
         <div className={styles.contentRange}>
           <div className={styles.sectionHeader}>
@@ -223,28 +133,10 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      {/* Projetos */}
       <section className={styles.sectionModal}>
         <Projects tag="Projetos especiais"/>
       </section>
 
-      {/* CTA final */}
-      <section className={styles.sectionModal}>
-        <div className={styles.contentCta}>
-          <h2>Se a sua campanha precisa sair do padrão, a gente executa.</h2>
-          <p>
-            Fale com a Zoom e desenvolva um projeto especial com execução real
-            e controle completo.
-          </p>
-          <ButtonTag
-            label="Falar com a Zoom"
-            size="lg"
-            variant="primary"
-            icon={<FiArrowRight size={24} color="#fff" />}
-            onClick={() => handleClick("/contato")}
-          />
-        </div>
-      </section>
     </>
   );
 };

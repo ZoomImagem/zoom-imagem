@@ -1,39 +1,31 @@
 @use "@/styles/mixins.scss" as *;
 
-
-// ─── Tokens ──────────────────────────────────────────────────────────────────
-
-$yellow: #facc15;
-$yellow-hover: #fde047;
-$dark: #030712;
-$dark-mid: #111827;
-$gray-50: #f9fafb;
-$gray-100: #f3f4f6;
-$gray-400: #9ca3af;
-$gray-500: #6b7280;
-$gray-600: #4b5563;
-$gray-900: #111827;
-$white: #ffffff;
-
-$radius-sm: 0.75rem;
-$radius-md: 1rem;
-$radius-lg: 1.5rem;
-$radius-full: 9999px;
-
-$bp-md: 768px;
-$bp-lg: 1024px;
-
-@mixin section-base {
-  padding-block: 6rem;
-
-  @media (min-width: $bp-md) {
-    padding-block: 8rem;
-  }
-}
-
-// ====================== GERAL
-
 .sectionModal {
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: $ice;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: $pink;
+    margin-bottom: 0.5rem;
+  }
+
+  @include respond-to("l") {
   h2 {
     font-size: 32px;
     font-weight: 600;
@@ -50,17 +42,18 @@ $bp-lg: 1024px;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: $pink;
     margin-bottom: 0.5rem;
   }
+  }
 }
 
 .imageBox {
-  border-radius: $radius-lg;
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .image {
@@ -207,11 +200,9 @@ $bp-lg: 1024px;
   justify-content: space-between;
   margin-bottom: 64px;
 
-@include respond-to("l") {
+  @include respond-to("l") {
     flex-direction: row;
-  
-}
-
+  }
 }
 
 .citiesBlock {
@@ -226,8 +217,8 @@ $bp-lg: 1024px;
   padding: 8px 18px;
   min-width: 180px;
   border-radius: 999px;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font-size: 12px;
   cursor: pointer;
@@ -240,121 +231,19 @@ $bp-lg: 1024px;
 }
 
 .cityTag:hover {
+
+  @include respond-to("l") {
   background: $pink;
   border-color: $pink;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(238, 8, 116,0.35);
-}
-
-.cityTag:active {
-  transform: translateY(0px) scale(0.97);
-  box-shadow: none;
-}
-
-// ==================== projetos
-
-.contentProjects {
-  justify-content: space-between;
-  margin-bottom: 64px;
-}
-
-.projectsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.projectCard {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: $radius-lg;
-  overflow: hidden;
-  background-color: $gray-100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  flex: 1 1 100%;
-
-  @include respond-to("l") {
-    flex: 1 1 calc(33.333% - 0.667rem);
-    max-width: calc(33.333% - 0.667rem);
-}
-  &:hover .projectImage {
-    transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(238, 8, 116, 0.35);
   }
 }
 
-.projectImage {
-  object-fit: cover;
-  transition: transform 0.5s ease;
+.cityTag:active {
+  @include respond-to("l") {
+  transform: translateY(0px) scale(0.97);
+  box-shadow: none;
+  }
 }
-
-.projectOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.25rem;
-}
-
-.projectBrand {
-  color: $white;
-  font-weight: 700;
-  font-size: 1rem;
-  margin: 0;
-}
-
-.projectType {
-  color: $yellow;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.075em;
-  margin: 0;
-} 
-
-
-// // ─── CTA section ─────────────────────────────────────────────────────────────
-
-// .sectionCta {
-//   @include section-base;
-//   background-color: $dark;
-//   text-align: center;
-
-//   h2 {
-//     font-size: clamp(1.75rem, 4vw, 3rem);
-//     font-weight: 800;
-//     color: $white;
-//     margin-bottom: 1.5rem;
-//     line-height: 1.2;
-//   }
-
-//   p {
-//     font-size: 1.125rem;
-//     color: $gray-400;
-//     max-width: 36rem;
-//     margin-inline: auto;
-//     margin-bottom: 2.5rem;
-//     line-height: 1.75;
-//   }
-// }
-
-// .ctaInner {
-//   @include container;
-//   max-width: 42rem;
-// }
-
-// // ─── Footer ───────────────────────────────────────────────────────────────────
-
-// .footer {
-//   background-color: #000;
-//   padding-block: 2rem;
-//   text-align: center;
-
-//   p {
-//     font-size: 0.875rem;
-//     color: $gray-500;
-//     margin: 0;
-//   }
-// }
