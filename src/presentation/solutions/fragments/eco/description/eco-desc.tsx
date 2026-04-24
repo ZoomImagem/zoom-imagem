@@ -178,7 +178,7 @@ export const EcoDescription = () => {
           onClick={() => handleClick("/portfolio")}
         />
       </div>
-      
+
       <section className={styles.sectionModal} ref={sectionRef}>
         <div
           className={`${styles.ctaContainer} ${inView ? styles["ctaContainer--visible"] : ""}`}
@@ -259,7 +259,7 @@ export const EcoDescription = () => {
             <div className={styles.ctaActions}>
               <ButtonTag
                 label="Falar com a Zoom"
-                size="sm"
+                size="lg"
                 variant="ecoglass"
                 icon={<FiArrowRight size={24} color="#111D13" />}
                 onClick={() => handleClick("/contato")}
