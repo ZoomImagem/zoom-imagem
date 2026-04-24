@@ -1,7 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
 .sectionModal {
-  padding: 3rem 1.5rem;
+  padding: 24px 16px;
   background-color: rgba(#8fb996, 0.8);
 
   @include respond-to("l") {
@@ -10,8 +10,11 @@
 }
 
 .sectionHeader {
-  margin-bottom: 3rem;
 
+  margin-bottom: 24px;
+  @include respond-to("l") {
+    margin-bottom: 48px;
+  }
   h3 {
     font-size: 0.78rem;
     font-weight: 500;
@@ -46,7 +49,7 @@
 .contentWhat,
 .contentAtuation,
 .contentTypes {
-  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   max-width: 1100px;
   border-radius: 16px;
   margin: 0 auto;
@@ -148,7 +151,7 @@
   transition:
     border-color 0.3s,
     transform 0.3s;
-
+@include respond-to("l") {
   &:hover {
     border-color: rgba(#e5e6fa, 0.35);
     transform: translateY(-4px);
@@ -159,6 +162,7 @@
       border-color: rgba(#e5e6fa, 0.3);
     }
   }
+}
 
   h3 {
     font-size: 1.05rem;
@@ -267,7 +271,7 @@
 .contentProjects {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 3rem;
+  padding: 2rem 16px;
   border-radius: 16px;
 
 
@@ -301,7 +305,7 @@
   transition:
     border-color 0.3s,
     transform 0.3s;
-
+@include respond-to("l") {
   &:hover {
     border-color: rgba(#e5e6fa, 0.35);
     transform: translateY(-4px);
@@ -314,6 +318,7 @@
       opacity: 1;
     }
   }
+}
 }
 
 .projectImage {
@@ -469,10 +474,11 @@
 .ctaImg {
   object-fit: cover;
   transition: transform 0.5s ease;
-
+@include respond-to("l") {
   &:hover {
     transform: scale(1.04);
   }
+}
 }
 
 .ctaBadge {

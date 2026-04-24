@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./eco-hall.module.scss";
+import { Folder } from "lucide-react";
 
 export const EcoHall = () => {
   const router = useRouter();
@@ -15,7 +16,7 @@ export const EcoHall = () => {
 
   return (
     <>
-      {/* Hero */}
+
       <section className={styles.hero}>
         <div className={styles.heroBg}>
           <Image
@@ -49,6 +50,7 @@ export const EcoHall = () => {
               size="lg"
               variant="ecoglass"
               onClick={() => handleClick("/portfolio")}
+              icon={<Folder size={20} color="#fff" />}
             />
           </div>
         </div>

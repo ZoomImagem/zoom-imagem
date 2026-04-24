@@ -1,67 +1,12 @@
 @use "@/styles/mixins.scss" as *;
 
-
-$pink: #e5e6fa;
-$bg: #111d13;
-$bg-alt: #0f1320;
-$border: #e5e6fa;
-
-// ── Compartilhados ────────────────────────────────────────────
-
-.sectionModal {
-  padding: 4rem 1.5rem;
-
-  @include respond-to("m") {
-    padding: 5rem 3rem;
-  }
-
-  @include respond-to("l") {
-    padding: 6rem 6rem;
-  }
-}
-
-.sectionHeader {
-  margin-bottom: 3rem;
-
-  h3 {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: $pink;
-    margin-bottom: 0.75rem;
-  }
-
-  h2 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 700;
-    color: #e5e6fa;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-
-  p {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    color: rgba(#e5e6fa, 0.5);
-    line-height: 1.75;
-    max-width: 600px;
-  }
-}
-
-.titleLight {
-  color: #e5e6fa !important;
-}
-
-// ── Hero ──────────────────────────────────────────────────────
-
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 6rem 1.5rem;
+  padding: 64px 16px;
 
   @include respond-to("l") {
     padding: 0 6rem;
@@ -83,8 +28,8 @@ $border: #e5e6fa;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba($bg, 0.88) 0%,
-    rgba($bg, 0.65) 55%,
+    rgba(#111d13, 0.88) 0%,
+    rgba(#111d13, 0.65) 55%,
     transparent 100%
   );
 }

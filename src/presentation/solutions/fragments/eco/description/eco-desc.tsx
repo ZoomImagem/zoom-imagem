@@ -4,67 +4,12 @@ import { ButtonTag } from "@/components";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FiArrowRight, FiCheck, FiCheckCircle } from "react-icons/fi";
-import { Recycle, Package, Leaf, Zap } from "lucide-react";
+
 import styles from "./eco-desc.module.scss";
 import { useRef, useState, useEffect } from "react";
+import { images, projects, solutions, steps } from "./constants/eco.constants";
 
-const solutions = [
-  {
-    icon: Recycle,
-    title: "Materiais recicláveis",
-    description: "Uso de insumos com menor impacto ambiental.",
-  },
-  {
-    icon: Package,
-    title: "Estruturas reutilizáveis",
-    description: "Projetos pensados para múltiplas utilizações.",
-  },
-  {
-    icon: Leaf,
-    title: "Redução de resíduos",
-    description: "Processos produtivos otimizados.",
-  },
-  {
-    icon: Zap,
-    title: "Projetos sob medida",
-    description:
-      "Desenvolvimento de soluções sustentáveis específicas para cada campanha.",
-  },
-];
 
-const steps = [
-  {
-    n: "01",
-    title: "Análise do projeto",
-    desc: "Identificação de oportunidades de redução de impacto.",
-  },
-  {
-    n: "02",
-    title: "Definição de materiais",
-    desc: "Escolha de soluções adequadas.",
-  },
-  {
-    n: "03",
-    title: "Produção",
-    desc: "Execução com controle e eficiência.",
-  },
-  {
-    n: "04",
-    title: "Implementação",
-    desc: "Aplicação no ambiente de campanha.",
-  },
-];
-
-const projects = [
-  { brand: "Marca A", type: "Varejo", img: "/images/senna.jpg" },
-  { brand: "Marca B", type: "Ambientação", img: "/images/senna.jpg" },
-  { brand: "Marca C", type: "Mídia Exterior", img: "/images/senna.jpg" },
-  { brand: "Marca D", type: "Ponto de Venda", img: "/images/senna.jpg" },
-  { brand: "Marca E", type: "Varejo", img: "/images/senna.jpg" },
-  { brand: "Marca F", type: "Institucional", img: "/images/senna.jpg" },
-];
-
-const images = ["/images/senna.jpg", "/images/senna.jpg", "/images/senna.jpg"];
 
 export const EcoDescription = () => {
   const router = useRouter();
@@ -233,8 +178,7 @@ export const EcoDescription = () => {
           onClick={() => handleClick("/portfolio")}
         />
       </div>
-
-      {/* CTA      */}
+      
       <section className={styles.sectionModal} ref={sectionRef}>
         <div
           className={`${styles.ctaContainer} ${inView ? styles["ctaContainer--visible"] : ""}`}
