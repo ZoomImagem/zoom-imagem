@@ -1,61 +1,10 @@
 "use client";
 
-import { ButtonTag } from "@/components";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FiArrowRight } from "react-icons/fi";
 import styles from "./description-ooh.module.scss";
-
-const oohTypes = [
-  {
-    icon: "🪧",
-    title: "Outdoors",
-    desc: "Produção e instalação de campanhas em outdoor com alta visibilidade e alcance.",
-  },
-  {
-    icon: "💡",
-    title: "Painéis e Frontlights",
-    desc: "Estruturas de grande formato para campanhas de impacto.",
-  },
-  {
-    icon: "🏙️",
-    title: "Mobiliário Urbano",
-    desc: "Presença em pontos estratégicos da cidade, como abrigos de ônibus e relógios urbanos.",
-  },
-  {
-    icon: "✦",
-    title: "Projetos personalizados",
-    desc: "Execuções sob medida para campanhas que exigem soluções diferenciadas.",
-  },
-];
-
-const steps = [
-  {
-    n: "01",
-    title: "Planejamento",
-    desc: "Definição da melhor estratégia de presença para a campanha.",
-  },
-  {
-    n: "02",
-    title: "Produção",
-    desc: "Desenvolvimento dos materiais com controle técnico e qualidade.",
-  },
-  {
-    n: "03",
-    title: "Instalação",
-    desc: "Execução em campo com equipe especializada.",
-  },
-  {
-    n: "04",
-    title: "Acompanhamento",
-    desc: "Garantia de padrão e correta implementação.",
-  },
-];
-
-const cities = ["São Paulo - SP", "Rio de Janeiro - RJ", "Belo Horizonte - MG", "Fortaleza - CE", "Curitiba - PR"]
-
-
+import { cities, oohTypes, steps } from "./constants/desc-ooh.constants";
 
 export const OohDescription = () => {
   const router = useRouter();
@@ -63,9 +12,10 @@ export const OohDescription = () => {
     function handleClick(link: string) {
       router.push(link);
     }
+
   return (
     <>
-      {/* O que é OOH */}
+     
       <section className={styles.sectionModal}>
         <div className={styles.contentWhat}>
           <div className={styles.textBlock}>
@@ -94,12 +44,11 @@ export const OohDescription = () => {
         </div>
       </section>
 
-      {/* Projetos */}
+  
       <section className={styles.sectionModal}>
         <Projects tag="OOH"/>
       </section>
 
-      {/* O que a Zoom faz */}
       <section className={styles.sectionModal}>
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
@@ -127,7 +76,7 @@ export const OohDescription = () => {
         </div>
       </section>
 
-      {/* Tipos de OOH */}
+   
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
           <div className={styles.sectionHeader}>
@@ -145,7 +94,6 @@ export const OohDescription = () => {
         </div>
       </section>
 
-      {/* Como funciona */}
       <section  className={styles.sectionModal}>
         <div className={styles.contentHow}>
           <div className={styles.sectionHeader}>
@@ -188,10 +136,6 @@ export const OohDescription = () => {
           </div>
         </div>
       </section>
-
-      
-
-     
     </>
   );
 };
