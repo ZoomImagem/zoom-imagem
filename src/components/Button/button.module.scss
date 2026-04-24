@@ -27,31 +27,37 @@
 .primary {
   background: linear-gradient(225deg, $yellow 0%, $pink 75%);
   color: #000;
-
+@include respond-to("l"){
   &:hover {
     transform: scale(1.05);
   }
+}
 }
 
 .ecoglass {
   background: linear-gradient(225deg, #3e5f44 0%, #111d13 100%);
   color: #e5e6fa;
 
-  &:hover {
+  @include respond-to("l"){
+&:hover {
     background: linear-gradient(225deg, #3e5f44 20%, #111d13 80%);
     color: #e5e6fa;
   }
+  }
+
+  
 }
 
 .secondary {
   border: 1px solid $ice;
   background-color: $bg;
   color: $ice;
-
+@include respond-to("l"){
   &:hover {
     border: 2px solid $pink;
     transform: scale(1.05);
   }
+}
 }
 
 .tertiary {
