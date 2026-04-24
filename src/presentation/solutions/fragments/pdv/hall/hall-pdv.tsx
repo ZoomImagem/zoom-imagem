@@ -46,15 +46,15 @@ export default function PdvHall() {
       <div className={styles.heroButtons}>
         <ButtonTag
           label="Ver mais projetos"
-          size="sm"
-          variant="glass"
+          size="lg"
+          variant="secondary"
           icon={<FiArrowRight size={24} color="#EE0874" />}
           onClick={() => handleClick("/portfolio")}
         />
         <ButtonTag
           label="Falar com a zoom"
-          size="sm"
-          variant="glass"
+          size="lg"
+          variant="secondary"
           icon={<FiArrowRight size={24} color="#EE0874" />}
           onClick={() => handleClick("/contato")}
         />

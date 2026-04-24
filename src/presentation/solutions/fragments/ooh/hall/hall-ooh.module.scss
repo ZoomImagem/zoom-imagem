@@ -32,10 +32,11 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 1.5rem;
 
   @include respond-to("l") {
+    margin-top: 32px;
     flex-direction: row;
   }
 }
