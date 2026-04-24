@@ -63,16 +63,16 @@ export const HeaderTag = () => {
         <ul className={styles.listMenuMobile}>
           <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/")}>Home</li>
           <li className={menuOpen ? styles.isOpen : ""} onClick={() => { setMenuOpen(false);
-    setTimeout(() => setSolutionsMenu(true), 300); }}>Soluções</li>
+     setSolutionsMenu(true); }}>Soluções</li>
           <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/portfolio")}>Projetos</li>
           <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/sobre")}>Sobre</li>
           <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/contato")}>Fale com a Zoom</li>
         </ul>
       </div>
 
-      {/* <div className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}>
+      <div className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}>
         <DropSolutionsMobile onClose={() => setSolutionsMenu(false)} />
-      </div> */}
+      </div>
     </>
   );
 };

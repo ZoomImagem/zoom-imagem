@@ -188,13 +188,20 @@
 }
 
 .listMenuMobile li {
+  display: flex;
   width: 100%;
   max-width: 343px;
   height: 52px;
-  text-align: center;
+  justify-content: center;
   text-transform: uppercase;
   font-size: 21px;
   color: #ffffff;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 400;
+
+  border-radius: 16px;
+  background: rgba(0,0,0,0.3);
 
   opacity: 0;
   visibility: hidden;
