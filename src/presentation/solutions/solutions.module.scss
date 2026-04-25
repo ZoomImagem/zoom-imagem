@@ -8,13 +8,11 @@
   gap: 16px;
   padding: 0 16px;
   position: relative;
-  
 }
 
 .solutionsContent {
   display: flex;
   flex-direction: column;
-  // background-color: red;
   text-align: center;
   align-items: center;
   gap: 42px;
@@ -23,11 +21,8 @@
     radial-gradient(circle at left, $bg 0%, #000 100%),
     conic-gradient(from 0deg at 10% 10%, $bg 0%, $pink 50%, $pink 100%);
 
-  
-
   @include respond-to("l") {
     padding: 64px;
-    
   }
 }
 
@@ -45,15 +40,14 @@
   }
   @include respond-to("l") {
     h2 {
-    font-size: 42px;
-  }
+      font-size: 42px;
+    }
 
-  p {
-    font-size: 20px;
-    color: $ice;
+    p {
+      font-size: 20px;
+      color: $ice;
+    }
   }
-  }
-  
 }
 
 .solutionsItems {
@@ -82,7 +76,7 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     &:hover {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
       .itemContent {
         opacity: 1;
         visibility: visible;
@@ -106,9 +100,10 @@
   align-items: center;
 
   @include respond-to("l") {
-    transition: opacity 300ms ease,
-                visibility 300ms ease;
-    opacity: 0; 
+    transition:
+      opacity 300ms ease,
+      visibility 300ms ease;
+    opacity: 0;
     visibility: hidden;
   }
 }

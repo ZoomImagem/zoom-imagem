@@ -27,7 +27,7 @@ export const SolutionsComponent = () => {
                 key={key}
                 className={styles.item}
                 style={{ backgroundImage: `url(${item.image})` }}
-                // onClick={() => handleActiveService(item)}
+                onClick={() => handleClick(`/solucoes/${item.slug}`)}
               >
                 <div className={styles.itemContent}>
                   <div className={styles.itemTitle}>
