@@ -47,13 +47,72 @@ export const steps = [
   },
 ];
 
-export const projects = [
-  { brand: "Marca A", type: "Varejo", img: "/images/senna.jpg" },
-  { brand: "Marca B", type: "Ambientação", img: "/images/senna.jpg" },
-  { brand: "Marca C", type: "Mídia Exterior", img: "/images/senna.jpg" },
-  { brand: "Marca D", type: "Ponto de Venda", img: "/images/senna.jpg" },
-  { brand: "Marca E", type: "Varejo", img: "/images/senna.jpg" },
-  { brand: "Marca F", type: "Institucional", img: "/images/senna.jpg" },
+export interface AmbienteProjects {
+  brand: string;
+  type: string;
+  img: string;
+  images?: string[];
+}
+
+export const project: AmbienteProjects[] = [
+  {
+    brand: "Marca A",
+    type: "Varejo",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
+  {
+    brand: "Marca B",
+    type: "Ambientação",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
+  {
+    brand: "Marca C",
+    type: "Mídia Exterior",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
+  {
+    brand: "Marca D",
+    type: "Ponto de Venda",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
+  {
+    brand: "Marca E",
+    type: "Varejo",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
+  {
+    brand: "Marca F",
+    type: "Institucional",
+    img: "/images/senna.jpg",
+    images: [
+      "/images/projects/Chevrolet-01.webp",
+      "/images/projects/intelbras1.webp",
+    ],
+  },
 ];
 
-export const images = ["/images/senna.jpg", "/images/senna.jpg", "/images/senna.jpg"];
+export const imagesCta = [
+  "/images/senna.jpg",
+  "/images/senna.jpg",
+  "/images/senna.jpg",
+];
