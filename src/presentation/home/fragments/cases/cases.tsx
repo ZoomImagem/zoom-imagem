@@ -1,57 +1,8 @@
-import {
-  FiArrowDownRight,
-  FiEye,
-  FiMapPin,
-  FiTarget,
-  FiTool,
-} from "react-icons/fi";
+import { FiArrowDownRight } from "react-icons/fi";
 import styles from "./cases.module.scss";
 import { useRouter } from "next/navigation";
 import { ButtonTag, ContentTag } from "@/components";
-
-const steps = [
-  {
-    icon: FiTarget,
-    title: "Planejamento de campanha",
-    description:
-      "Definição da melhor estratégia para presença em mídia OOH, PDV ou ativações.",
-  },
-  {
-    icon: FiTool,
-    title: "Produção de materiais",
-    description:
-      "Desenvolvimento técnico e produção com controle de qualidade.",
-  },
-  {
-    icon: FiMapPin,
-    title: "Instalação e execução",
-    description: "Implementação em campo com equipe especializada.",
-  },
-  {
-    icon: FiEye,
-    title: "Monitoramento e acompanhamento",
-    description: "Garantia de padrão e funcionamento correto das ações",
-  },
-];
-
-const projects = [
-  {
-    title: "Metrô - Vila Sônia",
-    image: "/images/process/metro.png",
-  },
-  {
-    title: "Intelbras - Rua Pamplona",
-    image: "/images/process/urbano.png",
-  },
-  {
-    title: "Betano - Especial",
-    image: "/images/process/betano.png",
-  },
-  {
-    title: "Bauducco - Frei Caneca",
-    image: "/images/process/bauducco.png",
-  },
-];
+import { projects, steps } from "./constants/cases.constants";
 
 const CasesComponent = () => {
   const router = useRouter();
@@ -71,14 +22,20 @@ const CasesComponent = () => {
           localidades.
         </span>
       </div>
+
       <ul className={styles.listCases}>
         {projects.map((item, index) => (
-          <li
+          <li onClick={() => handleClick("/portfolio")}
             key={index}
             className={styles.listCaseItem}
             style={{ backgroundImage: `url(${item.image})` }}
+            
           >
             <h3>{item.title}</h3>
+
+            <div className={styles.viewMore}>
+              <p>ver mais + </p>
+            </div>
           </li>
         ))}
       </ul>
@@ -114,7 +71,7 @@ const CasesComponent = () => {
           <ButtonTag
             label="Falar com a Zoom"
             size="lg"
-            variant="tertiary"
+            variant="secondary"
             icon={<FiArrowDownRight size={24} color="#EE0874" />}
             onClick={() => handleClick("/contato")}
           />

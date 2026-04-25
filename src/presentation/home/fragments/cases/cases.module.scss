@@ -62,13 +62,14 @@
   border-radius: 24px;
   overflow: hidden;
   padding: 24px;
-
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  cursor: pointer;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
 
   h3 {
     position: relative;
@@ -76,6 +77,33 @@
     color: white;
     font-size: 28px;
     font-weight: 700;
+  }
+
+  @include respond-to("l") {
+    &:hover {
+      transform: translateY(-2px);
+
+      .viewMore,
+      .icon {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.85),
+          rgba(0, 0, 0, 0.2),
+          transparent
+        );
+
+        z-index: 1;
+      }
+    }
   }
 
   &::before {
@@ -90,6 +118,24 @@
     );
     z-index: 1;
   }
+}
+
+.viewMore {
+  height: 40px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease,
+    transform 300ms ease;
+  color: $ice;
+  font-size: 24px;
+  z-index: 3;
 }
 
 .process {
@@ -197,7 +243,11 @@
   display: flex;
   padding: 48px 24px;
   border-radius: 20px;
-  background: linear-gradient(210deg, #fed207 20%, $pink);
+  background:
+    radial-gradient(circle at center, $bg 0%, #000 100%),
+    conic-gradient(from 0deg at 50% 50%, #bde0c3 0%, #3e5f44 50%, #bde0c3 100%);
+
+  // background: linear-gradient(210deg, #fed207 20%, $pink);
   gap: 64px;
   flex-direction: column;
 
@@ -211,7 +261,7 @@
     font-size: 32px;
     font-weight: 400;
     line-height: 100%;
-    color: #030303;
+    color: $yellow;
     position: relative;
 
     @include respond-to("l") {
@@ -226,7 +276,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: #000000;
+      background: $yellow;
 
       @include respond-to("l") {
         top: 0;
@@ -254,7 +304,7 @@
       font-size: 24px;
       font-weight: 400;
       line-height: 33.6px;
-      color: $bg;
+      color: $ice;
 
       strong {
         font-weight: 700;
