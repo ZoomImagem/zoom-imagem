@@ -5,7 +5,8 @@ import { FiArrowRight } from "react-icons/fi";
 
 import styles from "./jobs.module.scss";
 import { IListServices, listServices } from "./constants/jobs.constants";
-import {ContentTag, CheckboxTag} from "@/components";
+import { ContentTag, CheckboxTag } from "@/components";
+import { useRouter } from "next/navigation";
 
 const JobsComponent = () => {
   const [activeService, setActiveService] = useState<IListServices>(
@@ -15,6 +16,12 @@ const JobsComponent = () => {
   const handleActiveService = (service: IListServices) => {
     setActiveService(service);
   };
+
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
 
   return (
     <ContentTag colorTopPosition="left">
@@ -28,7 +35,9 @@ const JobsComponent = () => {
           <div>
             <FiArrowRight size={16} color="black" />
           </div>{" "}
-          <p>Confira nossos projetos</p>
+          <p onClick={() => handleClick("/portfolio")}>
+            Confira nossos projetos
+          </p>
         </div>
       </div>
 

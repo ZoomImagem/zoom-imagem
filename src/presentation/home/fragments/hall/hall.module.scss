@@ -1,23 +1,15 @@
 @use "@/styles/mixins.scss" as *;
 
 .hallWrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100%;
-  justify-content: space-between;
+  height: calc(100vh - 140px);
 
-  a {
-    display: none;
-  }
   @include respond-to("l") {
-    margin-top: 100px;
+    padding-top: 100px;
     text-align: left;
     padding-bottom: 30px;
-    a {
-      display: flex;
-    }
   }
 }
 
@@ -62,6 +54,9 @@
   @include respond-to("l") {
     font-size: 72px;
     display: block;
+  }
+  @include respond-to("m") {
+    font-size: 54px;
   }
   strong {
     font-weight: 700;
@@ -164,13 +159,12 @@
 }
 
 .contentButtonOvalMobile {
-  width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
+  margin-top: 5rem;
 
   @include respond-to("l") {
-    display: none;
+    margin-top: 0;
   }
 }
 

@@ -8,16 +8,18 @@
   text-align: left;
 
   span {
-    color: $pink;
-    font-size: 14px;
+    color: $ice;
+    font-size: 24px;
     letter-spacing: 0.01em;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-align: center;
 
     @include respond-to("l") {
-      font-size: 16px;
+      font-size: 52px;
       margin-bottom: 24px;
+      text-align: left;
     }
   }
 
@@ -26,17 +28,18 @@
     font-weight: 400;
     font-size: 28px;
     line-height: 110%;
-    color: #fafafab2;
+    color: #fff;
     margin: 32px 0;
+    
 
     @include respond-to("l") {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 100px;
       display: block;
     }
 
     strong {
-      color: #ffffff;
+      color: $pink;
       font-weight: 600;
     }
   }
@@ -263,14 +266,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   span {
-    color: $ice;
+    color: $pink;
     font-size: 14px;
     letter-spacing: 0.01em;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 8px;
+    text-align: center;
 
     @include respond-to("l") {
       font-size: 16px;
@@ -286,6 +290,7 @@
     line-height: 110%;
     color: #fafafab2;
     margin-bottom: 32px;
+    text-align: center;
 
     @include respond-to("l") {
       font-size: 64px;
@@ -300,16 +305,17 @@
 }
 
 .ourClients {
-  color: $ice;
+  color: $pink;
   font-size: 14px;
   letter-spacing: 0.01em;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  text-align: center;
 
   @include respond-to("l") {
     font-size: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 }
 
@@ -382,7 +388,7 @@
   display: flex;
   padding: 48px 24px;
   border-radius: 20px;
-  background: linear-gradient(210deg, #fed207 20%, $pink);
+  background: linear-gradient(210deg, $bg 0%, $ice 100%);
   gap: 64px;
   flex-direction: column;
 

@@ -57,17 +57,14 @@ const HallComponent = () => {
                 cada etapa
               </p>
             </div>
-            <a onClick={() => handleScroll()} className={styles.buttonDown}>
-              <FiArrowDown size={40} color="#1E1E1E" />
-            </a>
+            <div className={styles.contentButtonOvalMobile}>
+              <a onClick={() => handleScroll()} className={styles.buttonDown}>
+                <FiArrowDown size={40} color="#1E1E1E" />
+              </a>
+            </div>
           </div>
         </div>
       </CenterTag>
-      <div className={styles.contentButtonOvalMobile}>
-        <a onClick={() => handleScroll()} className={styles.buttonDown}>
-          <FiArrowDown size={40} color="#1E1E1E" />
-        </a>
-      </div>
     </>
   );
 };

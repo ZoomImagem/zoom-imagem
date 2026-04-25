@@ -55,7 +55,7 @@
 
 .cardDescription {
   display: none;
-  background-color: #000000;
+  background-color: transparent;
   width: 380px;
   height: fit-content;
   min-height: 160px;
@@ -64,7 +64,7 @@
   align-items: flex-start;
   text-align: right;
   border-radius: 16px;
-  box-shadow: 0 -5px 99px rgb(0, 0, 0);
+  box-shadow: 10 0px 20px rgb(0, 0, 0);
 
   @include respond-to("l") {
     display: flex;

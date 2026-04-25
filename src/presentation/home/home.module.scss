@@ -10,10 +10,11 @@
 }
 
 .hallWrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  height: calc(100vh - 140px);
+  margin-bottom: 16px;
 
   @include respond-to("l") {
     padding: 0 16px;
@@ -24,7 +25,6 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 16px;
   padding: 16px;
 }
 
@@ -37,8 +37,6 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
 }
 
 .heroOverlay {

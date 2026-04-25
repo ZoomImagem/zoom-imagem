@@ -21,16 +21,24 @@ export const HeaderTag = () => {
     setMenuOpen(false);
   }
 
-  console.log(solutionsMenu)
+  console.log(solutionsMenu);
 
   return (
     <>
       <div className={styles.headerWrapper}>
         <header className={styles.header}>
-          <Image alt="Zoom" src="/images/logo-zoom.svg" width={100} height={100} />
+          <Image
+            alt="Zoom"
+            src="/images/logo-zoom.svg"
+            width={100}
+            height={100}
+            onClick={() => handleClick("/")}
+          />
 
           <ul className={styles.listMenu}>
-            <li className={styles.listMenuLi} onClick={() => handleClick("/")}>Home</li>
+            <li className={styles.listMenuLi} onClick={() => handleClick("/")}>
+              Home
+            </li>
             <li className={styles.listMenuLi}>
               <Link href="/solucoes">Soluções</Link>
               <ul className={styles.dropMenu}>
@@ -41,36 +49,94 @@ export const HeaderTag = () => {
                 ))}
               </ul>
             </li>
-            <li className={styles.listMenuLi} onClick={() => handleClick("/portfolio")}>Projetos</li>
-            <li className={styles.listMenuLi} onClick={() => handleClick("/sobre")}>Sobre</li>
-            <li className={styles.listMenuLi} onClick={() => handleClick("/contato")}>Fale com a Zoom</li>
+            <li
+              className={styles.listMenuLi}
+              onClick={() => handleClick("/portfolio")}
+            >
+              Projetos
+            </li>
+            <li
+              className={styles.listMenuLi}
+              onClick={() => handleClick("/sobre")}
+            >
+              Sobre
+            </li>
+            <li
+              className={styles.listMenuLi}
+              onClick={() => handleClick("/contato")}
+            >
+              Fale com a Zoom
+            </li>
           </ul>
         </header>
 
         <div className={styles.headerMobile}>
-          <Image alt="Zoom" src="/images/logo-zoom.svg" width={100} height={100} />
+          <Image
+            alt="Zoom"
+            src="/images/logo-zoom.svg"
+            width={100}
+            height={100}
+            onClick={() => handleClick("/")}
+          />
           <FiMenu size={36} color="#C4C4C4" onClick={clickMenuMobile} />
         </div>
       </div>
 
       {/* sempre no DOM — classe controla visibilidade */}
-      <div className={`${styles.headerMobileOpen} ${menuOpen ? styles.isVisible : ""}`}>
+      <div
+        className={`${styles.headerMobileOpen} ${menuOpen ? styles.isVisible : ""}`}
+      >
         <div className={styles.headerContent}>
-          <Image alt="Zoom" src="/images/logo-zoom.svg" width={100} height={100} />
+          <Image
+            alt="Zoom"
+            src="/images/logo-zoom.svg"
+            width={100}
+            height={100}
+            onClick={() => handleClick("/")}
+          />
           <FiX size={36} color="#C4C4C4" onClick={clickMenuMobile} />
         </div>
 
         <ul className={styles.listMenuMobile}>
-          <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/")}>Home</li>
-          <li className={menuOpen ? styles.isOpen : ""} onClick={() => { setMenuOpen(false);
-     setSolutionsMenu(true); }}>Soluções</li>
-          <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/portfolio")}>Projetos</li>
-          <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/sobre")}>Sobre</li>
-          <li className={menuOpen ? styles.isOpen : ""} onClick={() => handleClick("/contato")}>Fale com a Zoom</li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => handleClick("/")}
+          >
+            Home
+          </li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => {
+              setMenuOpen(false);
+              setSolutionsMenu(true);
+            }}
+          >
+            Soluções
+          </li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => handleClick("/portfolio")}
+          >
+            Projetos
+          </li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => handleClick("/sobre")}
+          >
+            Sobre
+          </li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => handleClick("/contato")}
+          >
+            Fale com a Zoom
+          </li>
         </ul>
       </div>
 
-      <div className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}>
+      <div
+        className={`${styles.solutionsOpen} ${solutionsMenu ? styles.isVisible : ""}`}
+      >
         <DropSolutionsMobile onClose={() => setSolutionsMenu(false)} />
       </div>
     </>

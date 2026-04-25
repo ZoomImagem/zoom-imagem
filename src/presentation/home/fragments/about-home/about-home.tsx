@@ -90,7 +90,9 @@ const AboutHomeComponent = () => {
 
         <h2 className={styles.ourClients}>Nossos clientes</h2>
         <CarouselTag />
+
         <div className={styles.weResults}>
+          
           <span>Nossos Resultados</span>
 
           <h2 className={styles.subtitleMob}>

@@ -3,6 +3,7 @@ import { Projects } from "@/components/projects";
 import { PortfolofioHall } from "./fragments/hall";
 import styles from "./portfolio.module.scss";
 import { ApplicationsTag } from "@/components/applications";
+import { CtaTag } from "@/components/cta";
 
 export const PortfolioComponent = () => {
   return (
@@ -26,6 +27,10 @@ export const PortfolioComponent = () => {
         <Projects tag="Todos" />
       </ContentTag>
       <ApplicationsTag />
+
+      <ContentTag colorTopPosition="right">
+        <CtaTag />
+      </ContentTag>
     </div>
   );
 };

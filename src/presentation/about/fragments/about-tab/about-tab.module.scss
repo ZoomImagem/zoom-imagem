@@ -14,20 +14,16 @@
     margin-bottom: 100px;
   }
 
-  img {
-    display: none;
-    width: 100% !important;
-    height: 700px;
-    border-radius: 16px;
-
-    @include respond-to("l") {
-      display: flex;
-      max-width: 586px !important;
-      height: 100% !important;
-    }
+  .buttonContact {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10%;
   }
 
   .aboutDescription {
+    display: flex;
+    flex-direction: column;
     span {
       font-size: 14px;
       font-weight: 500;
@@ -103,6 +99,23 @@
       max-width: 268px;
       margin: none;
     }
+  }
+}
+
+.imageAbout {
+  display: none;
+  width: 100% !important;
+  height: 100%;
+  border-radius: 16px;
+  max-width: 600px !important;
+  object-fit: cover;
+
+  img {
+    border-radius: 16px;
+  }
+
+  @include respond-to("l") {
+    display: flex;
   }
 }
 
@@ -502,5 +515,13 @@
       border-radius: 12px;
       cursor: pointer;
     }
+  }
+}
+
+.carouselDisplay {
+  display: none;
+
+  @include respond-to("l") {
+    display: flex;
   }
 }

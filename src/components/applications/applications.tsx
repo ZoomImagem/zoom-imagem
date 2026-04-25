@@ -17,7 +17,7 @@ const ApplicationsComponent = () => {
     null,
   );
   const [carouselIndex, setCarouselIndex] = useState(0);
-  
+
   function handleClick(link: string) {
     router.push(link);
   }
@@ -74,8 +74,8 @@ const ApplicationsComponent = () => {
     <ContentTag colorBottomPosition="left">
       <section className={styles.contentAmbientes}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Onde sua marca pode estar</h2>
-          <p className={styles.sub}>
+          <h2>Onde sua marca pode estar</h2>
+          <p>
             Aplicamos nossos projetos em diferentes ambientes, formatos e
             contextos — sempre com foco em presença e execução.
           </p>

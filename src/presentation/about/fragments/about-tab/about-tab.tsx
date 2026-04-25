@@ -144,12 +144,14 @@ const AboutTabComponent = () => {
   return (
     <ContentTag colorTopPosition="right" colorBottomPosition="left">
       <div className={styles.contentAbout}>
-        <Image
-          alt="Sobre nós"
-          src="/images/about-zoom.png"
-          width={586}
-          height={500}
-        />
+        <div className={styles.imageAbout}>
+          <Image
+            alt="Sobre nós"
+            src="/images/senna.jpg"
+            width={560}
+            height={664}
+          />
+        </div>
 
         <div className={styles.aboutDescription}>
           <span>Sobre Nós</span>
@@ -162,36 +164,33 @@ const AboutTabComponent = () => {
             A Zoom iniciou suas atividades em 2000, atuando na produção gráfica
             de grandes formatos para mobiliário urbano.
             <br />
-            <br />
             Ao longo dos anos, evoluímos nossa estrutura e nos especializamos na
             execução de projetos de comunicação em escala, com foco em OOH, PDV
             e projetos especiais.
-            <br />
             <br />
             Hoje, contamos com um parque gráfico de alta capacidade e uma
             operação preparada para atender demandas em diferentes regiões do
             Brasil.
             <br />
-            <br />
             Com mais de duas décadas de atuação, a Zoom se consolidou como uma
             das principais empresas do país na produção para mobiliário urbano,
             atendendo grandes agências e marcas nas principais capitais.
             <br />
-            <br />
             Com unidades em São Paulo e Salvador, garantimos operação
             consistente em diferentes regiões do país.
           </p>
-
-          <ButtonTag
-            variant="primary"
-            className={styles.btn}
-            label="Impulsionar meu negócio"
-            size="lg"
-            color="primary"
-            icon={<FiArrowDownRight size={24} color="#0C1132" />}
-          />
+          <div className={styles.buttonContact}>
+            <ButtonTag
+              variant="secondary"
+              label="Impulsionar meu negócio"
+              size="lg"
+              color="primary"
+              icon={<FiArrowDownRight size={24} color="#ee0874" />}
+            />
+          </div>
         </div>
       </div>
+
       <h2 className={styles.subititles}>Como operamos</h2>
 
       <div className={styles.contentOperations}>
@@ -249,8 +248,8 @@ const AboutTabComponent = () => {
             className={styles.imageCapacity}
             alt="Mapa do Brasil"
             src="/images/maps.png"
-            width={120}
-            height={120}
+            width={3962}
+            height={4118}
           />
         </div>
       </div>
@@ -296,9 +295,9 @@ const AboutTabComponent = () => {
           </div>
         ))}
       </div>
-
-      <CarouselTag />
-
+      <div className={styles.carouselDisplay}>
+        <CarouselTag />
+      </div>
       <div className={styles.contentCopy}>
         <h3> Se a sua marca precisa de execução, a gente resolve. </h3>
 
