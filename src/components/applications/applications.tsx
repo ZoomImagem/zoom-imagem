@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonTag, ContentTag } from "@/components";
+import { ContentTag } from "@/components";
 import styles from "./applications.module.scss";
 import { AmbienteItem, items } from "./constants/aplications.constants";
 import { FiArrowRight } from "react-icons/fi";
