@@ -43,7 +43,7 @@ export const listServices: IListServices[] = [
   {
     service: TypeService.SpecialProjects,
     imgDeskt: "/images/projetos-especiais/fallout/fallout1.webp",
-    imgMobile: "/images/ux-mob.png",
+    imgMobile: "/images/projetos-especiais/fallout/fallout1.webp",
     descriptionJob:
       "Desenvolvimento e execução de projetos personalizados para campanhas que exigem soluções fora do padrão.",
     listCheck: [],
@@ -51,7 +51,7 @@ export const listServices: IListServices[] = [
   {
     service: TypeService.LinhaEco,
     imgDeskt: "/images/ecotela.avif",
-    imgMobile: "/images/branding-mob.png",
+    imgMobile: "/images/ecotela.avif",
     descriptionJob:
       "Produção com foco em materiais sustentáveis e soluções com menor impacto ambiental.",
     listCheck: [],

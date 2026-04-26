@@ -222,14 +222,14 @@
   border-radius: 20px;
   overflow: hidden;
   width: 100%;
-  max-width: 920px;
+  height: 90vh;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
 
   @include respond-to("l") {
     flex-direction: row;
-    max-height: 520px;
   }
 }
 
@@ -275,19 +275,21 @@
 .modalImageWrap {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  position: relative;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
+  overflow: hidden;
+  background: rgba($bg, .2);
+  height: 400px;
+  
 
   @include respond-to("l") {
-    aspect-ratio: 16 / 9;
-    min-height: 100%;
+    width: 55%;
+    height: 100%;
   }
 }
 
 .modalImage {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 // ── Carousel ──────────────────────────────────────────────────────────────
