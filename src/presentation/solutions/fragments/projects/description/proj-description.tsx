@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./proj-description.module.scss";
 import { cities, projectTypes, steps } from "./constants/proj-desc.constants";
+import { CtaTag } from "@/components/cta";
 
 export const ProjDescription = () => {
   const router = useRouter();
@@ -136,7 +137,8 @@ export const ProjDescription = () => {
       <section className={styles.sectionModal}>
         <Projects tag="Projetos especiais"/>
       </section>
-
+      
+      <CtaTag/>
     </>
   );
 };

@@ -14,6 +14,7 @@ import { ButtonTag, CarouselTag, ContentTag } from "@/components";
 import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { CtaTag } from "@/components/cta";
 
 interface Stage {
   id: string;
@@ -298,25 +299,8 @@ const AboutTabComponent = () => {
       <div className={styles.carouselDisplay}>
         <CarouselTag />
       </div>
-      <div className={styles.contentCopy}>
-        <h3> Se a sua marca precisa de execução, a gente resolve. </h3>
 
-        <div className={styles.copyDescription}>
-          <p>
-            Fale com uma equipe especializada em produção de{" "}
-            <strong>OOH, PDV e projetos especiais </strong>e leve sua marca para
-            os principais pontos de contato com o público.
-          </p>
-
-          <ButtonTag
-            label="Falar com a Zoom"
-            size="lg"
-            variant="tertiary"
-            icon={<FiArrowDownRight size={24} color="#EE0874" />}
-            onClick={() => handleClick("/contato")}
-          />
-        </div>
-      </div>
+      <CtaTag />
     </ContentTag>
   );
 };

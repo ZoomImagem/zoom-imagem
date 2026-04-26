@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./description-ooh.module.scss";
 import { cities, oohTypes, steps } from "./constants/desc-ooh.constants";
+import { CtaTag } from "@/components/cta";
 
 export const OohDescription = () => {
   const router = useRouter();
@@ -135,6 +136,8 @@ export const OohDescription = () => {
             ))}
           </div>
         </div>
+
+        <CtaTag/>
       </section>
     </>
   );
