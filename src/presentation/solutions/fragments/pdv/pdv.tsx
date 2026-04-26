@@ -5,22 +5,16 @@ import { PdvDescription } from "./description";
 import { PdvHall } from "./hall";
 import styles from "./pdv.module.scss";
 
-
-
 export const PdvComponent = () => {
-  
   return (
-<>
-
-<div className={styles.pdvWrapper}>
-      
-      <ContentTag colorTopPosition="left">
+    <>
+      <div className={styles.pdvWrapper}>
         <PdvHall />
-      </ContentTag>
-      <ContentTag colorTopPosition="right" colorBottomPosition="left">
-        <PdvDescription />
-      </ContentTag>
-    </div>
+
+        <ContentTag colorTopPosition="right" colorBottomPosition="left">
+          <PdvDescription />
+        </ContentTag>
+      </div>
     </>
   );
 };

@@ -9,9 +9,7 @@ export const ProjectsComponent = () => {
   return (
     <>
       <div className={styles.projectsWrapper}>
-        <ContentTag colorTopPosition="left">
-          <ProjHall />
-        </ContentTag>
+        <ProjHall />
         <ContentTag colorTopPosition="right" colorBottomPosition="left">
           <ProjetosEspeciais />
         </ContentTag>

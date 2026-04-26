@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonTag, CenterTag } from "@/components";
+import { ButtonTag} from "@/components";
 import { useRouter } from "next/navigation";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import styles from "./hall.module.scss";

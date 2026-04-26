@@ -1,6 +1,21 @@
 @use "@/styles/mixins.scss" as *;
 
-@use "@/styles/mixins.scss" as *;
+.hallWrapper {
+  width: 100%;
+
+  background: red;
+  padding: 16px;
+  height: calc(100vh - 140px);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background: radial-gradient(circle at 50% 0%, $bg 0%, transparent 65%);
+
+  @include respond-to("l") {
+    height: 100vh;
+    padding: 140px;
+  }
+}
+
 
 .heroSectionContainer {
   display: flex;

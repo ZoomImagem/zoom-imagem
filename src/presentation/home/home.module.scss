@@ -7,13 +7,13 @@
   padding: 0 16px;
   position: relative;
   gap: 16px;
+ 
 }
 
 .hallWrapper {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: calc(100vh - 140px);
   margin-bottom: 16px;
 
   @include respond-to("l") {

@@ -17,9 +17,7 @@
   align-items: center;
   gap: 42px;
   padding: 14px;
-  background:
-    radial-gradient(circle at left, $bg 0%, #000 100%),
-    conic-gradient(from 0deg at 10% 10%, $bg 0%, $pink 50%, $pink 100%);
+  background: radial-gradient(circle at left, $bg 0%, #000 100%);
 
   @include respond-to("l") {
     padding: 64px;
@@ -30,6 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   h2 {
     font-size: 28px;
   }
@@ -39,6 +38,7 @@
     color: $ice;
   }
   @include respond-to("l") {
+    margin-top: 140px;
     h2 {
       font-size: 42px;
     }

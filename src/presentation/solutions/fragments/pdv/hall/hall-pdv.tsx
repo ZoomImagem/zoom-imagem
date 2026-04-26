@@ -13,6 +13,7 @@ export default function PdvHall() {
     router.push(link);
   }
   return (
+    <section className={styles.hallWrapper}>
     <section className={styles.heroSectionContainer}>
       <div className={styles.heroContainer}>
         <div className={styles.heroLeft}>
@@ -59,6 +60,7 @@ export default function PdvHall() {
           onClick={() => handleClick("/contato")}
         />
       </div>
+    </section>
     </section>
   );
 }

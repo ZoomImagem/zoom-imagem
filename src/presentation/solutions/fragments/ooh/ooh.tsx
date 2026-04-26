@@ -6,9 +6,9 @@ import { OohDescription } from "./description";
 export const OohComponent = () => {
   return (
     <div className={styles.oohWrapper}>
-      <ContentTag colorTopPosition="left">
+    
         <OohHall />
-      </ContentTag>
+      
       <ContentTag colorTopPosition="right" colorBottomPosition="left">
         <OohDescription />
       </ContentTag>

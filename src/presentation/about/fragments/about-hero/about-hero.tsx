@@ -1,8 +1,19 @@
+"use client";
+
+import { ButtonTag } from "@/components";
 import styles from "./about-hero.module.scss";
+import { Folder } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { FiArrowRight } from "react-icons/fi";
 
 const AboutHeroComponent = () => {
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
   return (
-    <div className={styles.aboutHero}>
+    <section className={styles.hallWrapper}>
       <div className={styles.aboutDescription}>
         <div className={styles.titleDescription}>
           <h1>Execução que transforma presença em percepção de marca.</h1>
@@ -18,8 +29,25 @@ const AboutHeroComponent = () => {
             consistência.
           </p>
         </div>
+
+        <div className={styles.ctaButtons}>
+        <ButtonTag
+          label="Fale com a Zoom"
+          size="lg"
+          variant="tertiary"
+          icon={<FiArrowRight size={20} color="#fff" />}
+          onClick={() => handleClick("/contato")}
+        />
+        <ButtonTag
+          label="Ver projetos"
+          size="lg"
+          variant="tertiary"
+          icon={<Folder size={20} color="#fff" />}
+          onClick={() => handleClick("/portfolio")}
+        />
+        </div> 
       </div>
-    </div>
+    </section>
   );
 };
 

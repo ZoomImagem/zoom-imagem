@@ -1,5 +1,20 @@
 @use "@/styles/mixins.scss" as *;
 
+.hallWrapper {
+  width: 100%;
+
+  background: red;
+  padding: 16px;
+  height: calc(100vh - 140px);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background: radial-gradient(circle at 50% 0%, $bg 0%, transparent 65%);
+
+  @include respond-to("l") {
+    height: 100vh;
+    padding: 140px;
+  }
+}
 
 .heroSectionContainer {
   display: flex;
@@ -58,13 +73,12 @@
 
 .heroText {
   font-size: 0.95rem;
-  color: rgba(#fff, .7);
+  color: rgba(#fff, 0.7);
   line-height: 1.8;
   max-width: 520px;
   margin-top: 24px;
 
   @include respond-to("l") {
-    
     color: rgba(#fff, 0.5);
   }
 }
@@ -88,10 +102,9 @@
   background: rgba(#fff, 0.04);
 
   margin-top: 16px;
-@include respond-to("l") {
+  @include respond-to("l") {
     margin-top: 0;
   }
-
 }
 
 .heroImg {
