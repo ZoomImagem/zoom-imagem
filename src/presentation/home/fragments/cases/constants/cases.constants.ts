@@ -32,16 +32,16 @@ export const steps = [
 
 export const projects = [
   {
-    title: "Metrô - Vila Sônia",
-    image: "/images/process/metro.png",
+    title: "Rexona - Metrô Vila Sônia",
+    image: "/images/projetos-especiais/rexona/rexona4.jpg",
   },
   {
     title: "Intelbras - Rua Pamplona",
     image: "/images/process/urbano.png",
   },
   {
-    title: "Betano - Especial",
-    image: "/images/process/betano.png",
+    title: "Stranger Things - Especial",
+    image: "/images/projetos-especiais/stranger-things/stranger2.webp",
   },
   {
     title: "Bauducco - Frei Caneca",
