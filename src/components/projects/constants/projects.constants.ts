@@ -7,46 +7,64 @@ export interface Project {
   tag: string;
 }
 
-export const categories = ["Todos", "OOH", "PDV", "Projetos especiais", "Linha ECO"];
+export const categories = [
+  "Todos",
+  "OOH",
+  "PDV",
+  "Projetos especiais",
+  "Linha ECO",
+];
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Linha ECO",
-    aplication: "Eventos e ativações",
-    image: "/images/senna.jpg",
-    images: ["/images/senna.jpg", "/images/senna.jpg", "/images/senna.jpg"],
-    tag: "Linha ECO",
+    title: "Disney",
+    aplication: "Cenografia",
+    image: "/images/pdv/disney/disney1.webp",
+    images: [
+      "/images/pdv/disney/disney1.webp",
+      "/images/pdv/disney/disney2.webp",
+      "/images/pdv/disney/disney3.webp",
+    ],
+    tag: "PDV",
   },
   {
     id: 2,
-    title: "Out of home",
-    aplication: "Mobiliario urbano",
-    image: "/images/senna.jpg",
-    images: ["/images/senna.jpg", "/images/senna.jpg"],
-    tag: "OOH",
+    title: "Marvel",
+    aplication: "Cenografia",
+    image: "/images/pdv/herois/heroi1.jpg",
+    images: [
+      "/images/pdv/herois/heroi1.jpg",
+      "/images/pdv/herois/heroi2.jpg",
+      "/images/pdv/herois/heroi3.webp",
+    ],
+    tag: "PDV",
   },
   {
     id: 3,
-    title: "Pontos de venda - PDV",
-    aplication: "Pontos de venda",
-    image: "/images/senna.jpg",
-    images: ["/images/senna.jpg", "/images/senna.jpg"],
+    title: "Mickey Mouse",
+    aplication: "Stands",
+    image: "/images/pdv/mickey/mickey1.jpg",
+    images: [
+      "/images/pdv/mickey/mickey1.jpg",
+      "/images/pdv/mickey/mickey2.jpg",
+      "/images/pdv/mickey/mickey3.jpg",
+    ],
     tag: "PDV",
   },
   {
     id: 4,
-    title: "Pontos de venda",
-    aplication: "Materiais de apoio",
-    image: "/images/senna.jpg",
-    images: ["/images/senna.jpg", "/images/senna.jpg"],
+    title: "Princesas",
+    aplication: "Cenografia",
+    image: "/images/pdv/princesas/princesas1.jpg",
+    images: ["/images/pdv/princesas/princesas1.jpg", "/images/pdv/princesas/princesas2.jpg"],
     tag: "PDV",
   },
   {
     id: 5,
     title: "Projeto Personalizado",
     aplication: "Campanhas especiais",
-    image: "/images/senna.jpg",
+    image: "/images/pdv/princesas/princesa.jpg",
     images: ["/images/senna.jpg", "/images/senna.jpg", "/images/senna.jpg"],
     tag: "OOH",
   },
