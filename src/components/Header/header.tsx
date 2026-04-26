@@ -92,7 +92,7 @@ export const HeaderTag = () => {
         </div>
       </div>
 
-      {/* sempre no DOM — classe controla visibilidade */}
+  
       <div
         className={`${styles.headerMobileOpen} ${menuOpen ? styles.isVisible : ""}`}
       >

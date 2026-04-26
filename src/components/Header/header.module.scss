@@ -10,7 +10,6 @@
   position: relative;
   padding: 24px;
 
-
   @include respond-to("l") {
     position: fixed;
     top: 0;
@@ -19,15 +18,16 @@
     pointer-events: none;
     background: transparent;
 
-    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition:
+      padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     .header {
       pointer-events: all;
       background: transparent;
-      transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                  max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition:
+        background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
       &::before {
         opacity: 0;
@@ -35,7 +35,6 @@
       }
     }
 
-   
     &.isScrolled {
       height: 70px;
       padding: 12px 24px;
@@ -117,6 +116,7 @@
 
 .listMenuLi {
   height: 52px;
+  position: relative;
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -134,10 +134,12 @@
 
   & .dropMenu {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(10);
     visibility: visible;
   }
 }
+
+// ================= MOBILE ===============
 
 .headerMobile {
   width: 100%;
@@ -172,9 +174,10 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
-  transition: opacity 300ms ease,
-              visibility 300ms ease,
-              transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease,
+    transform 300ms ease;
 
   @include respond-to("l") {
     display: none;
@@ -238,9 +241,10 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(6px);
-  transition: opacity 300ms ease,
-              visibility 300ms ease,
-              transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease,
+    transform 300ms ease;
 }
 
 .listMenuMobile li.isOpen {
@@ -262,10 +266,11 @@
 
 .dropMenu {
   position: absolute;
+
   top: calc(100%);
-  left: calc(0);
+  left: calc(-20%);
   right: calc(0);
-  background: #020202;
+  background: $bg;
   border-radius: 12px;
   padding: 8px 0;
   min-width: 180px;
@@ -274,18 +279,16 @@
   opacity: 0;
   transform: translateY(-10px);
   visibility: hidden;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
 
   li {
     height: 42px;
-    padding: 0 16px;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
 
-    @include respond-to("l") {
-      text-align: left;
-    }
+    font-size: 14px;
+    width: 100%;
 
     &:hover {
       background: rgba(#535353, 0.2);
@@ -299,10 +302,11 @@
       height: 100%;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
 }
-
 
 .solutionsOpen {
   display: flex;
@@ -314,9 +318,10 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
-  transition: opacity 300ms ease,
-              visibility 300ms ease,
-              transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    visibility 300ms ease,
+    transform 300ms ease;
 
   @include respond-to("l") {
     display: none;
