@@ -26,27 +26,27 @@
   }
 
   @include respond-to("l") {
-  h2 {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.2;
-    color: #fff;
-    margin-bottom: 1.5rem;
-  }
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
 
-  p {
-    font-size: 20px;
-    line-height: 1.75;
-    color: $ice;
-    margin-bottom: 12px;
-  }
+    p {
+      font-size: 20px;
+      line-height: 1.75;
+      color: $ice;
+      margin-bottom: 12px;
+    }
 
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: $pink;
-    margin-bottom: 0.5rem;
-  }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: $pink;
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -123,6 +123,10 @@
   width: 100%;
   padding: 2rem;
   border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 
   background: linear-gradient(
     125deg,
@@ -143,6 +147,7 @@
   p {
     font-size: 0.875rem;
     color: $ice;
+    text-align: center;
   }
 }
 
@@ -231,19 +236,18 @@
 }
 
 .cityTag:hover {
-
   @include respond-to("l") {
-  background: $pink;
-  border-color: $pink;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(238, 8, 116, 0.35);
+    background: $pink;
+    border-color: $pink;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(238, 8, 116, 0.35);
   }
 }
 
 .cityTag:active {
   @include respond-to("l") {
-  transform: translateY(0px) scale(0.97);
-  box-shadow: none;
+    transform: translateY(0px) scale(0.97);
+    box-shadow: none;
   }
 }

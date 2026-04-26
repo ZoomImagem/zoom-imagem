@@ -1,21 +1,21 @@
 export const oohTypes = [
   {
-    icon: "🪧",
+    icon: "/images/outdoor.png",
     title: "Outdoors",
     desc: "Produção e instalação de campanhas em outdoor com alta visibilidade e alcance.",
   },
   {
-    icon: "💡",
+    icon: "/images/outdoor.png",
     title: "Painéis e Frontlights",
     desc: "Estruturas de grande formato para campanhas de impacto.",
   },
   {
-    icon: "🏙️",
+    icon: "/images/trem1.png",
     title: "Mobiliário Urbano",
     desc: "Presença em pontos estratégicos da cidade, como abrigos de ônibus e relógios urbanos.",
   },
   {
-    icon: "✦",
+    icon: "/images/evento.png",
     title: "Projetos personalizados",
     desc: "Execuções sob medida para campanhas que exigem soluções diferenciadas.",
   },

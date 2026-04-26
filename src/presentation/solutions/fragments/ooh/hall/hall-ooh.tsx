@@ -31,7 +31,7 @@ export const OohHall = () => {
             <div className={styles.heroRight}>
               <div className={styles.heroImgWrap}>
                 <Image
-                  src="/images/senna.jpg"
+                  src="/images/ooh/betano/betano3.webp"
                   alt="Materiais de PDV"
                   fill
                   className={styles.heroImg}

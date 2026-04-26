@@ -54,7 +54,7 @@ export const OohDescription = () => {
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
             <Image
-              src="/images/senna.jpg"
+              src="/images/projetos-especiais/tartarugas-ninja/tartaruga1.jpg"
               alt="Equipe Zoom executando campanha OOH"
               width={260}
               height={260}
@@ -86,7 +86,7 @@ export const OohDescription = () => {
           <div className={styles.cardGrid}>
             {oohTypes.map((item) => (
               <div key={item.title} className={styles.card}>
-                <span className={styles.cardIcon}>{item.icon}</span>
+                <Image src={item.icon} alt="" width={32} height={32} />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
