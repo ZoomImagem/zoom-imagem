@@ -9,9 +9,10 @@ const ContactComponent = () => {
   const subjectOptions = [
     "OOH - Out oh home",
     "PDV - Ponto de venda",
-    "Design de Produto",
+    "Projetos especiais",
+    "Linha Eco",
     "Parcerias",
-    "Suporte Técnico",
+    "Suporte",
     "Outros",
   ];
 
@@ -61,7 +62,7 @@ const ContactComponent = () => {
       <form onSubmit={handleSubmit} className={styles.contentContact}>
         <ContentTag colorTopPosition="right">
           <div className={styles.contentHeader}>
-            <p>FALE CONOSCO</p>
+           
             <h2>
               <strong> Coloque suas ideias em prática: </strong>
               Agende um atendimento
@@ -146,11 +147,10 @@ const ContactComponent = () => {
 
                 <div className={styles.submitRow}>
                   <ButtonTag
-                    className={styles.btnSend}
                     label="Enviar mensagem "
                     size="lg"
-                    variant="primary"
-                    icon={<FiSend size={24} color="#0C1132" />}
+                    variant="secondary"
+                    icon={<FiSend size={24} color="#fff" />}
                     type="submit"
                     onClick={handleClear}
                   />

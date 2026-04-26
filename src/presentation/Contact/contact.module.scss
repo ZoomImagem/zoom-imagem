@@ -13,16 +13,12 @@
 
 .contentHeader {
   width: 100%;
-
-  p {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: #506070;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
+@include respond-to("l") {
+      font-size: 64px;
+      line-height: 75px;
+      margin-bottom: 64px;
+    }
+ 
 
   h2 {
     width: 100%;
@@ -40,7 +36,7 @@
     @include respond-to("l") {
       font-size: 64px;
       line-height: 75px;
-      margin-bottom: 64px;
+      margin: 64px 0;
     }
   }
 
