@@ -4,7 +4,7 @@ import { solucoes } from "@/lib/solucoes/solucoes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { DropSolutionsMobile } from "./fragments/dropmobile/solutions";
 import styles from "./header.module.scss";
@@ -12,6 +12,7 @@ import styles from "./header.module.scss";
 export const HeaderTag = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutionsMenu, setSolutionsMenu] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
 
   const clickMenuMobile = () => setMenuOpen((prev) => !prev);
@@ -21,11 +22,20 @@ export const HeaderTag = () => {
     setMenuOpen(false);
   }
 
-  console.log(solutionsMenu);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div className={styles.headerWrapper}>
+      <div
+        className={`${styles.headerWrapper} ${isScrolled ? styles.isScrolled : ""}`}
+      >
         <header className={styles.header}>
           <Image
             alt="Zoom"
@@ -65,7 +75,7 @@ export const HeaderTag = () => {
               className={styles.listMenuLi}
               onClick={() => handleClick("/contato")}
             >
-              Fale com a Zoom
+              Contato
             </li>
           </ul>
         </header>

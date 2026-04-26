@@ -1,7 +1,6 @@
 @use "@/styles/mixins.scss" as *;
 @use "sass:color";
 
-
 .headerWrapper {
   width: 100%;
   display: flex;
@@ -10,11 +9,54 @@
   justify-content: center;
   position: relative;
   padding: 24px;
+
+
+  @include respond-to("l") {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+    background: transparent;
+
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    .header {
+      pointer-events: all;
+      background: transparent;
+      transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &::before {
+        opacity: 0;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+   
+    &.isScrolled {
+      height: 70px;
+      padding: 12px 24px;
+      margin-top: 36px;
+
+      .header {
+        max-width: 925px;
+        background: radial-gradient(circle at 50% 0%, $bg 0%, #000 95%);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .header {
   width: 100%;
-  max-width: 1059px;
+  justify-content: center;
+  max-width: 1100px;
   height: 100px;
   display: none;
   align-items: center;
@@ -22,7 +64,6 @@
   border-radius: 60px;
   position: relative;
   background: #020202;
-
   gap: 64px;
 
   @include respond-to("l") {
@@ -34,14 +75,13 @@
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 50px;
+  border-radius: 60px;
   padding: 1.3px;
   background: linear-gradient(
     190deg,
     #f5c518 0%,
     transparent 40%,
     #e6003a 60%,
-
     #f5c518 100%
   );
   -webkit-mask:
@@ -50,7 +90,6 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  border-radius: 60px;
 }
 
 .header > img {
@@ -72,7 +111,6 @@
   width: 1px;
   height: 52px;
   background: #4d4444;
-  position: absolute;
   bottom: 0;
   left: -24px;
 }
@@ -82,14 +120,11 @@
   display: flex;
   align-items: center;
   padding: 0 24px;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 400;
-
-
 }
-
 
 .listMenu li:hover {
   background: rgba($color: #535353, $alpha: 0.2);
@@ -97,22 +132,20 @@
   cursor: pointer;
   align-items: center;
 
-  & .dropMenu{
+  & .dropMenu {
     opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
+    transform: translateY(0);
+    visibility: visible;
   }
 }
-
-// mobile
 
 .headerMobile {
   width: 100%;
   height: 80px;
   display: flex;
-  
   align-items: center;
   justify-content: space-between;
+  pointer-events: all;
 
   @include respond-to("l") {
     display: none;
@@ -199,9 +232,8 @@
   align-items: center;
   padding: 0 24px;
   font-weight: 400;
-
   border-radius: 16px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
 
   opacity: 0;
   visibility: hidden;
@@ -271,12 +303,11 @@
   }
 }
 
-// solutions menu
 
 .solutionsOpen {
-  display: flex; // era display: block, mas precisa de flex pra herdar o layout
+  display: flex;
   position: fixed;
-  z-index: 1000; // maior que o headerMobileOpen (999)
+  z-index: 1000;
   inset: 0;
   background: $bg;
   flex-direction: column;
