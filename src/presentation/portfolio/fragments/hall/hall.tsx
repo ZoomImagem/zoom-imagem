@@ -37,7 +37,7 @@ export default function PortfolofioHall() {
           <div className={styles.imageHall}>
             <Image
               className={styles.image}
-              src="/images/projects/bauducco1.webp"
+              src="/images/projetos-especiais/fallout/fallout3.webp"
               alt=""
               width={400}
               height={400}

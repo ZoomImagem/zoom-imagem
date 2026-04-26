@@ -12,7 +12,7 @@
   justify-content: space-around;
 
   @include respond-to("l") {
-    padding: 150px 100px;
+    padding: 180px 100px 100px;
   }
 }
 
@@ -62,7 +62,7 @@
 
 .ctaBadge {
   position: absolute;
-  top: 71%;
+  top: 77%;
   left: 67%;
   transform: translateY(-50%);
   background: #f60978;
