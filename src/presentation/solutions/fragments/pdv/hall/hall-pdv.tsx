@@ -24,7 +24,7 @@ export default function PdvHall() {
             Materiais de PDV bem executados destacam produtos, reforçam a marca
             e influenciam diretamente a decisão de compra.
           </p>
-          <p className={styles.heroText}>
+          <p className={styles.heroText2}>
             A Zoom atua na produção de displays, totens, wobblers, faixas e
             estruturas promocionais, garantindo qualidade, padronização e
             impacto em escala.

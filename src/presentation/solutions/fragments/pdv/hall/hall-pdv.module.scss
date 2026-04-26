@@ -47,7 +47,7 @@
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 2rem;
 
   @include respond-to("l") {
     margin-top: 32px;
@@ -60,15 +60,21 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+
+  @include respond-to("l") {
+    gap: 1.25rem;
+  }
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: 36px;
   font-weight: 700;
   color: #fff;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+
+  @include respond-to("l") {
+    font-size: 64px;
+  }
 }
 
 .heroText {
@@ -80,6 +86,20 @@
 
   @include respond-to("l") {
     color: rgba(#fff, 0.5);
+    display: flex;
+  }
+}
+
+.heroText2 {
+  font-size: 0.95rem;
+  color: rgba(#fff, 0.7);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-top: 24px;
+  display: none;
+  @include respond-to("l") {
+    color: rgba(#fff, 0.5);
+    display: flex;
   }
 }
 
