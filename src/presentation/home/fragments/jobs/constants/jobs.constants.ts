@@ -17,24 +17,24 @@ export interface IListServices {
 export const listServices: IListServices[] = [
   {
     service: TypeService.Introduction,
-    imgDeskt: "/images/projects/bauducco1.webp",
-    imgMobile: "/images/web-mob.png",
+    imgDeskt: "/images/projetos-especiais/pepsi/pepsi3.webp",
+    imgMobile: "/images/projetos-especiais/pepsi/pepsi3.webp",
     descriptionJob:
       "Desenvolvemos projetos que conectam sua marca com o público nos principais pontos de contato — das ruas ao ponto de venda.",
     listCheck: [],
   },
   {
     service: TypeService.OOH,
-    imgDeskt: "/images/process/urbano.png",
-    imgMobile: "/images/web-mob.png",
+    imgDeskt: "/images/ooh/intelbras/intelbras1.webp",
+    imgMobile: "/images/ooh/intelbras/intelbras1.webp",
     descriptionJob:
       "Projetos de mídia OOH com produção e instalação de outdoors, painéis, frontlights e outras soluções de publicidade externa.",
     listCheck: [],
   },
   {
     service: TypeService.PDV,
-    imgDeskt: "/images/mobile-desktop.png",
-    imgMobile: "/images/app-mob.png",
+    imgDeskt: "/images/pdv/mickey/mickey1.jpg",
+    imgMobile: "/images/pdv/mickey/mickey1.jpg",
     descriptionJob:
       "Produção de materiais para PDV que fortalecem a presença da marca no momento da decisão de compra.",
     listCheck: [],
@@ -42,7 +42,7 @@ export const listServices: IListServices[] = [
 
   {
     service: TypeService.SpecialProjects,
-    imgDeskt: "/images/specialProject-Home.png",
+    imgDeskt: "/images/projetos-especiais/fallout/fallout1.webp",
     imgMobile: "/images/ux-mob.png",
     descriptionJob:
       "Desenvolvimento e execução de projetos personalizados para campanhas que exigem soluções fora do padrão.",
