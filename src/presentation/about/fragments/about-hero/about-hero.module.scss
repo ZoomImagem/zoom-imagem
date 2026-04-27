@@ -22,7 +22,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 50px 16px;
+  padding: 50px 24px 160px;
   background: linear-gradient(to right, #000, rgba(0, 0, 0, 0.7));
 
   position: relative;
@@ -80,8 +80,8 @@
   @include respond-to("l") {
     display: flex;
     position: absolute;
-    bottom: 32px;
-    right: 32px;
+    bottom: 120px;
+    right: 80px;
   }
 }
 
