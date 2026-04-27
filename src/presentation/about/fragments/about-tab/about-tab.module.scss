@@ -295,11 +295,29 @@
 
 .imageCard {
   flex: 1;
-  min-width: 360px;
+  min-width: 360px;   
   height: 400px;
   border-radius: 16px;
   overflow: hidden;
-  background-image: url("/images/senna.jpg");
+  background-image: url("/images/projetos-especiais/keeta/keeta3.webp");
+  background-size: cover;
+  background-position: center;
+
+  outline: 2px solid rgba(255, 255, 255, 0.12);
+  outline-offset: -2px;
+
+  box-shadow:
+    inset 0 0 40px rgba(0, 0, 0, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.imageCard2 {
+  flex: 1;
+  min-width: 360px;   
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-image: url("/images/ooh/chevrolet/chevrolet2.webp");
   background-size: cover;
   background-position: center;
 

@@ -148,7 +148,7 @@ const AboutTabComponent = () => {
         <div className={styles.imageAbout}>
           <Image
             alt="Sobre nós"
-            src="/images/senna.jpg"
+            src="/images/projetos-especiais/stranger-things/stranger2.webp"
             width={560}
             height={664}
           />
@@ -260,7 +260,7 @@ const AboutTabComponent = () => {
       <div className={styles.contentDifferencials}>
         <div className={styles.ImageWrapper}>
           <div className={styles.imageCard} />
-          <div className={`${styles.imageCard} ${styles.imageCardOffset}`} />
+          <div className={`${styles.imageCard2} ${styles.imageCardOffset}`} />
         </div>
 
         <div className={styles.contentFeatures}>
