@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     title: "Intelbras - Rua Pamplona",
-    image: "/images/process/urbano.png",
+    image: "/images/ooh/intelbras/intelbras1.webp",
   },
   {
     title: "Stranger Things - Especial",
@@ -45,6 +45,6 @@ export const projects = [
   },
   {
     title: "Bauducco - Frei Caneca",
-    image: "/images/process/bauducco.png",
+    image: "/images/ooh/bauducco/bauducco1.webp",
   },
 ];
