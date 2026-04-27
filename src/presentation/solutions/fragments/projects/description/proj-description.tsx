@@ -1,10 +1,8 @@
 "use client";
 
-import { ButtonTag } from "@/components";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FiArrowRight } from "react-icons/fi";
 import styles from "./proj-description.module.scss";
 import { cities, projectTypes, steps } from "./constants/proj-desc.constants";
 import { CtaTag } from "@/components/cta";
@@ -37,7 +35,7 @@ export const ProjDescription = () => {
           </div>
           <div className={styles.imageBox}>
             <Image
-              src="/images/process/urbano.png"
+              src="/images/projetos-especiais/fallout/fallout3.webp"
               alt="Projeto especial de comunicação"
               width={260}
               height={260}
@@ -51,7 +49,7 @@ export const ProjDescription = () => {
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
             <Image
-              src="/images/senna.jpg"
+              src="/images/projetos-especiais/senna/senna3.webp"
               alt="Equipe Zoom executando projeto especial"
               width={260}
               height={260}
@@ -82,7 +80,7 @@ export const ProjDescription = () => {
           <div className={styles.cardGrid}>
             {projectTypes.map((item) => (
               <div key={item.title} className={styles.card}>
-                <span className={styles.cardIcon}>{item.icon}</span>
+                <Image src={item.icon} alt="" width={32} height={32} />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>

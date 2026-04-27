@@ -1,21 +1,21 @@
 export const projectTypes = [
   {
-    icon: "✦",
+    icon: "/images/flag.png",
     title: "Ativações de marca",
     desc: "Projetos que criam interação e presença em pontos estratégicos.",
   },
   {
-    icon: "🏛️",
+    icon: "/images/instalacoes.png",
     title: "Instalações especiais",
     desc: "Estruturas desenvolvidas sob medida para campanhas específicas.",
   },
   {
-    icon: "🎭",
+    icon: "/images/cenografia.png",
     title: "Ambientações e cenografia",
     desc: "Criação de ambientes que reforçam identidade e experiência da marca.",
   },
   {
-    icon: "🗂️",
+    icon: "/images/hibrido.png",
     title: "Projetos híbridos",
     desc: "Integração de OOH, PDV e ações especiais em uma única execução.",
   },

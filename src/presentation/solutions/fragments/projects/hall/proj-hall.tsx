@@ -30,7 +30,7 @@ export default function ProjHall() {
           <div className={styles.heroRight}>
             <div className={styles.heroImgWrap}>
               <Image
-                src="/images/senna.jpg"
+                src="/images/projetos-especiais/tartarugas-ninja/tartaruga1.jpg"
                 alt="Materiais de PDV"
                 fill
                 className={styles.heroImg}
