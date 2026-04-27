@@ -66,8 +66,8 @@ const JobsComponent = () => {
 
           <Image
             src={activeService.imgDeskt}
-            width={500}
-            height={300}
+            width={1920}
+            height={1080}
             alt="Serviço"
           />
 
@@ -94,7 +94,7 @@ const JobsComponent = () => {
             <h2>{service.service}</h2>
 
             <Image
-              src={activeService.imgMobile}
+              src={service.imgMobile}
               width={300}
               height={250}
               alt="Serviço"
