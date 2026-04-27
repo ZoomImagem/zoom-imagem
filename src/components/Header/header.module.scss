@@ -42,8 +42,12 @@
 
       .header {
         max-width: 925px;
+        height: 72px;
         background: radial-gradient(circle at 50% 0%, $bg 0%, #000 95%);
 
+        img {
+          height: 26px !important;
+        }
         &::before {
           opacity: 1;
         }
