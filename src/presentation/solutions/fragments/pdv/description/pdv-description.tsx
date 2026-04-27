@@ -7,9 +7,6 @@ import { CtaTag } from "@/components/cta";
 import { cities, pdvTypes, steps } from "./constants/pdv-desc.constants";
 
 export const PdvDescription = () => {
- 
-
-
   return (
     <>
       {/* O que é PDV */}
@@ -29,7 +26,7 @@ export const PdvDescription = () => {
           </div>
           <div className={styles.imageBox}>
             <Image
-              src="/images/process/urbano.png"
+              src="/images/pdv/herois/heroi3.webp"
               alt="Material de PDV em ambiente de loja"
               width={260}
               height={260}
@@ -75,7 +72,7 @@ export const PdvDescription = () => {
           <div className={styles.cardGrid}>
             {pdvTypes.map((item) => (
               <div key={item.title} className={styles.card}>
-                <span className={styles.cardIcon}>{item.icon}</span>
+                <Image src={item.icon} alt="" width={32} height={32} />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>

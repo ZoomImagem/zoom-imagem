@@ -34,7 +34,7 @@ export default function PdvHall() {
         <div className={styles.heroRight}>
           <div className={styles.heroImgWrap}>
             <Image
-              src="/images/senna.jpg"
+              src="/images/pdv/mickey/mickey1.jpg"
               alt="Materiais de PDV"
               fill
               className={styles.heroImg}

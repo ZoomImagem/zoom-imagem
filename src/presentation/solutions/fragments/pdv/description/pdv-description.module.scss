@@ -83,6 +83,7 @@
 
   @include respond-to("l") {
     flex-direction: row;
+    padding: 12px 0;
   }
 }
 
@@ -123,6 +124,10 @@
   width: 100%;
   padding: 2rem;
   border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 
   background: linear-gradient(
     125deg,
@@ -143,9 +148,9 @@
   p {
     font-size: 0.875rem;
     color: $ice;
+    text-align: center;
   }
 }
-
 .cardIcon {
   font-size: 2.45rem;
   display: block;

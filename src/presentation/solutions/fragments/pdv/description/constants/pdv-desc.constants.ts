@@ -1,22 +1,22 @@
 
 export const pdvTypes = [
    {
-    icon: "🗂️",
+    icon: "/images/totem.png",
     title: "Displays promocionais",
     desc: "Estruturas para destaque de produtos dentro do ambiente de venda.",
   },
   {
-    icon: "🏛️",
+    icon: "/images/display.png",
     title: "Totens e expositores",
     desc: "Materiais que aumentam a visibilidade e organizam a comunicação no PDV.",
   },
   {
-    icon: "🏷️",
+    icon: "/images/apoio.png",
     title: "Materiais de apoio",
     desc: "Faixas, wobblers, stoppers e outras peças que reforçam campanhas no ponto de venda.",
   },
   {
-    icon: "✦",
+    icon: "/images/personalizacao.png",
     title: "Projetos personalizados",
     desc: "Desenvolvimento de soluções específicas para campanhas e ações promocionais.",
   },
