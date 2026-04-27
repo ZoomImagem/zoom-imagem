@@ -18,9 +18,9 @@ export const CtaTag = () => {
   }
 
   const imagesCta = [
-    "/images/senna.jpg",
-    "/images/senna.jpg",
-    "/images/senna.jpg",
+    "/images/ooh/avon/avon1.webp",
+    "/images/ooh/shopee/shopee1.jpg",
+    "/images/projetos-especiais/99food/991.webp",
   ];
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import { Project } from "@/components/projects/constants/projects.constants";
 import { IconType } from "react-icons";
 import {
   FiCalendar,
