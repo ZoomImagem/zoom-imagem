@@ -1,1 +1,1 @@
-export { default as CenterTag } from "../Center/center";
+export { default as CenterTag } from "./center";

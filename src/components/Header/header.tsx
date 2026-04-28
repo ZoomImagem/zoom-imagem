@@ -9,7 +9,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { DropSolutionsMobile } from "./fragments/dropmobile/solutions";
 import styles from "./header.module.scss";
 
-export const HeaderTag = () => {
+const HeaderComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutionsMenu, setSolutionsMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,7 +92,6 @@ export const HeaderTag = () => {
         </div>
       </div>
 
-  
       <div
         className={`${styles.headerMobileOpen} ${menuOpen ? styles.isVisible : ""}`}
       >
@@ -153,4 +152,4 @@ export const HeaderTag = () => {
   );
 };
 
-export default HeaderTag;
+export default HeaderComponent;

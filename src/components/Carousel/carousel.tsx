@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import styles from "./carousel.module.scss";
-import { ButtonTag } from "../Button";
+import { ButtonTag } from "../button";
 import { FiArrowDownRight } from "react-icons/fi";
 import { Folder } from "lucide-react";
 
-export const CarouselTag = () => {
+const CarouselComponent = () => {
   const trackRef = useRef<HTMLDivElement>(null);
-  
+
   const logos = [
     "/images/client-logo/santander-branco.png",
     "/images/client-logo/netflix-branco.png",
@@ -37,7 +37,7 @@ export const CarouselTag = () => {
     if (!track) return;
 
     let position = 0;
-    const speed = 1.2; 
+    const speed = 1.2;
 
     const animate = () => {
       position -= speed;
@@ -57,10 +57,10 @@ export const CarouselTag = () => {
   }, []);
 
   const router = useRouter();
-  
-    function handleClick(link: string) {
-      router.push(link);
-    }
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
 
   return (
     <div className={styles.clientsWrapper}>
@@ -68,30 +68,36 @@ export const CarouselTag = () => {
         {[...logos, ...logos, ...logos, ...logos, ...logos].map(
           (logo, index) => (
             <div key={index} className={styles.item}>
-              <Image src={logo} alt="" width={140} height={140} onClick={() => handleClick("/portfolio")} />
+              <Image
+                src={logo}
+                alt=""
+                width={140}
+                height={140}
+                onClick={() => handleClick("/portfolio")}
+              />
             </div>
           ),
         )}
       </div>
 
       <div className={styles.clientesCta}>
-            <ButtonTag
-              label="Falar com a Zoom"
-              size="lg"
-              variant="glass"
-              icon={<FiArrowDownRight size={24} color="#EE0874" />}
-              onClick={() => handleClick("/contato")}
-            />
-            <ButtonTag
-              label="Ver projetos"
-              size="lg"
-              variant="glass"
-              icon={<Folder  size={20} color="#EE0874" />}
-              onClick={() => handleClick("/portfolio")}
-            />
-          </div>
+        <ButtonTag
+          label="Falar com a Zoom"
+          size="lg"
+          variant="glass"
+          icon={<FiArrowDownRight size={24} color="#EE0874" />}
+          onClick={() => handleClick("/contato")}
+        />
+        <ButtonTag
+          label="Ver projetos"
+          size="lg"
+          variant="glass"
+          icon={<Folder size={20} color="#EE0874" />}
+          onClick={() => handleClick("/portfolio")}
+        />
+      </div>
     </div>
   );
 };
 
-export default CarouselTag;
+export default CarouselComponent;

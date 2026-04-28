@@ -1,1 +1,0 @@
-export { default as OohHall } from "../hall/hall-ooh";

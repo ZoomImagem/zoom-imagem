@@ -7,7 +7,6 @@
   padding: 0 16px;
   position: relative;
   gap: 16px;
- 
 }
 
 .hallWrapper {
@@ -15,10 +14,6 @@
   flex-direction: column;
   position: relative;
   margin-bottom: 16px;
-
-  @include respond-to("l") {
-    padding: 0 16px;
-  }
 }
 
 .homeBackground {

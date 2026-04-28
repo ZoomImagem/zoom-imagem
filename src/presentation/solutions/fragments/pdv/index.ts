@@ -1,1 +1,1 @@
-export { default as PdvComponent } from "./pdv";
+export { default as PdvTag } from "./pdv";

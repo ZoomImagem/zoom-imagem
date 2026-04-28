@@ -1,1 +1,2 @@
-export { default as OohComponent } from "./ooh";
+export { default as OohTag } from "./ooh";
+export * from "./fragments";

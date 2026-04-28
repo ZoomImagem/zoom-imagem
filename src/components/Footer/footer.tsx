@@ -2,7 +2,7 @@ import Image from "next/image";
 import { FiFacebook, FiInstagram, FiLinkedin, FiX } from "react-icons/fi";
 import styles from "./footer.module.scss";
 
-export const FooterTag = () => {
+const FooterComponent = () => {
   return (
     <div className={styles.footerWrapper}>
       <div className={styles.content}>
@@ -76,4 +76,4 @@ export const FooterTag = () => {
   );
 };
 
-export default FooterTag;
+export default FooterComponent;

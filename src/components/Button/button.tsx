@@ -1,3 +1,4 @@
+"use client";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import styles from "./button.module.scss";
 import clsx from "clsx";
@@ -18,7 +19,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   load?: boolean;
 }
 
-export const ButtonTag = ({
+const ButtonComponent = ({
   label,
   size,
   variant,
@@ -75,4 +76,4 @@ export const ButtonTag = ({
   );
 };
 
-export default ButtonTag;
+export default ButtonComponent;
