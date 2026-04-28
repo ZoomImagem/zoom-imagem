@@ -20,12 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/presentation/*": ["./src/presentation/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/templates/*": ["./src/templates/*"]
+      "@/*": ["./*"]
     }
   },
   "include": [
