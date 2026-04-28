@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./cta.module.scss";
 import Image from "next/image";
 import { FiArrowRight, FiCheck, FiCheckCircle } from "react-icons/fi";
-import { ButtonTag } from "../button";
+import { ButtonTag } from "@/components/button";
 
 const CtaComponent = () => {
   const router = useRouter();
