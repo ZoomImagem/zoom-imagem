@@ -314,7 +314,7 @@
   }
   @include respond-to("l") {
     &:hover {
-      background: darken($pink, 8%);
+      background: color.adjust($pink, $lightness: -8%);
       transform: translateY(-2px);
 
       svg {
@@ -410,9 +410,8 @@
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
   overflow: hidden;
-  background: rgba($bg, .2);
+  background: rgba($bg, 0.2);
   height: 400px;
-  
 
   @include respond-to("l") {
     width: 55%;
