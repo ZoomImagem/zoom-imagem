@@ -1,8 +1,6 @@
 // lib/solucoes/solucoes.ts
 
-import { OohComponent } from "@/presentation";
-import EcoComponent from "@/presentation/solutions/fragments/eco/eco";
-import { PdvComponent } from "@/presentation/solutions/fragments/pdv";
+import { OohTag, PdvTag, EcoTag } from "@/presentation/solutions/fragments";
 import { ProjectsComponent } from "@/presentation/solutions/fragments/projects";
 import { ComponentType } from "react";
 
@@ -13,16 +11,16 @@ type Solucao = {
 };
 
 export const solucoes: Solucao[] = [
-  { label: "Out of home - OOH", slug: "out-of-home", component: OohComponent },
+  { label: "Out of home - OOH", slug: "out-of-home", component: OohTag },
   {
     label: "Pontos de venda - PDV",
     slug: "ponto-de-venda",
-    component: PdvComponent,
+    component: PdvTag,
   },
   {
     label: "Projetos especiais",
     slug: "projetos-especiais",
     component: ProjectsComponent,
   },
-  { label: "Linha ECO", slug: "linha-eco", component: EcoComponent },
+  { label: "Linha ECO", slug: "linha-eco", component: EcoTag },
 ];

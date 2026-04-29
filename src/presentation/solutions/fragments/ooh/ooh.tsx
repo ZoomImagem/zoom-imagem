@@ -1,14 +1,13 @@
 import { ContentTag } from "@/components";
-import { OohHall } from "./hall";
+import { OohHall } from "./fragments/hall";
 import styles from "./ooh.module.scss";
-import { OohDescription } from "./description";
+import { OohDescription } from "./fragments/description";
 
 export const OohComponent = () => {
   return (
     <div className={styles.oohWrapper}>
-    
-        <OohHall />
-      
+      <OohHall />
+
       <ContentTag colorTopPosition="right" colorBottomPosition="left">
         <OohDescription />
       </ContentTag>

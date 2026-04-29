@@ -1,8 +1,6 @@
 import { ContactEmailTemplate } from "@/templates/contactEmail";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ContactPayload = {
   name: string;
   email: string;
@@ -10,6 +8,8 @@ type ContactPayload = {
 };
 
 export async function POST(req: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const body: ContactPayload = await req.json();
 

@@ -1,6 +1,6 @@
 import "../../styles/global.scss";
-import { SolutionsComponent } from "@/presentation";
+import { SolutionsTag } from "@/presentation";
 
 export default function SolutionsTab() {
-  return <SolutionsComponent />;
+  return <SolutionsTag />;
 }

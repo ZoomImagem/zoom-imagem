@@ -1,1 +1,1 @@
-export { default as OohComponent } from "./eco";
+export { default as EcoTag } from "./eco";

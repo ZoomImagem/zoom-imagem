@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./cta.module.scss";
 import Image from "next/image";
 import { FiArrowRight, FiCheck, FiCheckCircle } from "react-icons/fi";
-import { ButtonTag } from "../Button";
+import { ButtonTag } from "@/components/button";
 
-export const CtaTag = () => {
+const CtaComponent = () => {
   const router = useRouter();
   const [inView, setInView] = useState(false);
 
@@ -129,4 +129,4 @@ export const CtaTag = () => {
   );
 };
 
-export default CtaTag;
+export default CtaComponent;

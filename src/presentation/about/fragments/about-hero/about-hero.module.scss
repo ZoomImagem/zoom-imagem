@@ -37,6 +37,7 @@
     font-size: 42px;
     line-height: 120%;
     margin-bottom: 24px;
+    color: #ffffff;
 
     @include respond-to("l") {
       font-size: 64px;

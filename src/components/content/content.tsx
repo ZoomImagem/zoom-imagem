@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "react";
 import styles from "./content.module.scss";
 import clsx from "clsx";
-import  CenterTag  from "../Center/center";
+import { CenterTag } from "../center";
 
 export interface IContentProps extends PropsWithChildren {
   colorTopPosition?: "left" | "right";
   colorBottomPosition?: "left" | "right";
 }
 
-export const ContentTag = ({
+const ContentComponent = ({
   children,
   colorBottomPosition,
   colorTopPosition,
@@ -40,4 +40,4 @@ export const ContentTag = ({
   );
 };
 
-export default ContentTag;
+export default ContentComponent;
