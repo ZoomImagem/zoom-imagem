@@ -69,6 +69,11 @@
   background: #020202;
   gap: 64px;
 
+  & > img {
+    pointer-events: visible;
+    cursor: pointer;
+  }
+
   @include respond-to("l") {
     display: flex;
   }
@@ -160,6 +165,7 @@
 
 .headerMobile > img {
   margin-left: 16px;
+  pointer-events: visible;
 }
 
 .headerMobile > svg {

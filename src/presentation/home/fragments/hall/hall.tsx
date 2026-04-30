@@ -35,14 +35,14 @@ const HallComponent = () => {
 
           <div className={styles.ctaButtons}>
             <ButtonTag
-              label="Falar com a Zoom"
+              label="Fale com a gente"
               size="lg"
               variant="primary"
               onClick={() => handleClick("/contato")}
             />
 
             <ButtonTag
-              label="Ver projetos"
+              label="Veja nossos projetos"
               size="lg"
               variant="primary"
               onClick={() => handleClick("/portfolio")}

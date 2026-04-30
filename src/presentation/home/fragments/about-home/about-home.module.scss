@@ -30,7 +30,6 @@
     line-height: 110%;
     color: #fff;
     margin: 32px 0;
-    
 
     @include respond-to("l") {
       font-size: 32px;
@@ -128,29 +127,6 @@
 
   @include respond-to("l") {
     margin: 32px 0 100px;
-  }
-
-  button {
-    cursor: pointer;
-    border: none;
-    width: 327px;
-    font-size: 18px;
-    background: transparent;
-    color: $ice;
-    padding: 0 00%;
-    display: none;
-
-    &:hover {
-      color: $pink;
-      transform: scale(1.2);
-    }
-
-    @include respond-to("l") {
-      margin: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 }
 
@@ -347,6 +323,10 @@
     background: #252831;
     text-align: center;
 
+    &:hover {
+      border: 1px solid $yellow;
+    }
+
     @include respond-to("l") {
       width: 280px;
       height: 268px;
@@ -388,7 +368,7 @@
   display: flex;
   padding: 48px 24px;
   border-radius: 20px;
-  background: linear-gradient(210deg, $bg 0%, $ice 100%);
+  background: linear-gradient(210deg, $yellow 0%, $pink 100%);
   gap: 64px;
   flex-direction: column;
 
