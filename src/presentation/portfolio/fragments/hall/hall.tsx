@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonTag} from "@/components";
+import { ButtonTag } from "@/components";
 import { useRouter } from "next/navigation";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import styles from "./hall.module.scss";
@@ -26,8 +26,8 @@ export default function PortfolofioHall() {
             <ButtonTag
               label="Fale com a Zoom"
               size="lg"
-              variant="secondary"
-              icon={<FiArrowRight size={24} color="#EE0874" />}
+              variant="primary"
+              icon={<FiArrowRight size={24} color="#191919" />}
               onClick={() => handleClick("/contato")}
             />
           </div>
@@ -55,7 +55,6 @@ export default function PortfolofioHall() {
           </div>
         </div>
       </section>
-     
     </>
   );
 }

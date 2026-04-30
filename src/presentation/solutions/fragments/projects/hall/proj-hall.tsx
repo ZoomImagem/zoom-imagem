@@ -44,15 +44,15 @@ export default function ProjHall() {
           <ButtonTag
             label="Ver mais projetos"
             size="lg"
-            variant="secondary"
-            icon={<FiArrowRight size={24} color="#EE0874" />}
+            variant="primary"
+            icon={<FiArrowRight size={24} color="#191919" />}
             onClick={() => handleClick("/portfolio")}
           />
           <ButtonTag
             label="Falar com a zoom"
             size="lg"
-            variant="secondary"
-            icon={<FiArrowRight size={24} color="#EE0874" />}
+            variant="primary"
+            icon={<FiArrowRight size={24} color="#191919" />}
             onClick={() => handleClick("/contato")}
           />
         </div>

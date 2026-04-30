@@ -31,21 +31,21 @@ const AboutHeroComponent = () => {
         </div>
 
         <div className={styles.ctaButtons}>
-        <ButtonTag
-          label="Fale com a Zoom"
-          size="lg"
-          variant="tertiary"
-          icon={<FiArrowRight size={20} color="#fff" />}
-          onClick={() => handleClick("/contato")}
-        />
-        <ButtonTag
-          label="Ver projetos"
-          size="lg"
-          variant="tertiary"
-          icon={<Folder size={20} color="#fff" />}
-          onClick={() => handleClick("/portfolio")}
-        />
-        </div> 
+          <ButtonTag
+            label="Fale com a Zoom"
+            size="lg"
+            variant="primary"
+            icon={<FiArrowRight size={20} color="#191919" />}
+            onClick={() => handleClick("/contato")}
+          />
+          <ButtonTag
+            label="Ver projetos"
+            size="lg"
+            variant="primary"
+            icon={<Folder size={20} color="#191919" />}
+            onClick={() => handleClick("/portfolio")}
+          />
+        </div>
       </div>
     </section>
   );

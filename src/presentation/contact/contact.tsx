@@ -62,7 +62,6 @@ const ContactComponent = () => {
       <form onSubmit={handleSubmit} className={styles.contentContact}>
         <ContentTag colorTopPosition="right">
           <div className={styles.contentHeader}>
-           
             <h2>
               <strong> Coloque suas ideias em prática: </strong>
               Agende um atendimento
@@ -149,8 +148,8 @@ const ContactComponent = () => {
                   <ButtonTag
                     label="Enviar mensagem "
                     size="lg"
-                    variant="secondary"
-                    icon={<FiSend size={24} color="#fff" />}
+                    variant="primary"
+                    icon={<FiSend size={24} color="#191919" />}
                     type="submit"
                     onClick={handleClear}
                   />

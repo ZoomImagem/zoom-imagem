@@ -94,7 +94,6 @@ export const EcoDescription = () => {
   return (
     <>
       <section className={`${styles.descWrap} ${styles.topLeft}`}>
-
         <section className={`${styles.sectionWrap} ${styles.topLeft}`}>
           <div className={styles.contentWhat}>
             <div className={styles.textBlock}>
@@ -340,7 +339,6 @@ export const EcoDescription = () => {
             </div>
           </div>
         </section>
-
       </section>
 
       {selectedProject &&
