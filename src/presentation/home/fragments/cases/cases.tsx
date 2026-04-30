@@ -71,9 +71,9 @@ const CasesComponent = () => {
           <ButtonTag
             label="Entrar em contato"
             size="lg"
-            variant="tertiary"
+            variant="primary"
             onClick={() => handleClick("/contato")}
-            icon={<FiArrowDownRight size={24} color="#EE0874" />}
+            icon={<FiArrowDownRight size={24} color="#191919" />}
           />
         </div>
       </div>

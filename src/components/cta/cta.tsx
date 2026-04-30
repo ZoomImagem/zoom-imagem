@@ -117,7 +117,7 @@ const CtaComponent = () => {
               <ButtonTag
                 label="Falar com a Zoom"
                 size="lg"
-                variant="secondary"
+                variant="primary"
                 icon={<FiArrowRight size={24} color="#ee0874" />}
                 onClick={() => handleClick("/contato")}
               />

@@ -28,8 +28,8 @@ const SolutionsListComponent = () => {
             <ButtonTag
               label="Ver mais"
               size="lg"
-              variant="glass"
-              icon={<FiArrowRight size={24} color="#EE0874" />}
+              variant="primary"
+              icon={<FiArrowRight size={24} color="#191919" />}
               onClick={() => handleClick(`/solucoes/${item.slug}`)}
             />
           </div>
