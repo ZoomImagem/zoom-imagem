@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  AboutHomeTag,
-  ApplicationsTag,
-  CasesTag,
-  HallTag,
-  JobsTag,
-} from "./fragments";
+import { AboutHomeTag, ApplicationsTag, CasesTag, HallTag } from "./fragments";
 import styles from "./home.module.scss";
 
 const HomeComponent = () => {
@@ -24,9 +18,8 @@ const HomeComponent = () => {
 
       <div className={styles.homeWrapper}>
         <AboutHomeTag />
-        <JobsTag />
-        <ApplicationsTag />
         <CasesTag />
+        <ApplicationsTag />
       </div>
     </>
   );

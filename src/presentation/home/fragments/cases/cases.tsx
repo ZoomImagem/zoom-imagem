@@ -25,11 +25,11 @@ const CasesComponent = () => {
 
       <ul className={styles.listCases}>
         {projects.map((item, index) => (
-          <li onClick={() => handleClick("/portfolio")}
+          <li
+            onClick={() => handleClick("/portfolio")}
             key={index}
             className={styles.listCaseItem}
             style={{ backgroundImage: `url(${item.image})` }}
-            
           >
             <h3>{item.title}</h3>
 
@@ -69,11 +69,11 @@ const CasesComponent = () => {
           </p>
 
           <ButtonTag
-            label="Falar com a Zoom"
+            label="Entrar em contato"
             size="lg"
-            variant="secondary"
-            icon={<FiArrowDownRight size={24} color="#EE0874" />}
+            variant="tertiary"
             onClick={() => handleClick("/contato")}
+            icon={<FiArrowDownRight size={24} color="#EE0874" />}
           />
         </div>
       </div>

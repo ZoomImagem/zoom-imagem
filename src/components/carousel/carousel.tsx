@@ -15,7 +15,7 @@ const CarouselComponent = () => {
     "/images/client-logo/santander-branco.png",
     "/images/client-logo/netflix-branco.png",
     "/images/client-logo/aws-branco.png",
-    "/images/client-logo/99-branco.png",
+    "/images/client-logo/99-white.png",
     "/images/client-logo/vivo-branco.png",
     "/images/client-logo/heineken-branco.png",
     "/images/client-logo/bk-branco.png",
@@ -24,7 +24,7 @@ const CarouselComponent = () => {
     "/images/client-logo/santander-branco.png",
     "/images/client-logo/netflix-branco.png",
     "/images/client-logo/aws-branco.png",
-    "/images/client-logo/99-branco.png",
+    "/images/client-logo/99-white.png",
     "/images/client-logo/vivo-branco.png",
     "/images/client-logo/heineken-branco.png",
     "/images/client-logo/bk-branco.png",
@@ -82,17 +82,17 @@ const CarouselComponent = () => {
 
       <div className={styles.clientesCta}>
         <ButtonTag
-          label="Falar com a Zoom"
+          label="Fale com a gente"
           size="lg"
-          variant="glass"
-          icon={<FiArrowDownRight size={24} color="#EE0874" />}
+          variant="primary"
+          icon={<FiArrowDownRight size={24} color="#191919" />}
           onClick={() => handleClick("/contato")}
         />
         <ButtonTag
-          label="Ver projetos"
+          label="Veja nossos projetos"
           size="lg"
-          variant="glass"
-          icon={<Folder size={20} color="#EE0874" />}
+          variant="primary"
+          icon={<Folder size={20} color="#191919" />}
           onClick={() => handleClick("/portfolio")}
         />
       </div>

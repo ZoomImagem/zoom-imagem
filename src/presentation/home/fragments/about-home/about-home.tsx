@@ -80,19 +80,24 @@ const AboutHomeComponent = () => {
         </ul>
 
         <div className={styles.ctaSkills}>
-          <button onClick={() => handleClick("/portfolio")}>
-            Confira nossos projetos
-          </button>
-          <button onClick={() => handleClick("/contato")}>
-            Entre em contato
-          </button>
+          <ButtonTag
+            label="Confira nossos projetos"
+            size="lg"
+            variant="primary"
+            onClick={() => handleClick("/portfolio")}
+          />
+          <ButtonTag
+            label="Entre em contato"
+            size="lg"
+            variant="primary"
+            onClick={() => handleClick("/contato")}
+          />
         </div>
 
         <h2 className={styles.ourClients}>Nossos clientes</h2>
         <CarouselTag />
 
         <div className={styles.weResults}>
-          
           <span>Nossos Resultados</span>
 
           <h2 className={styles.subtitleMob}>
@@ -139,6 +144,22 @@ const AboutHomeComponent = () => {
             <p>anos de atuação</p>
           </li>
         </ul>
+
+        <div className={styles.ctaSkills}>
+          <ButtonTag
+            label="Confira nossos projetos"
+            size="lg"
+            variant="primary"
+            onClick={() => handleClick("/portfolio")}
+          />
+          <ButtonTag
+            label="Entre em contato"
+            size="lg"
+            variant="primary"
+            onClick={() => handleClick("/contato")}
+          />
+        </div>
+
         <div className={styles.contentCopy}>
           <h3>
             <strong>Acelere os resultados</strong> da sua empresa
