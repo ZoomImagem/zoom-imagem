@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { FiFacebook, FiInstagram, FiLinkedin, FiX } from "react-icons/fi";
 import styles from "./footer.module.scss";
+import { useRouter } from "next/navigation";
 
 const FooterComponent = () => {
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
   return (
     <div className={styles.footerWrapper}>
       <div className={styles.content}>
@@ -16,11 +24,10 @@ const FooterComponent = () => {
         </div>
 
         <ul className={styles.listInstitucional}>
-          <li>Zoom</li>
-          <li>Sobre</li>
-          <li>Notícias</li>
-          <li>Portifólio</li>
-          <li>Linha Eco</li>
+          <li onClick={() => handleClick("/")}>Zoom</li>
+          <li onClick={() => handleClick("/sobre")}>Sobre</li>
+          <li onClick={() => handleClick("/portfolio")}>Portifólio</li>
+          <li onClick={() => handleClick("/solucoes/linha-eco")}>Linha Eco</li>
         </ul>
 
         <ul className={styles.listSocialMobile}>
