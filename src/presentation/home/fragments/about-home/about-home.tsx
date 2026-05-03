@@ -15,6 +15,7 @@ import {
 
 import { ButtonTag, CarouselTag, ContentTag } from "@/components";
 import styles from "./about-home.module.scss";
+import { AvaliationsTag } from "@/components/avaliations";
 
 const AboutHomeComponent = () => {
   const router = useRouter();
@@ -96,6 +97,8 @@ const AboutHomeComponent = () => {
 
         <h2 className={styles.ourClients}>Nossos clientes</h2>
         <CarouselTag />
+
+        <AvaliationsTag />
 
         <div className={styles.weResults}>
           <span>Nossos Resultados</span>

@@ -1,0 +1,274 @@
+@use "@/styles/mixins.scss" as *;
+
+.avaliationsWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  align-items: center;
+
+  @include respond-to("l") {
+    padding: 4rem 1.5rem;
+  }
+}
+
+.contentAvaliations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px 0;
+  gap: 12px;
+}
+
+.headerAvaliations {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h2 {
+    color: $pink;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0.75rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem;
+}
+
+.ratingNumber {
+  font-size: 44px;
+  font-weight: 700;
+  color: $yellow;
+  line-height: 120%;
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star {
+  color: #f5a623;
+  font-size: 20px;
+}
+
+.starEmpty {
+  color: #d4d4d4;
+  font-size: 20px;
+}
+
+.totalRatings {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  @include respond-to("l") {
+    flex-direction: row;
+    width: 900px;
+    height: 368px;
+    align-items: center;
+  }
+}
+
+.card {
+  min-width: 348px;
+  height: 600px;
+  position: relative;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.5s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1.3px;
+    background: linear-gradient(190deg, #f5c518 0%, #e6003a 60%, #f5c518 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @include respond-to("l") {
+    flex-direction: row;
+    height: 288px;
+    width: 100%;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+  gap: 10px;
+  text-align: center;
+  background: rgba($ice, 0.2);
+  border-radius: 16px;
+
+  @include respond-to("l") {
+    max-width: 215px;
+  }
+}
+
+.ArrowsDisplay {
+  display: none;
+  cursor: pointer;
+
+  @include respond-to("l") {
+    display: flex;
+  }
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatarFallback {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0ede8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a6e64;
+  flex-shrink: 0;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.reviewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.reviewerName {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.reviewDate {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-family: "Helvetica Neue", sans-serif;
+  margin-top: 1px;
+}
+
+.cardDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+
+  .reviewText {
+    font-size: 18px;
+    margin-top: 40px;
+    color: $ice;
+    flex: 1;
+    line-height: 120%;
+  }
+
+  @include respond-to("l") {
+    padding: 16px;
+  }
+}
+
+.cardStars {
+  display: flex;
+  gap: 2px;
+}
+
+.cardStar {
+  color: #f5a623;
+  font-size: 14px;
+}
+
+.cardStarEmpty {
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #aaa;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+.error {
+  text-align: center;
+  padding: 3rem;
+  color: #c0392b;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+
+  @include respond-to("l") {
+    display: none;
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dotActive {
+  background: $pink;
+}
