@@ -21,6 +21,8 @@ const CarouselComponent = () => {
     "/images/client-logo/bk-branco.png",
     "/images/client-logo/byd-branco.webp",
     "/images/client-logo/itau-branco.png",
+    "/images/client-logo/keeta.png",
+    "/images/client-logo/ambev.png",
     "/images/client-logo/santander-branco.png",
     "/images/client-logo/netflix-branco.png",
     "/images/client-logo/aws-branco.png",
@@ -30,6 +32,8 @@ const CarouselComponent = () => {
     "/images/client-logo/bk-branco.png",
     "/images/client-logo/byd-branco.webp",
     "/images/client-logo/itau-branco.png",
+    "/images/client-logo/keeta.png",
+    "/images/client-logo/ambev.png",
   ];
 
   useEffect(() => {
