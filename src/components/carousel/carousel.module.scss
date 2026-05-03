@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 260px;
   overflow: hidden;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   margin-bottom: 60px;
@@ -77,4 +77,3 @@
   flex-direction: row;
   gap: 1rem;
 }
-
