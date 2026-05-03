@@ -58,8 +58,7 @@ const AvaliationsComponent = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [current, setCurrent] = useState(0);
-
-  // Adiciona estes hooks/estado junto aos existentes
+  const [direction, setDirection] = useState<"left" | "right">("left");
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
 
@@ -77,9 +76,8 @@ const AvaliationsComponent = () => {
     // Ignora se foi mais vertical que horizontal (scroll da página)
     if (Math.abs(deltaX) < 40 || deltaY > Math.abs(deltaX)) return;
 
-    if (deltaX < 0)
-      next(); // swipe ← = próximo
-    else prev(); // swipe → = anterior
+    if (deltaX < 0) next();
+    else prev();
 
     touchStartX.current = null;
     touchStartY.current = null;
@@ -113,10 +111,14 @@ const AvaliationsComponent = () => {
     );
   }
 
-  const prev = () =>
+  const prev = () => {
+    setDirection("right");
     setCurrent((c) => (c === 0 ? data.reviews.length - 1 : c - 1));
-  const next = () =>
+  };
+  const next = () => {
+    setDirection("left");
     setCurrent((c) => (c === data.reviews.length - 1 ? 0 : c + 1));
+  };
 
   const review = data.reviews[current];
 
@@ -145,7 +147,8 @@ const AvaliationsComponent = () => {
           />
 
           <div
-            className={styles.card}
+            key={current}
+            className={`${styles.card} ${direction === "left" ? styles.slideLeft : styles.slideRight}`}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
