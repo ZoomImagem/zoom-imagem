@@ -32,25 +32,41 @@ const FooterComponent = () => {
 
         <ul className={styles.listSocialMobile}>
           <li>
-            <div>
-              <FiInstagram size={22} color="#000000" />
-            </div>
+            <a
+              href="https://instagram.com/zoomimagembr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FiInstagram size={22} color="#0d101b" />
+            </a>
           </li>
           <li>
-            <div>
+            <a
+              href="https://x.com/zoomimagem"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FiX size={22} color="#000000" />
-            </div>
+            </a>
           </li>
           <li>
-            <div>
+            <a
+              href="https://www.facebook.com/zoomimagembr/?locale2=pt_PT"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FiFacebook size={22} color="#000000" />
-            </div>
+            </a>
           </li>
 
           <li>
-            <div>
+            <a
+              href="https://www.linkedin.com/company/zoom-imagem/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FiLinkedin size={22} color="#000000" />
-            </div>
+            </a>
           </li>
         </ul>
       </div>
