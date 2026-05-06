@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { FiFacebook, FiInstagram, FiLinkedin, FiX } from "react-icons/fi";
-import styles from "./footer.module.scss";
 import { useRouter } from "next/navigation";
+import { FiFacebook, FiInstagram, FiLinkedin } from "react-icons/fi";
+import styles from "./footer.module.scss";
 
 const FooterComponent = () => {
   const router = useRouter();
@@ -30,45 +30,40 @@ const FooterComponent = () => {
           <li onClick={() => handleClick("/solucoes/linha-eco")}>Linha Eco</li>
         </ul>
 
-        <ul className={styles.listSocialMobile}>
-          <li>
-            <a
-              href="https://instagram.com/zoomimagembr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiInstagram size={22} color="#0d101b" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://x.com/zoomimagem"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiX size={22} color="#000000" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/zoomimagembr/?locale2=pt_PT"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiFacebook size={22} color="#000000" />
-            </a>
-          </li>
+        <div className={styles.socialContent}>
+          <span>Nossas redes sociais</span>
+          <ul className={styles.listSocialMobile}>
+            
+            <li>
+              <a
+                href="https://instagram.com/zoomimagembr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiInstagram size={22} color="#0d101b" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/zoomimagembr/?locale2=pt_PT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiFacebook size={22} color="#000000" />
+              </a>
+            </li>
 
-          <li>
-            <a
-              href="https://www.linkedin.com/company/zoom-imagem/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiLinkedin size={22} color="#000000" />
-            </a>
-          </li>
-        </ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/zoom-imagem/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiLinkedin size={22} color="#000000" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className={styles.localization}>

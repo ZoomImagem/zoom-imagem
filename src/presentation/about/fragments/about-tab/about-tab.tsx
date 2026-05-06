@@ -1,20 +1,21 @@
 "use client";
 
+import { ButtonTag, CarouselTag, ContentTag } from "@/components";
+import { CtaTag } from "@/components/cta";
+import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 import { IconType } from "react-icons";
 import {
   FiArrowDownRight,
+  FiArrowRight,
   FiClipboard,
   FiEye,
   FiPlay,
   FiSettings,
 } from "react-icons/fi";
 import styles from "./about-tab.module.scss";
-import { ButtonTag, CarouselTag, ContentTag } from "@/components";
-import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
-import React from "react";
-import { useRouter } from "next/navigation";
-import { CtaTag } from "@/components/cta";
 
 interface Stage {
   id: string;
@@ -296,8 +297,18 @@ const AboutTabComponent = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.carouselDisplay}>
         <CarouselTag />
+      </div>
+      <div className={styles.buttonsCta}>
+        <ButtonTag
+          label="Confira nossos projetos"
+          size="lg"
+          variant="primary"
+          onClick={() => handleClick("/portfolio")}
+          icon={<FiArrowRight size={24} color="#EE0874" />}
+        />
       </div>
 
       <CtaTag />

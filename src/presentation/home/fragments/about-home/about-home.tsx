@@ -14,8 +14,8 @@ import {
 } from "react-icons/lu";
 
 import { ButtonTag, CarouselTag, ContentTag } from "@/components";
-import styles from "./about-home.module.scss";
 import { AvaliationsTag } from "@/components/avaliations";
+import styles from "./about-home.module.scss";
 
 const AboutHomeComponent = () => {
   const router = useRouter();
@@ -80,21 +80,6 @@ const AboutHomeComponent = () => {
           </li>
         </ul>
 
-        <div className={styles.ctaSkills}>
-          <ButtonTag
-            label="Confira nossos projetos"
-            size="lg"
-            variant="primary"
-            onClick={() => handleClick("/portfolio")}
-          />
-          <ButtonTag
-            label="Entre em contato"
-            size="lg"
-            variant="primary"
-            onClick={() => handleClick("/contato")}
-          />
-        </div>
-
         <h2 className={styles.ourClients}>Nossos clientes</h2>
         <CarouselTag />
 
@@ -155,12 +140,7 @@ const AboutHomeComponent = () => {
             variant="primary"
             onClick={() => handleClick("/portfolio")}
           />
-          <ButtonTag
-            label="Entre em contato"
-            size="lg"
-            variant="primary"
-            onClick={() => handleClick("/contato")}
-          />
+         
         </div>
 
         <div className={styles.contentCopy}>
@@ -178,9 +158,9 @@ const AboutHomeComponent = () => {
             <ButtonTag
               label="Entrar em contato"
               size="lg"
-              variant="primary"
+              variant="secondary"
               onClick={() => handleClick("/contato")}
-              icon={<FiArrowDownRight size={24} color="#191919" />}
+              icon={<FiArrowDownRight size={24} color="#ee0874" />}
             />
           </div>
         </div>

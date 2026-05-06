@@ -543,3 +543,13 @@
     display: flex;
   }
 }
+
+
+.buttonsCta {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 48px 0;
+  gap: 16px;
+  justify-content: center;
+}

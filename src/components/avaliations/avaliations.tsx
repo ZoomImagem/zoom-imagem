@@ -1,26 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { FiArrowRight, FiChevronLeft, FiChevronRight, FiFolder } from "react-icons/fi";
+import { ButtonTag } from "../button";
 import styles from "./avaliations.module.scss";
 import { ReviewsData } from "./constants/avaliations.constants";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import Image from "next/image";
-import { Pointer } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Stars = ({
   rating,
-  size = "normal",
+
 }: {
   rating: number;
-  size?: "normal" | "small";
 }) => {
-  const starClass = size === "small" ? styles.cardStar : styles.star;
-  const emptyClass = size === "small" ? styles.cardStarEmpty : styles.starEmpty;
 
   return (
-    <div className={size === "small" ? styles.cardStars : styles.stars}>
+    <div className={styles.stars}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <span key={i} className={i <= rating ? starClass : emptyClass}>
+        <span key={i} className={i <= rating ? styles.star : styles.starEmpty}>
           ★
         </span>
       ))}
@@ -43,17 +41,24 @@ const Avatar = ({ name, photoUrl }: { name: string; photoUrl: string }) => {
 
   return (
     <Image
+      className={styles.avatar}
       src={photoUrl}
       alt={name}
-      width={90}
-      height={90}
-      // className={styles.avatar}
+      width={58}
+      height={58}
       onError={() => setImgError(true)}
+
     />
   );
 };
 
 const AvaliationsComponent = () => {
+
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
   const [data, setData] = useState<ReviewsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -73,7 +78,6 @@ const AvaliationsComponent = () => {
     const deltaX = e.changedTouches[0].clientX - touchStartX.current;
     const deltaY = Math.abs(e.changedTouches[0].clientY - touchStartY.current);
 
-    // Ignora se foi mais vertical que horizontal (scroll da página)
     if (Math.abs(deltaX) < 40 || deltaY > Math.abs(deltaX)) return;
 
     if (deltaX < 0) next();
@@ -125,23 +129,37 @@ const AvaliationsComponent = () => {
   return (
     <section className={styles.avaliationsWrapper}>
       <div className={styles.contentAvaliations}>
+
         <div className={styles.headerAvaliations}>
           <h2>O que nossos clientes dizem</h2>
+
           <div className={styles.summary}>
-            <span className={styles.ratingNumber}>
-              {data.rating.toFixed(1)}
-            </span>
-            <Stars rating={Math.round(data.rating)} />
+            <div className={styles.googleHeader}>
+              <Image
+                src="/images/google.png"
+                alt="google"
+                width={36}
+                height={36}
+              />
+
+              <span className={styles.ratingNumber}>
+                {data.rating.toFixed(1)}
+              </span>
+              <Stars rating={Math.round(data.rating)} />
+            </div>
+
             <span className={styles.totalRatings}>
               {data.user_ratings_total.toLocaleString("pt-BR")} avaliações no
               Google
             </span>
           </div>
+
         </div>
 
         <div className={styles.grid}>
           <FiChevronLeft
             size={44}
+            color="#000"
             onClick={prev}
             className={styles.ArrowsDisplay}
           />
@@ -152,24 +170,34 @@ const AvaliationsComponent = () => {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <div className={styles.cardHeader}>
-              <Avatar
-                name={review.author_name}
-                photoUrl={review.profile_photo_url}
-              />
-              <div className={styles.reviewer}>
-                <p className={styles.reviewerName}>{review.author_name}</p>
-                <p className={styles.reviewDate}>
-                  {review.relative_time_description}
-                </p>
-              </div>
-            </div>
             <div className={styles.cardDescription}>
-              <Stars rating={review.rating} size="small" />
               {review.text && (
                 <p className={styles.reviewText}>{review.text}</p>
               )}
             </div>
+            <div>
+              <Stars rating={review.rating} />
+              <div className={styles.cardHeader}>
+                <Avatar
+                  name={review.author_name}
+                  photoUrl={review.profile_photo_url}
+                />
+                <div className={styles.reviewer}>
+                  <p className={styles.reviewerName}>{review.author_name}</p>
+                  <p className={styles.reviewDate}>
+                    {review.relative_time_description}
+                  </p>
+
+                </div>
+                <Image
+                  src="/images/google.png"
+                  alt="google"
+                  width={36}
+                  height={36}
+                />
+              </div>
+            </div>
+
           </div>
           <div className={styles.dots}>
             {data.reviews.map((_, index) => (
@@ -182,8 +210,26 @@ const AvaliationsComponent = () => {
           </div>
           <FiChevronRight
             size={44}
+            color="#000"
             onClick={next}
             className={styles.ArrowsDisplay}
+          />
+        </div>
+
+        <div className={styles.buttonsCta}>
+          <ButtonTag
+            label="Fale com a gente"
+            size="lg"
+            variant="secondary"
+            onClick={() => handleClick("/contato")}
+            icon={<FiArrowRight size={24} color="#EE0874" />}
+          />
+          <ButtonTag
+            label="Confira nossos projetos"
+            size="lg"
+            variant="secondary"
+            onClick={() => handleClick("/portfolio")}
+            icon={<FiFolder size={24} color="#EE0874" />}
           />
         </div>
       </div>

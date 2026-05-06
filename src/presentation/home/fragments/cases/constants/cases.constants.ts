@@ -32,19 +32,23 @@ export const steps = [
 
 export const projects = [
   {
-    title: "Rexona - Metrô Vila Sônia",
+    title: "PDV",
     image: "/images/projetos-especiais/rexona/rexona4.jpg",
+    url:"/solucoes/pontos-de-venda"
   },
   {
-    title: "Intelbras - Rua Pamplona",
+    title: "OOH",
     image: "/images/ooh/intelbras/intelbras1.webp",
+    url:"/solucoes/out-of-home"
   },
   {
-    title: "Stranger Things - Especial",
+    title: "Projetos especiais",
     image: "/images/projetos-especiais/stranger-things/stranger2.webp",
+    url:"/solucoes/projetos-especiais"
   },
   {
-    title: "Bauducco - Frei Caneca",
+    title: "Linha Eco",
     image: "/images/ooh/bauducco/bauducco1.webp",
+    url:"/solucoes/linha-eco"
   },
 ];

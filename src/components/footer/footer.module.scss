@@ -108,14 +108,26 @@
   }
 }
 
+.socialContent {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+
+  @include respond-to("l") {
+    text-align: right;  
+  }
+}
+
 .listSocialMobile {
   display: flex;
-  align-items: flex-start;
   gap: 16px;
   align-self: center;
 
   @include respond-to("l") {
     flex-direction: row;
+    align-self: flex-end;
   }
 
   li {

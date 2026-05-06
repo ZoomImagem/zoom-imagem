@@ -45,10 +45,3 @@ export const steps = [
   },
 ];
 
-export const cities = [
-  "São Paulo - SP",
-  "Rio de Janeiro - RJ",
-  "Belo Horizonte - MG",
-  "Fortaleza - CE",
-  "Curitiba - PR",
-];

@@ -8,7 +8,7 @@
   align-items: center;
 
   @include respond-to("l") {
-    padding: 4rem 1.5rem;
+    padding: 0  1.5rem 4rem;
   }
 }
 
@@ -19,6 +19,9 @@
   align-items: center;
   margin: 32px 0;
   gap: 12px;
+  background: rgba(#fff, .9);
+  padding: 16px;
+  border-radius: 24px;
 }
 
 .headerAvaliations {
@@ -27,7 +30,7 @@
   text-align: center;
 
   h2 {
-    color: $pink;
+    color: $bg;
     font-size: 16px;
     letter-spacing: 0.01em;
     font-weight: 500;
@@ -37,12 +40,24 @@
   }
 
   .summary {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
     margin-top: 0.75rem;
+
+    @include respond-to("l") {
+    flex-direction: row;
+    }
+    
+  }
+
+  @include respond-to("l") {
+    h2 {
+     font-size: 24px;
+    }
   }
 }
 
@@ -51,16 +66,30 @@
   font-weight: 700;
   color: $yellow;
   line-height: 120%;
+  margin-left: 16px;
+}
+
+.googleHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
 }
 
 .stars {
   display: flex;
   gap: 3px;
+  color: #f5a623;
+  font-size: 40px;
 }
 
 .star {
   color: #f5a623;
   font-size: 20px;
+  display: flex;
+font-size: 40px;
+align-items: center;
 }
 
 .starEmpty {
@@ -83,40 +112,42 @@
   @include respond-to("l") {
     flex-direction: row;
     width: 900px;
-    height: 368px;
+    // height: 368px;
     align-items: center;
   }
 }
 
 .card {
   width: 100%;
-  height: 600px;
+  height: 368px;
   position: relative;
   border-radius: 16px;
+  border: 1px solid $ice;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  justify-content: space-between;
   transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 8px 1px rgba(#000, 0.2);
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    padding: 1.3px;
-    background: linear-gradient(190deg, #f5c518 0%, #e6003a 60%, #f5c518 100%);
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   inset: 0;
+  //   border-radius: 16px;
+  //   padding: 1.3px;
+  //   background: linear-gradient(190deg, #f5c518 0%, #e6003a 60%, #f5c518 100%);
+  //   -webkit-mask:
+  //     linear-gradient(#fff 0 0) content-box,
+  //     linear-gradient(#fff 0 0);
+  //   -webkit-mask-composite: xor;
+  //   mask-composite: exclude;
+  //   pointer-events: none;
+  // }
 
   @include respond-to("l") {
-    flex-direction: row;
-    height: 288px;
+    width: 568px;
+    height: 268px;
   }
 }
 
@@ -153,16 +184,18 @@
 .cardHeader {
   display: flex;
   width: 100%;
+  height: 78px;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 16px;
-  gap: 10px;
-  text-align: center;
-  background: rgba($ice, 0.2);
+  gap: 16px;
+  background: #D1D2D4;
   border-radius: 16px;
 
+  
+
   @include respond-to("l") {
-    max-width: 215px;
+    // max-width: 368px;
   }
 }
 
@@ -176,8 +209,8 @@
 }
 
 .avatar {
-  width: 38px;
-  height: 38px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -203,18 +236,25 @@
   display: flex;
   flex-direction: column;
 
-  gap: 12px;
+  @include respond-to("l") {
+    gap: 12px;
+  }
 }
 
 .reviewerName {
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #000;
+
+  @include respond-to("l") {
+    font-size: 22px;
+  }
 }
 
 .reviewDate {
   font-size: 0.75rem;
-  color: #aaa;
+  color: rgba(#000, 0.5);
   font-family: "Helvetica Neue", sans-serif;
   margin-top: 1px;
 }
@@ -223,35 +263,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 16px 0;
-
+  
   .reviewText {
     font-size: 18px;
-    margin-top: 40px;
-    color: $ice;
+    color: $bg;
     flex: 1;
     line-height: 120%;
   }
-
-  @include respond-to("l") {
-    padding: 16px;
-  }
 }
 
-.cardStars {
-  display: flex;
-  gap: 2px;
-}
-
-.cardStar {
-  color: #f5a623;
-  font-size: 14px;
-}
-
-.cardStarEmpty {
-  color: #e0e0e0;
-  font-size: 14px;
-}
 
 .loading {
   text-align: center;
@@ -292,5 +312,14 @@
 }
 
 .dotActive {
-  background: $pink;
+  background: #000;
+}
+
+.buttonsCta {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 16px 0;
+  gap: 16px;
+  justify-content: center;
 }

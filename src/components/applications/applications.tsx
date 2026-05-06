@@ -1,9 +1,9 @@
 "use client";
 
-import { ContentTag } from "@/components";
+import { ButtonTag, ContentTag } from "@/components";
 import styles from "./applications.module.scss";
 import { AmbienteItem, items } from "./constants/aplications.constants";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiFolder } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -107,6 +107,17 @@ const ApplicationsComponent = () => {
           ))}
         </ul>
 
+        <div className={styles.buttonsCta}>
+          <ButtonTag
+            label="Fale com a gente"
+            size="lg"
+            variant="primary"
+            onClick={() => handleClick("/contato")}
+            icon={<FiArrowRight size={24} color="#EE0874" />}
+          />
+         
+        </div>
+
         {selectedProject &&
           (() => {
             const imgs = getImages(selectedProject);
@@ -193,33 +204,6 @@ const ApplicationsComponent = () => {
                       </div>
                     )}
                   </div>
-
-                  {/* <div className={styles.modalBody}>
-                    <h3 className={styles.modalTitle}>
-                      {selectedProject.title}
-                    </h3>
-                    <p className={styles.modalCategory}>
-                      {selectedProject.aplication}
-                    </p>
-                    <p className={styles.modalDescription}>
-                      Projeto desenvolvido pela equipe Zoom para aplicação em{" "}
-                      <strong>
-                        {selectedProject.aplication.toLowerCase()}
-                      </strong>
-                      . Uma solução criativa e impactante que une design,
-                      tecnologia e sustentabilidade para destacar a marca no
-                      ponto de contato com o consumidor.
-                    </p>
-                    <div className={styles.buttonCta}>
-                      <ButtonTag
-                        label="Falar com a Zoom"
-                        size="lg"
-                        variant="glass"
-                        onClick={() => handleClick("/contato")}
-                        icon={<FiArrowRight size={24} color="#EE0874" />}
-                      />
-                    </div>
-                  </div> */}
                 </div>
               </div>
             );

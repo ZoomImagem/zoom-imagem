@@ -1,26 +1,21 @@
 "use client";
 
+import { CtaTag } from "@/components/cta";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { projectTypes, steps } from "./constants/proj-desc.constants";
 import styles from "./proj-description.module.scss";
-import { cities, projectTypes, steps } from "./constants/proj-desc.constants";
-import { CtaTag } from "@/components/cta";
 
 export const ProjDescription = () => {
-  const router = useRouter();
 
-  function handleClick(link: string) {
-    router.push(link);
-  }
 
   return (
     <>
-    
+
       <section className={styles.sectionModal}>
         <div className={styles.contentWhat}>
           <div className={styles.textBlock}>
-          
+
             <h2>O que são projetos especiais de comunicação?</h2>
             <p>
               Projetos especiais são soluções desenvolvidas sob medida para
@@ -57,7 +52,7 @@ export const ProjDescription = () => {
             />
           </div>
           <div className={styles.textBlock}>
-           
+
             <h2>Do conceito à execução, sem depender de terceiros</h2>
             <p>
               A Zoom desenvolve projetos especiais com foco em viabilidade,
@@ -74,7 +69,7 @@ export const ProjDescription = () => {
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
           <div className={styles.sectionHeader}>
-          
+
             <h2>Soluções personalizadas para diferentes objetivos</h2>
           </div>
           <div className={styles.cardGrid}>
@@ -92,7 +87,7 @@ export const ProjDescription = () => {
       <section className={styles.sectionModal}>
         <div className={styles.contentHow}>
           <div className={styles.sectionHeader}>
-          
+
             <h2 className={styles.titleLight}>
               Como desenvolvemos projetos especiais
             </h2>
@@ -112,7 +107,7 @@ export const ProjDescription = () => {
       <section className={styles.sectionModal}>
         <div className={styles.contentRange}>
           <div className={styles.sectionHeader}>
-            
+
             <h2 className={styles.titleLight}>
               Execução de projetos especiais em diferentes regiões
             </h2>
@@ -122,21 +117,15 @@ export const ProjDescription = () => {
               consistência em todas as etapas.
             </p>
           </div>
-          <div className={styles.citiesBlock}>
-            {cities.map((c) => (
-              <span key={c} className={styles.cityTag}>
-                {c}
-              </span>
-            ))}
-          </div>
+
         </div>
       </section>
 
       <section className={styles.sectionModal}>
-        <Projects tag="Projetos especiais"/>
+        <Projects tag="Projetos especiais" />
       </section>
-      
-      <CtaTag/>
+
+      <CtaTag />
     </>
   );
 };

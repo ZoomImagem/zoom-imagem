@@ -165,25 +165,7 @@ export default function Projects({ tag }: Props) {
             </div>
           )}
 
-          <div className={styles.projectsCta}>
-            <p className={styles.projectsCtaText}>
-              Quer ver mais projetos ou discutir o seu?
-            </p>
-            <ButtonTag
-              label="Falar com a Zoom"
-              size="lg"
-              variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
-              onClick={() => handleClick("/contato")}
-            />
-            <ButtonTag
-              label="Ver mais projetos"
-              size="lg"
-              variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
-              onClick={() => handleClick("/portfolio")}
-            />
-          </div>
+          
         </div>
       </section>
 

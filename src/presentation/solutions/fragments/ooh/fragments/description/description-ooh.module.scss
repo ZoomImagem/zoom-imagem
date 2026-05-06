@@ -210,44 +210,18 @@
   }
 }
 
-.citiesBlock {
+
+.buttonsCta {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  justify-content: center;
   align-items: center;
-}
+  gap: 1.25rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba($ice, 0.1);
 
-.cityTag {
-  padding: 8px 18px;
-  min-width: 180px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-size: 12px;
-  cursor: pointer;
-  transition:
-    background 0.22s ease,
-    border-color 0.22s ease,
-    color 0.22s ease,
-    transform 0.18s ease,
-    box-shadow 0.22s ease;
-}
-
-.cityTag:hover {
-  @include respond-to("l") {
-    background: $pink;
-    border-color: $pink;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(238, 8, 116, 0.35);
-  }
-}
-
-.cityTag:active {
-  @include respond-to("l") {
-    transform: translateY(0px) scale(0.97);
-    box-shadow: none;
+  @include respond-to("m") {
+    flex-direction: row;
+    justify-content: center;
   }
 }

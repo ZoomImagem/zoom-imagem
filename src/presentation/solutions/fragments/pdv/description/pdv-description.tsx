@@ -4,7 +4,7 @@ import { Projects } from "@/components/projects";
 import Image from "next/image";
 import styles from "./pdv-description.module.scss";
 import { CtaTag } from "@/components/cta";
-import { cities, pdvTypes, steps } from "./constants/pdv-desc.constants";
+import { pdvTypes, steps } from "./constants/pdv-desc.constants";
 
 export const PdvDescription = () => {
   return (
@@ -118,13 +118,7 @@ export const PdvDescription = () => {
               eficiência.
             </p>
           </div>
-          <div className={styles.citiesBlock}>
-            {cities.map((c) => (
-              <span key={c} className={styles.cityTag}>
-                {c}
-              </span>
-            ))}
-          </div>
+         
         </div>
       </section>
 

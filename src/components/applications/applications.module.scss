@@ -383,3 +383,12 @@
     transform: scale(1.35);
   }
 }
+
+.buttonsCta {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0  0 48px ;
+  gap: 16px;
+  justify-content: center;
+}

@@ -4,9 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import styles from "./carousel.module.scss";
-import { ButtonTag } from "../button";
-import { FiArrowDownRight } from "react-icons/fi";
-import { Folder } from "lucide-react";
 
 const CarouselComponent = () => {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -82,23 +79,6 @@ const CarouselComponent = () => {
             </div>
           ),
         )}
-      </div>
-
-      <div className={styles.clientesCta}>
-        <ButtonTag
-          label="Fale com a gente"
-          size="lg"
-          variant="primary"
-          icon={<FiArrowDownRight size={24} color="#191919" />}
-          onClick={() => handleClick("/contato")}
-        />
-        <ButtonTag
-          label="Veja nossos projetos"
-          size="lg"
-          variant="primary"
-          icon={<Folder size={20} color="#191919" />}
-          onClick={() => handleClick("/portfolio")}
-        />
       </div>
     </div>
   );
