@@ -1,18 +1,13 @@
 @use "@/styles/mixins.scss" as *;
 
 .hallWrapper {
-  width: 100%;
-
-  background: red;
-  padding: 16px;
-  height: calc(100vh - 140px);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  min-height: calc(100vh - 100px); // ← min-height em vez de height
+  height: auto;
   background: radial-gradient(circle at 50% 0%, $bg 0%, transparent 65%);
-
   @include respond-to("l") {
     height: 100vh;
-    padding: 140px;
+    min-height: unset;
+   padding: 200px 0 0;
   }
 }
 
@@ -21,9 +16,13 @@
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
+  width: 100%;
+  padding: 16px;
 
   @include respond-to("l") {
-    width: 100%;
+    padding: 0px;
+    max-width: 1192px;
+    margin: auto;
     align-items: center;
   }
 }
@@ -100,6 +99,8 @@
   border-radius: 16px;
   overflow: hidden;
   background: rgba(#fff, 0.04);
+  max-width: 768px;
+  max-height: 368px;
 
   margin-top: 16px;
   @include respond-to("l") {

@@ -35,7 +35,6 @@ export default function ProjHall() {
                 fill
                 className={styles.heroImg}
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

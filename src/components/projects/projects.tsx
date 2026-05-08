@@ -124,7 +124,6 @@ export default function Projects({ tag }: Props) {
                     alt={project.title}
                     fill
                     className={styles.projectsImage}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className={styles.projectsOverlay}>
                     <span className={styles.projectsOverlayTag}>
@@ -207,7 +206,6 @@ export default function Projects({ tag }: Props) {
                         alt={`${selectedProject.title} – imagem ${idx + 1}`}
                         fill
                         className={styles.modalImage}
-                        sizes="(max-width: 768px) 100vw, 55vw"
                         priority={idx === 0}
                       />
                     </div>

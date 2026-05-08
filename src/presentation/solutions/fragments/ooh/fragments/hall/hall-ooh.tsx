@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Folder } from "lucide-react";
 import Image from "next/image";
 
-export const OohHall = () => {
+const OohHall = () => {
   const router = useRouter();
 
   function handleClick(link: string) {
@@ -36,7 +36,6 @@ export const OohHall = () => {
                   fill
                   className={styles.heroImg}
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>

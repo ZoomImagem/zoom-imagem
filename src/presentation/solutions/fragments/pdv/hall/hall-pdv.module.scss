@@ -1,18 +1,13 @@
 @use "@/styles/mixins.scss" as *;
 
 .hallWrapper {
-  width: 100%;
-
-  background: red;
-  padding: 16px;
-  height: calc(100vh - 140px);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  min-height: calc(100vh - 100px); // ← min-height em vez de height
+  height: auto;
   background: radial-gradient(circle at 50% 0%, $bg 0%, transparent 65%);
-
   @include respond-to("l") {
     height: 100vh;
-    padding: 140px;
+    min-height: unset;
+    padding: 200px 0 0;
   }
 }
 
@@ -20,10 +15,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 16px;
 
   @include respond-to("l") {
-    width: 100%;
+    padding: 0px;
+    max-width: 1192px;
+    margin: auto;
     align-items: center;
   }
 }
@@ -36,10 +35,16 @@
   @include respond-to("l") {
     width: 100%;
     flex-direction: row;
-    gap: 5rem;
     align-items: center;
     justify-content: space-between;
   }
+  // @include respond-to("m") {
+  //   width: 100%;
+  //   flex-direction: row;
+
+  //   align-items: center;
+  //   justify-content: space-between;
+  // }
 }
 
 .heroButtons {
@@ -47,7 +52,7 @@
   width: 100%;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @include respond-to("l") {
     margin-top: 32px;
@@ -57,24 +62,18 @@
 
 // ── Esquerda ─────────────────────────────────────────────────
 .heroLeft {
-  flex: 1;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-
-  @include respond-to("l") {
-    gap: 1.25rem;
-  }
 }
 
 .heroTitle {
-  font-size: 36px;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 700;
   color: #fff;
   line-height: 1.15;
-
-  @include respond-to("l") {
-    font-size: 64px;
-  }
+  letter-spacing: -0.02em;
 }
 
 .heroText {
@@ -86,20 +85,6 @@
 
   @include respond-to("l") {
     color: rgba(#fff, 0.5);
-    display: flex;
-  }
-}
-
-.heroText2 {
-  font-size: 0.95rem;
-  color: rgba(#fff, 0.7);
-  line-height: 1.8;
-  max-width: 520px;
-  margin-top: 24px;
-  display: none;
-  @include respond-to("l") {
-    color: rgba(#fff, 0.5);
-    display: flex;
   }
 }
 
@@ -120,6 +105,9 @@
   border-radius: 16px;
   overflow: hidden;
   background: rgba(#fff, 0.04);
+  max-width: 768px;
+  min-width: 280px;
+  max-height: 368px;
 
   margin-top: 16px;
   @include respond-to("l") {

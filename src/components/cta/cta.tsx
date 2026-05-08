@@ -48,7 +48,7 @@ const CtaComponent = () => {
                 alt="Equipe Zoom PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 300px"
+                
               />
             </div>
             <div
@@ -59,7 +59,6 @@ const CtaComponent = () => {
                 alt="Material de PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>
             <div
@@ -70,7 +69,6 @@ const CtaComponent = () => {
                 alt="Produção PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>
 

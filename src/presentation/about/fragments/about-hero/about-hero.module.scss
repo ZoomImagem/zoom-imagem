@@ -2,11 +2,8 @@
 
 .hallWrapper {
   width: 100%;
-
   background: red;
-
   height: calc(100vh - 140px);
-
   background: url("/images/ooh/stranger-things/stranger9.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,29 +29,6 @@
     padding-top: 160px;
   }
 
-  h1 {
-    width: 100%;
-    font-size: 42px;
-    line-height: 120%;
-    margin-bottom: 24px;
-    color: #ffffff;
-
-    @include respond-to("l") {
-      font-size: 64px;
-      margin-bottom: 32px;
-    }
-  }
-
-  p {
-    line-height: 140%;
-    font-size: 20px;
-    color: $ice;
-
-    @include respond-to("l") {
-      font-size: 22px;
-    }
-  }
-
   span {
     font-size: 14px;
     color: $ice;
@@ -62,7 +36,35 @@
 }
 
 .titleDescription {
-  max-width: 920px;
+  max-width: 1192px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  h1 {
+    color: #fafafa;
+    font-size: 36px;
+    line-height: 120%;
+    font-weight: 300;
+    margin-bottom: 32px;
+    // display: none;
+
+    @include respond-to("l") {
+      font-size: 54px;
+      display: block;
+    }
+  }
+
+  p {
+    line-height: 120%;
+    font-size: 18px;
+    color: $ice;
+
+    @include respond-to("l") {
+      font-size: 22px;
+    }
+  }
 }
 
 .cardDescription {
@@ -82,7 +84,17 @@
     display: flex;
     position: absolute;
     bottom: 120px;
-    right: 80px;
+    right: 16rem;
+  }
+
+  p {
+    line-height: 120%;
+    font-size: 16px;
+    color: $ice;
+
+    @include respond-to("l") {
+      font-size: 18px;
+    }
   }
 }
 

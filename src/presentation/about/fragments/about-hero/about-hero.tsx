@@ -22,29 +22,29 @@ const AboutHeroComponent = () => {
             projetos de OOH, PDV e comunicação visual, com atuação em todo o
             Brasil.
           </p>
+
+          <div className={styles.ctaButtons}>
+            <ButtonTag
+              label="Fale com a Zoom"
+              size="lg"
+              variant="primary"
+              icon={<FiArrowRight size={20} color="#191919" />}
+              onClick={() => handleClick("/contato")}
+            />
+            <ButtonTag
+              label="Ver projetos"
+              size="lg"
+              variant="primary"
+              icon={<Folder size={20} color="#191919" />}
+              onClick={() => handleClick("/portfolio")}
+            />
+          </div>
         </div>
         <div className={styles.cardDescription}>
           <p>
             Mais do que planejar, a gente faz acontecer — com controle, escala e
             consistência.
           </p>
-        </div>
-
-        <div className={styles.ctaButtons}>
-          <ButtonTag
-            label="Fale com a Zoom"
-            size="lg"
-            variant="primary"
-            icon={<FiArrowRight size={20} color="#191919" />}
-            onClick={() => handleClick("/contato")}
-          />
-          <ButtonTag
-            label="Ver projetos"
-            size="lg"
-            variant="primary"
-            icon={<Folder size={20} color="#191919" />}
-            onClick={() => handleClick("/portfolio")}
-          />
         </div>
       </div>
     </section>

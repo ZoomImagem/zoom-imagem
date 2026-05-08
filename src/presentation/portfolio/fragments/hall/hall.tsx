@@ -15,41 +15,43 @@ export default function PortfolofioHall() {
 
   return (
     <>
-      <section className={styles.contentHall}>
-        <div className={styles.contentLeft}>
-          <h1>Projetos que mostram nossa capacidade de execução.</h1>
-          <p>
-            Da mídia exterior ao ponto de venda, reunimos projetos executados{" "}
-            <br /> em diferentes formatos, escalas e contextos.
-          </p>
-          <div className={styles.ctaHall}>
-            <ButtonTag
-              label="Fale com a Zoom"
-              size="lg"
-              variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
-              onClick={() => handleClick("/contato")}
-            />
+      <section className={styles.hallWrapper}>
+        <div className={styles.contentHall}>
+          <div className={styles.contentLeft}>
+            <h1>Projetos que mostram nossa capacidade de execução.</h1>
+            <p>
+              Da mídia exterior ao ponto de venda, reunimos projetos executados{" "}
+              <br /> em diferentes formatos, escalas e contextos.
+            </p>
+            <div className={styles.ctaHall}>
+              <ButtonTag
+                label="Fale com a Zoom"
+                size="lg"
+                variant="primary"
+                icon={<FiArrowRight size={24} color="#191919" />}
+                onClick={() => handleClick("/contato")}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className={styles.contentRight}>
-          <div className={styles.imageHall}>
-            <Image
-              className={styles.image}
-              src="/images/projetos-especiais/fallout/fallout3.webp"
-              alt=""
-              width={400}
-              height={400}
-            />
+          <div className={styles.contentRight}>
+            <div className={styles.imageHall}>
+              <Image
+                className={styles.image}
+                src="/images/projetos-especiais/fallout/fallout3.webp"
+                alt=""
+                width={400}
+                height={400}
+              />
 
-            <div className={styles.ctaBadge}>
-              <div className={styles.ctaBadgeIcon}>
-                <FiCheck />
-              </div>
-              <div>
-                <p className={styles.ctaBadgeTitle}>+500 projetos</p>
-                <p className={styles.ctaBadgeSub}>entregues com sucesso</p>
+              <div className={styles.ctaBadge}>
+                <div className={styles.ctaBadgeIcon}>
+                  <FiCheck />
+                </div>
+                <div>
+                  <p className={styles.ctaBadgeTitle}>+500 projetos</p>
+                  <p className={styles.ctaBadgeSub}>entregues com sucesso</p>
+                </div>
               </div>
             </div>
           </div>
