@@ -37,10 +37,10 @@ export const OohDescription = () => {
           </div>
           <div className={styles.imageBox}>
             <Image
-              src="/images/process/urbano.png"
+              src="/images/ooh/intelbras/intelbras1.webp"
               alt="Mídia OOH em ambiente urbano"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
