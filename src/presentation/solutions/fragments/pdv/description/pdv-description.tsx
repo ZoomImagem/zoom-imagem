@@ -43,8 +43,8 @@ export const PdvDescription = () => {
             <Image
               src="/images/senna.jpg"
               alt="Equipe Zoom produzindo materiais para PDV"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>

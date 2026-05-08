@@ -10,7 +10,6 @@ import { oohTypes, steps } from "./constants/desc-ooh.constants";
 import styles from "./description-ooh.module.scss";
 
 export const OohDescription = () => {
-
   const router = useRouter();
 
   function handleClick(link: string) {
@@ -22,7 +21,6 @@ export const OohDescription = () => {
       <section className={styles.sectionModal}>
         <div className={styles.contentWhat}>
           <div className={styles.textBlock}>
-
             <h2>O que é OOH (Out of Home)?</h2>
             <p>
               OOH (Out of Home) é toda forma de publicidade realizada fora de
@@ -47,7 +45,6 @@ export const OohDescription = () => {
         </div>
       </section>
 
-
       <section className={styles.sectionModal}>
         <Projects tag="OOH" />
       </section>
@@ -58,13 +55,12 @@ export const OohDescription = () => {
             <Image
               src="/images/projetos-especiais/tartarugas-ninja/tartaruga1.jpg"
               alt="Equipe Zoom executando campanha OOH"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
           <div className={styles.textBlock}>
-
             <h2>Execução completa de campanhas de OOH</h2>
             <p>
               A Zoom atua na produção e execução de projetos de OOH, garantindo
@@ -98,7 +94,6 @@ export const OohDescription = () => {
           />
         </div>
       </section>
-
 
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
@@ -139,7 +134,9 @@ export const OohDescription = () => {
       <section className={styles.sectionModal}>
         <div className={styles.contentRange}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.titleLight}>Execução de OOH em todo o Brasil</h2>
+            <h2 className={styles.titleLight}>
+              Execução de OOH em todo o Brasil
+            </h2>
             <p>
               Atendemos projetos em diferentes regiões do Brasil, garantindo
               padronização, controle e eficiência mesmo em campanhas de grande
@@ -150,7 +147,6 @@ export const OohDescription = () => {
               cidades com consistência.
             </p>
           </div>
-
         </div>
 
         <CtaTag />
