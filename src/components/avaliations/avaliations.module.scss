@@ -4,11 +4,10 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-
   align-items: center;
 
   @include respond-to("l") {
-    padding: 0  1.5rem 4rem;
+    padding: 0 1.5rem 4rem;
   }
 }
 
@@ -19,15 +18,20 @@
   align-items: center;
   margin: 32px 0;
   gap: 12px;
-  background: rgba(#fff, .9);
-  padding: 16px;
+  background: rgba(#fff, 0.9);
+  padding: 8px;
   border-radius: 24px;
+
+  @include respond-to("l") {
+    padding: 16px 0;
+  }
 }
 
 .headerAvaliations {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 100%;
 
   h2 {
     color: $bg;
@@ -40,24 +44,33 @@
   }
 
   .summary {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-around;
     margin-top: 0.75rem;
+    gap: 12px;
 
     @include respond-to("l") {
-    flex-direction: row;
+      flex-direction: row;
     }
-    
   }
 
   @include respond-to("l") {
     h2 {
-     font-size: 24px;
+      font-size: 24px;
     }
+  }
+}
+
+.googleHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond-to("l") {
+    flex-direction: row;
+    gap: 16px;
   }
 }
 
@@ -66,35 +79,35 @@
   font-weight: 700;
   color: $yellow;
   line-height: 120%;
-  margin-left: 16px;
-}
 
-.googleHeader {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
+  @include respond-to("l") {
+    margin-left: 16px;
+  }
 }
 
 .stars {
   display: flex;
   gap: 3px;
-  color: #f5a623;
   font-size: 40px;
+  justify-content: center;
+  margin: 12px 0;
+
+  @include respond-to("l") {
+    margin: 12px 0;
+  }
+
 }
 
 .star {
   color: #f5a623;
-  font-size: 20px;
+  font-size: 28px;
   display: flex;
-font-size: 40px;
-align-items: center;
+  align-items: center;
 }
 
 .starEmpty {
   color: #d4d4d4;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .totalRatings {
@@ -102,82 +115,45 @@ align-items: center;
   color: #888;
 }
 
-.grid {
+.carouselOuter {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
+}
 
-  @include respond-to("l") {
-    flex-direction: row;
-    width: 900px;
-    // height: 368px;
-    align-items: center;
-  }
+.carouselWrapper {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 12px;
+  gap: 16px;
+  width: max-content;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .card {
-  width: 100%;
+  flex-shrink: 0;
+  width: 280px;
   height: 368px;
-  position: relative;
   border-radius: 16px;
   border: 1px solid $ice;
   padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: box-shadow 0.2s ease;
   box-shadow: 0 0 8px 1px rgba(#000, 0.2);
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   inset: 0;
-  //   border-radius: 16px;
-  //   padding: 1.3px;
-  //   background: linear-gradient(190deg, #f5c518 0%, #e6003a 60%, #f5c518 100%);
-  //   -webkit-mask:
-  //     linear-gradient(#fff 0 0) content-box,
-  //     linear-gradient(#fff 0 0);
-  //   -webkit-mask-composite: xor;
-  //   mask-composite: exclude;
-  //   pointer-events: none;
-  // }
-
   @include respond-to("l") {
-    width: 568px;
     height: 268px;
-  }
-}
-
-.slideLeft {
-  animation: slideFromRight 0.3s ease forwards;
-}
-
-.slideRight {
-  animation: slideFromLeft 0.3s ease forwards;
-}
-
-@keyframes slideFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+    width: 368px;
   }
 }
 
@@ -189,19 +165,14 @@ align-items: center;
   flex-direction: row;
   padding: 16px;
   gap: 16px;
-  background: #D1D2D4;
+  background: #d1d2d4;
   border-radius: 16px;
-
-  
-
-  @include respond-to("l") {
-    // max-width: 368px;
-  }
 }
 
 .ArrowsDisplay {
   display: none;
   cursor: pointer;
+  flex-shrink: 0;
 
   @include respond-to("l") {
     display: flex;
@@ -209,8 +180,8 @@ align-items: center;
 }
 
 .avatar {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -237,7 +208,7 @@ align-items: center;
   flex-direction: column;
 
   @include respond-to("l") {
-    gap: 12px;
+    // gap: 12px;
   }
 }
 
@@ -248,7 +219,7 @@ align-items: center;
   color: #000;
 
   @include respond-to("l") {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -263,15 +234,14 @@ align-items: center;
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+
   .reviewText {
-    font-size: 18px;
+    font-size: 16px;
     color: $bg;
     flex: 1;
     line-height: 120%;
   }
 }
-
 
 .loading {
   text-align: center;
@@ -294,10 +264,6 @@ align-items: center;
   justify-content: center;
   gap: 8px;
   margin-top: 8px;
-
-  @include respond-to("l") {
-    display: none;
-  }
 }
 
 .dot {
