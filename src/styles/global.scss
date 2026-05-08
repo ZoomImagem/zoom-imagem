@@ -1,4 +1,4 @@
-@use "./mixins";
+@use "@/styles/mixins.scss" as *;
 
 @font-face {
   font-family: "Glancyr Neue";
@@ -40,3 +40,4 @@ ul {
     color-scheme: dark;
   }
 }
+

@@ -6,6 +6,7 @@ import styles from "./home.module.scss";
 const HomeComponent = () => {
   return (
     <>
+    
       <div className={styles.hallWrapper}>
         <div className={styles.homeBackground}>
           <video autoPlay muted loop playsInline className={styles.heroVideo}>

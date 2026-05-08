@@ -1,6 +1,7 @@
+import { FooterTag, HeaderTag } from "@/components";
 import type { Metadata } from "next";
 import "../styles/global.scss";
-import { FooterTag, HeaderTag } from "@/components";
+import { WhatsappTag } from "@/components/whatsapp";
 
 export const metadata: Metadata = {
   title: "Zoom",
@@ -24,6 +25,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <WhatsappTag />
         <HeaderTag />
 
         {children}
