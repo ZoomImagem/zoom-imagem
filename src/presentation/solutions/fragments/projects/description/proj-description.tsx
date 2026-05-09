@@ -32,8 +32,8 @@ export const ProjDescription = () => {
             <Image
               src="/images/projetos-especiais/fallout/fallout3.webp"
               alt="Projeto especial de comunicação"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
@@ -46,8 +46,8 @@ export const ProjDescription = () => {
             <Image
               src="/images/projetos-especiais/senna/senna3.webp"
               alt="Equipe Zoom executando projeto especial"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>

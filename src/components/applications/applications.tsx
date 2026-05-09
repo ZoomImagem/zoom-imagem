@@ -155,7 +155,6 @@ const ApplicationsComponent = () => {
                           alt=""
                           fill
                           className={styles.modalImage}
-                          sizes="(max-width: 768px) 100vw, 55vw"
                           priority={idx === 0}
                         />
                       </div>

@@ -28,8 +28,8 @@ export const PdvDescription = () => {
             <Image
               src="/images/pdv/herois/heroi3.webp"
               alt="Material de PDV em ambiente de loja"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
@@ -41,7 +41,7 @@ export const PdvDescription = () => {
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
             <Image
-              src="/images/senna.jpg"
+              src="/images/pdv/disney/disney2.jpg"
               alt="Equipe Zoom produzindo materiais para PDV"
               width={1920}
               height={1080}

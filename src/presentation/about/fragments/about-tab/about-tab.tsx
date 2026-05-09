@@ -2,65 +2,12 @@
 
 import { ButtonTag, CarouselTag, ContentTag } from "@/components";
 import { CtaTag } from "@/components/cta";
-import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { IconType } from "react-icons";
-import {
-  FiArrowDownRight,
-  FiArrowRight,
-  FiClipboard,
-  FiEye,
-  FiPlay,
-  FiSettings,
-} from "react-icons/fi";
+import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
 import styles from "./about-tab.module.scss";
-
-interface Stage {
-  id: string;
-  phase?: string;
-  icon: IconType;
-  label: string;
-  tools: string[];
-  color: "bubleColor";
-}
-
-const stages: Stage[] = [
-  {
-    id: "plan",
-    phase: "Planejamento",
-    icon: FiClipboard,
-    label: "Planejamento técnico",
-    tools: ["Cada projeto é pensado para funcionar na prática"],
-    color: "bubleColor",
-  },
-  {
-    id: "prod",
-    phase: "Produção",
-    icon: FiSettings,
-    label: "Produção própria",
-    tools: ["Controle total sobre qualidade, prazo e execução"],
-    color: "bubleColor",
-  },
-
-  {
-    id: "exec",
-    phase: "Execução",
-    icon: FiPlay,
-    label: "Execução em campo",
-    tools: ["Equipe preparada para implementar com padrão"],
-    color: "bubleColor",
-  },
-  {
-    id: "acc",
-    phase: "Acompanhamento",
-    icon: FiEye,
-    label: "Acompanhamento",
-    tools: ["Monitoramento para garantir qualidade"],
-    color: "bubleColor",
-  },
-];
+import { clientsMobile, features, stages } from "./constants/about-tab.constants";
 
 const Arrow: React.FC = () => (
   <div className={styles.arrow}>
@@ -70,72 +17,6 @@ const Arrow: React.FC = () => (
     <span className={styles.arrowHead} />
   </div>
 );
-
-const features = [
-  {
-    icon: ShieldCheck,
-    title: "Execução real",
-    description: "Não dependemos de terceiros.",
-  },
-  {
-    icon: Layers,
-    title: "Consistência",
-    description: "Entrega padronizada.",
-  },
-  {
-    icon: Gauge,
-    title: "Agilidade com controle ",
-    description: "Velocidade com qualidade.",
-  },
-  {
-    icon: Target,
-    title: "Visão prática ",
-    description: "Projetos pensados para funcionar.",
-  },
-];
-
-const clientsMobile = [
-  {
-    name: "byd",
-    src: "/images/client-logo/byd-branco.webp",
-  },
-  {
-    name: "99",
-    src: "/images/client-logo/99-branco.png",
-  },
-  {
-    name: "aws",
-    src: "/images/client-logo/aws-branco.png",
-  },
-  {
-    name: "heineken",
-    src: "/images/client-logo/heineken-branco.png",
-  },
-  {
-    name: "itau",
-    src: "/images/client-logo/itau-branco.png",
-  },
-  {
-    name: "santander",
-    src: "/images/client-logo/santander-branco.png",
-  },
-  {
-    name: "netflix",
-    src: "/images/client-logo/netflix-branco.png",
-  },
-  {
-    name: "vivo",
-    src: "/images/client-logo/vivo-branco.png",
-  },
-  {
-    name: "bk",
-    src: "/images/client-logo/bk-branco.png",
-  },
-  {
-    name: "disney",
-    src: "/images/client-logo/disney3.jpg",
-  },
-];
 
 const AboutTabComponent = () => {
   const router = useRouter();

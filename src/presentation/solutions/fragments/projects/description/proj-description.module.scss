@@ -191,6 +191,12 @@
   border-radius: 1.5rem;
   background-color: rgba(#fff, 0.04);
   border: 1px solid rgba(#fff, 0.08);
+  @include respond-to("l") {
+    &:hover {
+      transform: scale(1.02);
+       border: 1px solid $yellow;
+    }
+  }
 }
 
 .stepNumber {

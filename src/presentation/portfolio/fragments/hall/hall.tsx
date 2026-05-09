@@ -40,8 +40,8 @@ export default function PortfolofioHall() {
                 className={styles.image}
                 src="/images/projetos-especiais/fallout/fallout3.webp"
                 alt=""
-                width={400}
-                height={400}
+                width={1920}
+                height={1080}
               />
 
               <div className={styles.ctaBadge}>

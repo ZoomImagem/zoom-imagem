@@ -263,7 +263,6 @@ export const EcoDescription = () => {
                   alt="Equipe Zoom PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
               <div
@@ -274,7 +273,6 @@ export const EcoDescription = () => {
                   alt="Material de PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 200px"
                 />
               </div>
               <div
@@ -285,7 +283,6 @@ export const EcoDescription = () => {
                   alt="Produção PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 200px"
                 />
               </div>
 
@@ -378,7 +375,6 @@ export const EcoDescription = () => {
                         alt=""
                         fill
                         className={styles.modalImage}
-                        sizes="(max-width: 768px) 100vw, 55vw"
                         priority={idx === 0}
                       />
                     </div>
