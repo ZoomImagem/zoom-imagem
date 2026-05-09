@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
   padding-top: 100px;
 
   @include respond-to("l") {
@@ -34,32 +34,30 @@
 
 .hallTitle {
   color: #fafafa;
-  font-size: 36px;
+  font-size: $hall-title-mobile;
   line-height: 100%;
   font-weight: 300;
   margin-bottom: 32px;
 
   @include respond-to("l") {
-    font-size: 72px;
+    font-size: $hall-title-desktop;
     display: none;
   }
 }
 
 .hallTitleDesktop {
   color: #fafafa;
-  font-size: 50px;
+  font-size: $hall-title-mobile;
   line-height: 100%;
   font-weight: 300;
   margin-bottom: 32px;
   display: none;
 
   @include respond-to("l") {
-    font-size: 72px;
+    font-size: $hall-title-desktop;
     display: block;
   }
-  @include respond-to("m") {
-    font-size: 54px;
-  }
+
   strong {
     font-weight: 700;
   }
@@ -67,13 +65,13 @@
 
 .hallDescriptionMobile {
   color: $ice;
-  font-size: 20px;
+    font-size: $hall-subtitle-mobile;
   line-height: 28px;
   margin-bottom: 40px;
 
   @include respond-to("l") {
     display: none;
-    font-size: 28px;
+    font-size: $hall-subtitle-desktop;
   }
 }
 
@@ -106,13 +104,7 @@
     background: #ffffff33;
   }
 
-  .labelCheck {
-    color: #ffffff;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-  }
+
 }
 
 .ctaButtons {
@@ -151,7 +143,7 @@
 
   p {
     color: $ice;
-    font-size: 20px;
+    font-size: $hall-subtitle-desktop;
     line-height: 28px;
   }
 

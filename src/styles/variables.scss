@@ -4,16 +4,26 @@ $ds-breakpoint-m: 640px;
 $ds-breakpoint-l: 900px;
 $ds-breakpoint-xl: 1300px;
 $ds-breakpoint-2xl: 1400px;
-$ds-gradient-green-green-45: linear-gradient(225deg, #77FF00 0%, #CCFF66 100%);
-$ds-gradient-green-green-90: linear-gradient(63.83deg, #77FF00 15.08%, #CCFF66 85.04%);
-$ds-gradient-green-black-45: linear-gradient(225deg, #000000 0%, #CCFF66 100%);
-$ds-gradient-green-black-90: linear-gradient(63.83deg, #000000 16.48%, #CCFF66 83.52%);
-$ds-gradient-black-gray-45: linear-gradient(225deg, #0A0A0A 0%, #1D1D1D 100%);
-$ds-gradient-black-gray-90: linear-gradient(63.83deg, #030303 23.52%, #191919 53.02%, #030303 83.52%);
 
-
-// Brand colors
+// colors
 $pink: #ee0874;
 $yellow: #ffd200;
 $bg: #0d101b;
 $ice: #c4c4c4;
+
+// text-width
+
+$hall-title-desktop: 54px;
+$hall-title-mobile: 28px;
+$hall-subtitle-desktop: 20px;
+$hall-subtitle-mobile: 14px;
+
+$content-title-desktop: 32px;
+$content-title-mobile: 24px;
+$content-subtitle-desktop: 20px;
+$content-subtitle-mobile: 14px;
+
+$cards-title-desktop: 18px;
+$cards-title-mobile: 16px;
+$cards-subtitle-desktop: 16px;
+$cards-subtitle-mobile: 14px;

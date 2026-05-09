@@ -2,6 +2,7 @@
 
 .hallWrapper {
   width: 100%;
+  height: 540px;
   display: flex;
   flex-direction: row;
   padding: 32px;
@@ -12,6 +13,7 @@
   justify-content: space-around;
 
   @include respond-to("l") {
+    height: 100vh;
     padding: 140px 0 0;
   }
 }
@@ -43,14 +45,16 @@
 
   h1 {
     color: #fff;
+    font-size: $hall-title-mobile;
 
     @include respond-to("l") {
-      font-size: 42px;
+      font-size: $hall-title-desktop;
     }
   }
 
   p {
     color: $ice;
+    font-size: $hall-subtitle-desktop;
   }
 }
 
@@ -114,13 +118,13 @@
 }
 
 .ctaBadgeTitle {
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
 }
 
 .ctaBadgeSub {
-  font-size: 0.72rem;
+  font-size: 12px;
   color: rgba(#fff, 0.45);
 }

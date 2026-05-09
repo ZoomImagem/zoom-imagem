@@ -63,13 +63,15 @@
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: $hall-title-mobile;
   font-weight: 700;
   color: #fff;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
+  line-height: 140%;
 
+  @include respond-to("l") {
+    font-size: $hall-title-desktop;
+  }
+}
 .heroText {
   font-size: 0.95rem;
   color: rgba(#fff, 0.7);

@@ -3,7 +3,7 @@
 import { ButtonTag, ContentTag } from "@/components";
 import styles from "./applications.module.scss";
 import { AmbienteItem, items } from "./constants/aplications.constants";
-import { FiArrowRight, FiFolder } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";

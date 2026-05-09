@@ -28,11 +28,6 @@
   @include respond-to("l") {
     padding-top: 160px;
   }
-
-  span {
-    font-size: 14px;
-    color: $ice;
-  }
 }
 
 .titleDescription {
@@ -44,25 +39,24 @@
 
   h1 {
     color: #fafafa;
-    font-size: 36px;
-    line-height: 120%;
+    font-size: $hall-title-mobile;
+    line-height: 140%;
     font-weight: 300;
     margin-bottom: 32px;
-    // display: none;
 
     @include respond-to("l") {
-      font-size: 54px;
+      font-size: $hall-title-desktop;
       display: block;
     }
   }
 
   p {
-    line-height: 120%;
-    font-size: 18px;
+    line-height: 140%;
+    font-size: $hall-subtitle-mobile;
     color: $ice;
 
     @include respond-to("l") {
-      font-size: 22px;
+      font-size: $hall-subtitle-desktop;
     }
   }
 }

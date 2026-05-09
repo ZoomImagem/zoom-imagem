@@ -4,7 +4,7 @@ import styles from "./solutions.module.scss";
 
 import { SolutionsListTag } from "./fragments/solutions-list";
 
-export const SolutionsComponent = () => {
+const SolutionsComponent = () => {
   return (
     <>
       <div className={styles.solutionsWrapper}>

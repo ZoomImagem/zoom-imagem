@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   padding: 24px 16px;
-  // background-color: rgba(#8fb996, 0.8);
   gap: 64px;
   border-radius: 24px;
   justify-content: center;
@@ -31,7 +30,6 @@
 }
 
 .bottomRight {
-  
   background: radial-gradient(circle at 50% 50%, #577e5e 0%, #223f28 100%);
 }
 
@@ -569,14 +567,14 @@
 }
 
 .ctaBadgeTitle {
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
-  line-height: 1.2;
+  line-height: 140%;
 }
 
 .ctaBadgeSub {
-  font-size: 0.72rem;
+  font-size: 12px;
   color: rgba(#fff, 0.45);
 }
 
@@ -585,12 +583,11 @@
 }
 
 .ctaTitle {
-  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-size: $hall-title-desktop;
   font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.25rem;
+  color: #111d13;
+  line-height: 140%;
+  margin-bottom: 14px;
 }
 
 .ctaTitleHighlight {
@@ -611,13 +608,16 @@
 }
 
 .ctaText {
-  font-size: 1rem;
+  font-size: $hall-subtitle-mobile;
   color: rgba(#fff, 0.5);
-  line-height: 1.75;
+  line-height: 140%;
   max-width: 520px;
   margin-bottom: 2rem;
-}
 
+  @include respond-to("l") {
+    font-size: $hall-subtitle-desktop;
+  }
+}
 .ctaFeatures {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -819,7 +819,7 @@
   }
 
   &--active {
-    background: $pink;
+    background: #3e5f44;
     transform: scale(1.35);
   }
 }

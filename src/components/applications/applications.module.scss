@@ -61,32 +61,31 @@
 
 .header {
   margin-bottom: 48px;
+  text-align: center;
 
   h2 {
-    font-size: 36px;
+    font-size: $hall-title-mobile;
     font-weight: 700;
     letter-spacing: -0.03em;
-    line-height: 1.1;
+    line-height: 140%;
     color: #f0f0f0;
     margin-bottom: 16px;
     text-align: center;
 
     @include respond-to("l") {
-      font-size: 64px;
+      font-size: $hall-title-desktop;
     }
   }
 
   p {
-    font-size: 16px;
+    font-size: $hall-subtitle-desktop;
     color: #888;
-    line-height: 1.6;
 
     @include respond-to("l") {
-      font-size: 24px;
+      font-size: $hall-subtitle-desktop;
     }
   }
 }
-
 
 .lista {
   list-style: none;
@@ -166,13 +165,13 @@
   gap: 16px;
 
   span {
-    font-size: 18px;
+    font-size: $content-title-mobile;
     font-weight: 600;
     line-height: 110%;
     color: #ffffff;
 
     @include respond-to("l") {
-      font-size: 28px;
+      font-size: $content-title-desktop;
       margin-bottom: 8px;
     }
   }
@@ -184,12 +183,6 @@
   justify-content: center;
 }
 
-.icone {
-  font-size: 1.75rem;
-  line-height: 1;
-  display: block;
-  transition: transform 0.28s ease;
-}
 
 // Modal
 .modal {
@@ -278,9 +271,8 @@
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
   overflow: hidden;
-  background: rgba($bg, .2);
+  background: rgba($bg, 0.2);
   height: 400px;
-  
 
   @include respond-to("l") {
     width: 55%;
