@@ -329,7 +329,7 @@ export const EcoDescription = () => {
                   label="Falar com a Zoom"
                   size="lg"
                   variant="ecoglass"
-                  icon={<FiArrowRight size={24} color="#111D13" />}
+                  icon={<FiArrowRight size={22} color="#111D13" />}
                   onClick={() => handleClick("/contato")}
                 />
               </div>

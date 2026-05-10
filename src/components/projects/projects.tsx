@@ -313,7 +313,7 @@ export default function Projects({ tag }: Props) {
                       size="lg"
                       variant="primary"
                       onClick={() => handleClick("/contato")}
-                      icon={<FiArrowRight size={24} color="#191919" />}
+                      icon={<FiArrowRight size={22} color="#000" />}
                     />
                   </div>
                 </div>

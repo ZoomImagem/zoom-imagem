@@ -32,7 +32,7 @@ export const EcoHall = () => {
                 label="Falar com a Zoom"
                 size="lg"
                 variant="ecoglass"
-                icon={<FiArrowRight size={20} color="#fff" />}
+                icon={<FiArrowRight size={22} color="#fff" />}
                 onClick={() => handleClick("/contato")}
               />
               <ButtonTag
@@ -40,7 +40,7 @@ export const EcoHall = () => {
                 size="lg"
                 variant="ecoglass"
                 onClick={() => handleClick("/portfolio")}
-                icon={<Folder size={20} color="#fff" />}
+                icon={<Folder size={22} color="#fff" />}
               />
             </div>
           </div>

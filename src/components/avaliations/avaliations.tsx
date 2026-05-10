@@ -6,13 +6,13 @@ import {
   FiArrowRight,
   FiChevronLeft,
   FiChevronRight,
-  FiFolder,
   FiStar,
 } from "react-icons/fi";
 import { ButtonTag } from "../button";
 import styles from "./avaliations.module.scss";
 import { ReviewsData } from "./constants/avaliations.constants";
 import { useRouter } from "next/navigation";
+import { Folder } from "lucide-react";
 
 const Stars = ({ rating }: { rating: number }) => (
   <div className={styles.stars}>
@@ -250,7 +250,7 @@ const AvaliationsComponent = () => {
             size="lg"
             variant="secondary"
             onClick={() => handleClick("/portfolio")}
-            icon={<FiFolder size={24} color="#EE0874" />}
+            icon={<Folder size={24} color="#EE0874" />}
           />
         </div>
       </div>

@@ -116,7 +116,7 @@ const CtaComponent = () => {
                 label="Falar com a Zoom"
                 size="lg"
                 variant="primary"
-                icon={<FiArrowRight size={24} color="#ee0874" />}
+                icon={<FiArrowRight size={22} color="#000" />}
                 onClick={() => handleClick("/contato")}
               />
             </div>

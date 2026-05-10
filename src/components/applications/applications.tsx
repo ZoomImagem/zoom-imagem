@@ -113,7 +113,7 @@ const ApplicationsComponent = () => {
             size="lg"
             variant="primary"
             onClick={() => handleClick("/contato")}
-            icon={<FiArrowRight size={24} color="#EE0874" />}
+            icon={<FiArrowRight size={24} color="#000" />}
           />
          
         </div>

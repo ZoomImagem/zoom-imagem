@@ -45,14 +45,14 @@ const OohHall = () => {
               label="Ver mais projetos"
               size="lg"
               variant="primary"
-              icon={<Folder size={24} color="#191919" />}
+              icon={<Folder size={22} color="#000" />}
               onClick={() => handleClick("/portfolio")}
             />
             <ButtonTag
               label="Falar com a zoom"
               size="lg"
               variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
+              icon={<FiArrowRight size={22} color="#000" />}
               onClick={() => handleClick("/contato")}
             />
           </div>

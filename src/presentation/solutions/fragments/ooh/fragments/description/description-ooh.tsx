@@ -82,14 +82,14 @@ export const OohDescription = () => {
             label="Falar com a Zoom"
             size="lg"
             variant="primary"
-            icon={<FiArrowRight size={24} color="#191919" />}
+            icon={<FiArrowRight size={22} color="#000" />}
             onClick={() => handleClick("/contato")}
           />
           <ButtonTag
             label="Ver mais projetos"
             size="lg"
             variant="primary"
-            icon={<FiArrowRight size={24} color="#191919" />}
+            icon={<FiArrowRight size={22} color="#000" />}
             onClick={() => handleClick("/portfolio")}
           />
         </div>

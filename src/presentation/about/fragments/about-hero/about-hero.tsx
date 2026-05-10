@@ -28,14 +28,14 @@ const AboutHeroComponent = () => {
               label="Fale com a Zoom"
               size="lg"
               variant="primary"
-              icon={<FiArrowRight size={20} color="#191919" />}
+              icon={<FiArrowRight size={20} color="#000" />}
               onClick={() => handleClick("/contato")}
             />
             <ButtonTag
               label="Ver projetos"
               size="lg"
               variant="primary"
-              icon={<Folder size={20} color="#191919" />}
+              icon={<Folder size={20} color="#000" />}
               onClick={() => handleClick("/portfolio")}
             />
           </div>
