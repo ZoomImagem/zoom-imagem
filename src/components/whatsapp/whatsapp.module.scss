@@ -4,9 +4,6 @@
   position: fixed;
   display: flex;
   justify-content: flex-end;
-  gap: 16px;
-  width: 208px;
-  height: 80px;
   bottom: 24px;
   right: 24px;
   z-index: 999;
@@ -15,9 +12,6 @@
   gap: 8px;
 
   @include respond-to("l") {
-    width: 268px;
-    height: 120px;
-
     &:hover {
       .whatsappToast {
         opacity: 1;
