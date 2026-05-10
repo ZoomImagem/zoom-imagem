@@ -243,14 +243,14 @@ const AvaliationsComponent = () => {
             size="lg"
             variant="secondary"
             onClick={() => handleClick("/contato")}
-            icon={<FiArrowRight size={24} color="#EE0874" />}
+            icon={<FiArrowRight size={22} color="#EE0874" />}
           />
           <ButtonTag
             label="Confira nossos projetos"
             size="lg"
             variant="secondary"
             onClick={() => handleClick("/portfolio")}
-            icon={<Folder size={24} color="#EE0874" />}
+            icon={<Folder size={22} color="#EE0874" />}
           />
         </div>
       </div>
