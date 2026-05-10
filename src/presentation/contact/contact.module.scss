@@ -99,13 +99,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 99px;
+  border-radius: 50%;
   background: $pink;
   align-self: center;
   align-self: flex-end;
   box-shadow:
-    0 -5px 99px $pink,
-    0 -8px 109px $pink;
+    0 0px 60px $pink,
+    0 0px 60px $pink;
 
   @include respond-to("l") {
     margin-left: 86px;
