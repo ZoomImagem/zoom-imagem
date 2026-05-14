@@ -51,13 +51,13 @@ const HeaderComponent = () => {
             </li>
             <li className={styles.listMenuLi}>
               <Link href="/solucoes">Soluções</Link>
-              <ul className={styles.dropMenu}>
+              {/* <ul className={styles.dropMenu}>
                 {solucoes.map((s) => (
                   <li onClick={() => setMenuOpen(false)} key={s.slug}>
                     <Link href={`/solucoes/${s.slug}`}>{s.label}</Link>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </li>
             <li
               className={styles.listMenuLi}
