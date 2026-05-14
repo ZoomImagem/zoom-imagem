@@ -102,9 +102,9 @@ export default function Projects({ tag }: Props) {
       <section className={styles.projects} ref={sectionRef}>
         <div className={styles.projectsContainer}>
           <div className={styles.projectsHeader}>
-            <h2 className={styles.projectsTitle}>
+            {/* <h2 className={styles.projectsTitle}>
               Confira alguns dos nossos trabalhos
-            </h2>
+            </h2> */}
             <p className={styles.projectsSubtitle}>
               Conheça alguns dos projetos desenvolvidos pela nossa equipe para
               diferentes marcas e campanhas.
