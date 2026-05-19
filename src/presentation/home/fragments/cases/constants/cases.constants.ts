@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "PDV",
     image: "/images/projetos-especiais/rexona/rexona4.jpg",
-    url:"/solucoes/pontos-de-venda"
+    url:"/solucoes/ponto-de-venda"
   },
   {
     title: "OOH",

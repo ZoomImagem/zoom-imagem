@@ -10,8 +10,7 @@ const SolutionsComponent = () => {
       <div className={styles.solutionsWrapper}>
         <div className={styles.solutionsContent}>
           <div className={styles.solutionsTitle}>
-            <h2>Serviços prestados pela Zoom Imagem</h2>
-            <p>Conheça as principais soluções que a Zoom oferece</p>
+            <h2>Conheça as principais soluções que a Zoom oferece</h2>
           </div>
           <SolutionsListTag />
         </div>

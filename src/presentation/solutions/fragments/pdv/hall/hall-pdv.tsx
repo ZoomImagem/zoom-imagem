@@ -54,7 +54,7 @@ const PdvHall = () => {
               onClick={() => handleClick("/portfolio")}
             />
             <ButtonTag
-              label="Falar com a zoom"
+              label="Entre em contato agora"
               size="lg"
               variant="primary"
               icon={<FiArrowRight size={22} color="#000" />}

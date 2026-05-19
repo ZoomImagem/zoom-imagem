@@ -5,10 +5,17 @@ import { Projects } from "@/components/projects";
 import Image from "next/image";
 import { projectTypes, steps } from "./constants/proj-desc.constants";
 import styles from "./proj-description.module.scss";
+import { ButtonTag } from "@/components";
+import { FiArrowRight } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 export const ProjDescription = () => {
 
+const router = useRouter();
 
+  function handleClick(link: string) {
+    router.push(link);
+  }
   return (
     <>
 
@@ -41,6 +48,10 @@ export const ProjDescription = () => {
       </section>
 
       <section className={styles.sectionModal}>
+        <Projects tag="Projetos especiais" />
+      </section>
+
+      <section className={styles.sectionModal}>
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
             <Image
@@ -65,6 +76,26 @@ export const ProjDescription = () => {
           </div>
         </div>
       </section>
+
+      <div className={styles.buttonsCta}>
+          <p className={styles.projectsCtaText}>
+            Quer ver mais projetos ou discutir o seu?
+          </p>
+          <ButtonTag
+            label="Entre em contato agora"
+            size="lg"
+            variant="primary"
+            icon={<FiArrowRight size={22} color="#000" />}
+            onClick={() => handleClick("/contato")}
+          />
+          <ButtonTag
+            label="Ver mais projetos"
+            size="lg"
+            variant="primary"
+            icon={<FiArrowRight size={22} color="#000" />}
+            onClick={() => handleClick("/portfolio")}
+          />
+        </div>
 
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
@@ -121,9 +152,7 @@ export const ProjDescription = () => {
         </div>
       </section>
 
-      <section className={styles.sectionModal}>
-        <Projects tag="Projetos especiais" />
-      </section>
+      
 
       <CtaTag />
     </>

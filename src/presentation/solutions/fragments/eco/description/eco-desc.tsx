@@ -326,7 +326,7 @@ export const EcoDescription = () => {
 
               <div className={styles.ctaActions}>
                 <ButtonTag
-                  label="Falar com a Zoom"
+                  label="Fale com nossa equipe"
                   size="lg"
                   variant="ecoglass"
                   icon={<FiArrowRight size={22} color="#111D13" />}

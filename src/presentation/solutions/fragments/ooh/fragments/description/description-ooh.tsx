@@ -79,7 +79,7 @@ export const OohDescription = () => {
             Quer ver mais projetos ou discutir o seu?
           </p>
           <ButtonTag
-            label="Falar com a Zoom"
+            label="Entre em contato agora"
             size="lg"
             variant="primary"
             icon={<FiArrowRight size={22} color="#000" />}

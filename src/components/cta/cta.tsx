@@ -113,7 +113,7 @@ const CtaComponent = () => {
 
             <div className={styles.ctaActions}>
               <ButtonTag
-                label="Falar com a Zoom"
+                label="Fale com nossa equipe"
                 size="lg"
                 variant="primary"
                 icon={<FiArrowRight size={22} color="#000" />}

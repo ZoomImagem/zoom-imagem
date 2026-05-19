@@ -96,9 +96,9 @@ const ContactComponent = () => {
                 <Image
                   className={styles.image}
                   alt="Fale conosco"
-                  src="/images/talking.jpg"
-                  width={334}
-                  height={621}
+                  src="/images/contato.webp"
+                  width={1920}
+                  height={1080}
                 />
               </div>
 

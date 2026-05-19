@@ -64,11 +64,11 @@ const AboutTabComponent = () => {
           </p>
           <div className={styles.buttonContact}>
             <ButtonTag
-              variant="secondary"
+              variant="primary"
               label="Impulsionar meu negócio"
               size="lg"
-              color="primary"
-              icon={<FiArrowDownRight size={24} color="#ee0874" />}
+              icon={<FiArrowDownRight size={24} color="#000" />}
+              onClick={() => handleClick("/contato")}
             />
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { FiFacebook, FiInstagram, FiLinkedin } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiYoutube } from "react-icons/fi";
 import styles from "./footer.module.scss";
 
 const FooterComponent = () => {
@@ -27,13 +27,13 @@ const FooterComponent = () => {
           <li onClick={() => handleClick("/")}>Zoom</li>
           <li onClick={() => handleClick("/sobre")}>Sobre</li>
           <li onClick={() => handleClick("/portfolio")}>Portifólio</li>
-          <li onClick={() => handleClick("/solucoes/linha-eco")}>Linha Eco</li>
+          <li onClick={() => handleClick("/contato")}>Contato</li>
         </ul>
 
         <div className={styles.socialContent}>
           <span>Nossas redes sociais</span>
           <ul className={styles.listSocialMobile}>
-            
+
             <li>
               <a
                 href="https://instagram.com/zoomimagembr"
@@ -51,7 +51,7 @@ const FooterComponent = () => {
               >
                 <FiFacebook size={22} color="#000000" />
               </a>
-            </li>
+            </li> 
 
             <li>
               <a
@@ -60,6 +60,15 @@ const FooterComponent = () => {
                 rel="noopener noreferrer"
               >
                 <FiLinkedin size={22} color="#000000" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@zoomimagem8948"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiYoutube size={22} color="#000000" />
               </a>
             </li>
           </ul>
@@ -75,7 +84,7 @@ const FooterComponent = () => {
         </p>
 
         <p>
-          <strong>Lauro de Freitas</strong>
+          <strong>Salvador</strong>
           <br />
           R. Prisco José de Souza, s/n - Lote Amp Recreio Ipitanga, Q 28 - Caji
           - Lauro de Freitas - BA, 42700-130, Brasil

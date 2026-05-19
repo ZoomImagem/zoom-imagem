@@ -51,13 +51,13 @@ const HeaderComponent = () => {
             </li>
             <li className={styles.listMenuLi}>
               <Link href="/solucoes">Soluções</Link>
-              {/* <ul className={styles.dropMenu}>
+              <ul className={styles.dropMenu}>
                 {solucoes.map((s) => (
                   <li onClick={() => setMenuOpen(false)} key={s.slug}>
                     <Link href={`/solucoes/${s.slug}`}>{s.label}</Link>
                   </li>
                 ))}
-              </ul> */}
+              </ul>
             </li>
             <li
               className={styles.listMenuLi}
@@ -69,7 +69,7 @@ const HeaderComponent = () => {
               className={styles.listMenuLi}
               onClick={() => handleClick("/sobre")}
             >
-              Sobre
+              Sobre nós
             </li>
             <li
               className={styles.listMenuLi}
@@ -132,8 +132,7 @@ const HeaderComponent = () => {
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/sobre")}
           >
-            Sobre
-          </li>
+            Sobre nós          </li>
           <li
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/contato")}

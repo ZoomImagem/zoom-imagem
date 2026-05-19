@@ -29,7 +29,7 @@ export const EcoHall = () => {
             </p>
             <div className={styles.heroActions}>
               <ButtonTag
-                label="Falar com a Zoom"
+                label="Impulsione seu negócio"
                 size="lg"
                 variant="ecoglass"
                 icon={<FiArrowRight size={22} color="#fff" />}

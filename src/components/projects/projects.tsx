@@ -309,7 +309,7 @@ export default function Projects({ tag }: Props) {
                   </p>
                   <div className={styles.buttonCta}>
                     <ButtonTag
-                      label="Falar com a Zoom"
+                      label="Entre em contato agora"
                       size="lg"
                       variant="primary"
                       onClick={() => handleClick("/contato")}
