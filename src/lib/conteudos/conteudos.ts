@@ -1,3 +1,4 @@
+import { BlogTag } from '@/presentation/contents/fragments/blog'
 import { NewsTag } from '@/presentation/contents/fragments/news'
 import { ComponentType } from 'react'
 
@@ -8,6 +9,6 @@ type Page = {
 }
 
 export const conteudos: Page[] = [
-  { label: 'Notícias', slug: 'noticias', component: NewsTag }
-  // { label: 'Blog', slug: 'blog', component: BlogTag },
+  { label: 'Notícias', slug: 'noticias', component: NewsTag },
+  { label: 'Blog', slug: 'blog', component: BlogTag }
 ]

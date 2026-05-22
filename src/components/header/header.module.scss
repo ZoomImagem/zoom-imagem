@@ -1,5 +1,5 @@
-@use "@/styles/mixins.scss" as *;
-@use "sass:color";
+@use '@/styles/mixins.scss' as *;
+@use 'sass:color';
 
 .headerWrapper {
   width: 100%;
@@ -10,7 +10,7 @@
   position: relative;
   padding: 24px;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     position: fixed;
     top: 0;
     left: 0;
@@ -41,11 +41,12 @@
       margin-top: 36px;
 
       .dropMenu {
-        left: calc(-20%);
+        left: calc(-2.2em);
       }
 
       .listMenuLi {
         font-size: 14px;
+       
       }
 
       .header {
@@ -82,13 +83,13 @@
     cursor: pointer;
   }
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: flex;
   }
 }
 
 .header::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 60px;
@@ -123,7 +124,7 @@
 
 .listMenu::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 1px;
   height: 52px;
   background: #4d4444;
@@ -166,7 +167,7 @@
   justify-content: space-between;
   pointer-events: all;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }
@@ -197,7 +198,7 @@
     visibility 300ms ease,
     transform 300ms ease;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }
@@ -271,27 +272,16 @@
   transform: translateY(0);
 }
 
-.dropItem {
-  position: relative;
-  height: 52px;
-  align-items: center;
-  padding: 0 24px;
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: 400;
-  text-align: center;
-}
 
 .dropMenu {
   position: absolute;
 
   top: calc(103%);
-  left: calc(-10%);
-  right: calc(0);
+  left: calc(0);
   background: $bg;
   border-radius: 12px;
   padding: 8px 0;
-  min-width: 180px;
+  min-width: 160px;
   z-index: 99;
   flex-direction: column;
   opacity: 0;
@@ -305,7 +295,7 @@
   li {
     height: 42px;
 
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
 
     &:hover {
@@ -341,7 +331,7 @@
     visibility 300ms ease,
     transform 300ms ease;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }
