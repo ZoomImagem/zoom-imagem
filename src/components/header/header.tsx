@@ -73,6 +73,12 @@ const HeaderComponent = () => {
             </li>
             <li
               className={styles.listMenuLi}
+              onClick={() => handleClick("/conteudos")}
+            >
+              Conteúdos
+            </li>
+            <li
+              className={styles.listMenuLi}
               onClick={() => handleClick("/contato")}
             >
               Contato
