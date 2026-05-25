@@ -4,6 +4,10 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import styles from "./post.module.scss";
 import { Article, ContentBlock } from "./constants/post.types";
+import { ButtonTag } from "@/components";
+import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface ArticlePageProps {
   article: Article;
@@ -102,12 +106,40 @@ const ContentBlockRenderer: React.FC<{ block: ContentBlock }> = ({ block }) => {
         </section>
       );
 
+    case "cta":
+      return (
+        <Link href={block.data.href} className={styles.ctaBlock}>
+          <span className={styles.ctaText}>{block.data.text}</span>
+          <span className={styles.ctaAction}>
+            {block.data.linkLabel}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </span>
+        </Link>
+      );
     default:
       return null;
   }
 };
 
 const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [article.id]);
@@ -140,15 +172,7 @@ const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
         </div>
 
         <div className={styles.articleFooter}>
-          <div className={styles.tags}>
-            {article.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* <div className={styles.share}>
+          <div className={styles.share}>
             <span className={styles.shareLabel}>Compartilhar</span>
             <button
               className={styles.shareBtn}
@@ -197,9 +221,30 @@ const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
               </svg>
             </button>
-          </div> */}
+          </div>
         </div>
       </article>
+      <div className={styles.contentCopy}>
+        <h3>
+          <strong>Seu projeto precisa </strong> de execução real
+        </h3>
+
+        <div className={styles.copyDescription}>
+          <p>
+            Fale com nossa equipe de especialistas e desenvolva campanhas com
+            presença, escala e impacto.{" "}
+            <strong>Entre em contato agora mesmo!</strong>
+          </p>
+
+          <ButtonTag
+            label="Entrar em contato"
+            size="lg"
+            variant="secondary"
+            onClick={() => handleClick("/contato")}
+            icon={<FiArrowDownRight size={24} color="#ee0874" />}
+          />
+        </div>
+      </div>
     </div>
   );
 };

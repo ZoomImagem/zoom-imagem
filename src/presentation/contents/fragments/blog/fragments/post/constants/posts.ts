@@ -122,13 +122,15 @@ export const articles: Article[] = [
           },
         ],
       },
+      {
+        type: "cta",
+        data: {
+          text: "Quer levar sua marca para ambientes de alto fluxo?",
+          linkLabel: "Nossas soluções em OOH",
+          href: "/solucoes/out-of-home",
+        },
+      },
     ],
-    tags: ["OOH", "Metrô", "Mídia urbana", "Branding"],
-    meta: {
-      title: "Publicidade em Metrôs, Trens e Túneis | OOH em Alto Fluxo",
-      description:
-        "Entenda por que campanhas em metrôs, trens e túneis continuam gerando impacto, frequência e lembrança de marca em ambientes urbanos.",
-    },
   },
 
   {
@@ -247,13 +249,15 @@ export const articles: Article[] = [
           },
         ],
       },
+      {
+        type: "cta",
+        data: {
+          text: "Quer levar sua marca para ambientes de alto fluxo?",
+          linkLabel: "Nossas soluções em OOH",
+          href: "/solucoes/out-of-home",
+        },
+      },
     ],
-    tags: ["OOH", "Mídia exterior", "Branding", "Publicidade"],
-    meta: {
-      title: "O que é OOH? Entenda a força da mídia exterior",
-      description:
-        "Descubra o que é OOH, como funciona a mídia exterior e por que grandes marcas continuam investindo em publicidade fora de casa.",
-    },
   },
 
   {
@@ -343,13 +347,15 @@ export const articles: Article[] = [
           },
         ],
       },
+      {
+        type: "cta",
+        data: {
+          text: "Quer levar sua marca para ambientes de alto fluxo?",
+          linkLabel: "Nossas soluções em Projetos especiais",
+          href: "/solucoes/projetos-especiais",
+        },
+      },
     ],
-    tags: ["Projetos Especiais", "Ativação", "Experiência de marca", "OOH"],
-    meta: {
-      title: "Projetos Especiais de Comunicação | Experiências de Marca",
-      description:
-        "Descubra como projetos especiais ajudam marcas a criar campanhas urbanas memoráveis e experiências fora do padrão.",
-    },
   },
 ];
 
