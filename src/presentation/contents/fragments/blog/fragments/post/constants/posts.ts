@@ -99,6 +99,29 @@ export const articles: Article[] = [
         type: "quote",
         text: "Onde a rotina passa, a marca se instala.",
       },
+      {
+        type: "cases",
+        items: [
+          {
+            brand: "Eisenbahn",
+            title: "AC/DC no metrô",
+            thumbnail: "/images/projetos-especiais/eisenbahn/eisenbahn1.png",
+            instagramUrl: "https://www.instagram.com/p/DVeVx8kERPH/",
+          },
+          {
+            brand: "Seara",
+            title: "Bridgerton",
+            thumbnail: "/images/projetos-especiais/seara/seara1.jpeg",
+            instagramUrl: "https://www.instagram.com/p/DVyQiD1jWaW/",
+          },
+          {
+            brand: "Lacta",
+            title: "Guinness World Records",
+            thumbnail: "/images/projetos-especiais/lacta/lacta3.webp",
+            instagramUrl: "https://www.instagram.com/p/DWgvG0FjdWR/",
+          },
+        ],
+      },
     ],
     tags: ["OOH", "Metrô", "Mídia urbana", "Branding"],
     meta: {
@@ -201,6 +224,29 @@ export const articles: Article[] = [
         type: "quote",
         text: "No OOH, a execução é o que separa presença de impacto.",
       },
+      {
+        type: "cases",
+        items: [
+          {
+            brand: "Eisenbahn",
+            title: "AC/DC no metrô",
+            thumbnail: "/images/projetos-especiais/eisenbahn/eisenbahn1.png",
+            instagramUrl: "https://www.instagram.com/p/DVeVx8kERPH/",
+          },
+          {
+            brand: "Seara",
+            title: "Bridgerton",
+            thumbnail: "/images/projetos-especiais/seara/seara1.jpeg",
+            instagramUrl: "https://www.instagram.com/p/DVyQiD1jWaW/",
+          },
+          {
+            brand: "Lacta",
+            title: "Guinness World Records",
+            thumbnail: "/images/projetos-especiais/lacta/lacta3.webp",
+            instagramUrl: "https://www.instagram.com/p/DWgvG0FjdWR/",
+          },
+        ],
+      },
     ],
     tags: ["OOH", "Mídia exterior", "Branding", "Publicidade"],
     meta: {
@@ -273,6 +319,29 @@ export const articles: Article[] = [
       {
         type: "quote",
         text: "Projeto especial é onde a ideia encontra a rua.",
+      },
+      {
+        type: "cases",
+        items: [
+          {
+            brand: "Eisenbahn",
+            title: "AC/DC no metrô",
+            thumbnail: "/images/projetos-especiais/eisenbahn/eisenbahn1.png",
+            instagramUrl: "https://www.instagram.com/p/DVeVx8kERPH/",
+          },
+          {
+            brand: "Seara",
+            title: "Bridgerton",
+            thumbnail: "/images/projetos-especiais/seara/seara1.jpeg",
+            instagramUrl: "https://www.instagram.com/p/DVyQiD1jWaW/",
+          },
+          {
+            brand: "Lacta",
+            title: "Guinness World Records",
+            thumbnail: "/images/projetos-especiais/lacta/lacta3.webp",
+            instagramUrl: "https://www.instagram.com/p/DWgvG0FjdWR/",
+          },
+        ],
       },
     ],
     tags: ["Projetos Especiais", "Ativação", "Experiência de marca", "OOH"],

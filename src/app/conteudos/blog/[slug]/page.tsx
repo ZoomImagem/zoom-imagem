@@ -12,18 +12,6 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
-  const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
-
-  if (!article) return {};
-
-  return {
-    title: article.meta?.title ?? article.title,
-    description: article.meta?.description ?? article.lede,
-  };
-}
-
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
 

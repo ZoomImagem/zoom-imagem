@@ -12,6 +12,20 @@ export interface Advantage {
 }
 
 /**
+ * Case real de marca, exibido no rodapé do artigo.
+ */
+export interface CaseItem {
+  /** Nome da marca (ex: "Eisenbahn") */
+  brand: string;
+  /** Título/descrição curta do case (ex: "AC/DC no metrô") */
+  title: string;
+  /** Caminho da thumbnail. Salvar em /public/cases/ */
+  thumbnail: string;
+  /** Link da publicação do Instagram */
+  instagramUrl: string;
+}
+
+/**
  * Bloco de conteúdo do artigo. O tipo define como o bloco será renderizado.
  *
  * - 'paragraph': parágrafo de texto comum
@@ -19,13 +33,15 @@ export interface Advantage {
  * - 'advantages': bloco com vantagens numeradas
  * - 'list': lista com bullets destacados
  * - 'quote': frase de fechamento em destaque
+ * - 'cases': cards de cases reais com link para o Instagram
  */
 export type ContentBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
   | { type: 'advantages'; items: Advantage[] }
   | { type: 'list'; items: string[] }
-  | { type: 'quote'; text: string };
+  | { type: 'quote'; text: string }
+  | { type: 'cases'; items: CaseItem[] };
 
 /**
  * Informações do autor do artigo.

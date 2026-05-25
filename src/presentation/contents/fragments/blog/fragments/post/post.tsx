@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
+import Image from "next/image";
 import styles from "./post.module.scss";
 import { Article, ContentBlock } from "./constants/post.types";
 
@@ -44,21 +45,75 @@ const ContentBlockRenderer: React.FC<{ block: ContentBlock }> = ({ block }) => {
     case "quote":
       return <div className={styles.closingStatement}>{block.text}</div>;
 
+    case "cases":
+      return (
+        <section className={styles.casesSection}>
+          <header className={styles.casesHeader}>
+            <span className={styles.casesEyebrow}>Cases reais</span>
+            <h2 className={styles.casesTitle}>
+              Marcas que executaram com excelência
+            </h2>
+          </header>
+
+          <div className={styles.casesGrid}>
+            {block.items.map((caseItem) => (
+              <a
+                key={caseItem.instagramUrl}
+                href={caseItem.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.caseCard}
+                aria-label={`Ver case ${caseItem.brand} ${caseItem.title} no Instagram`}
+              >
+                <div className={styles.caseThumb}>
+                  <Image
+                    src={caseItem.thumbnail}
+                    alt={`${caseItem.brand} — ${caseItem.title}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className={styles.caseImage}
+                  />
+                </div>
+                <div className={styles.caseInfo}>
+                  <span className={styles.caseBrand}>{caseItem.brand}</span>
+                  <h3 className={styles.caseTitle}>{caseItem.title}</h3>
+                  <span className={styles.caseLink}>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Ver no Instagram
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+
     default:
       return null;
   }
 };
 
 const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
-  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [article.id]);
 
   return (
     <div className={styles.page}>
-       
-
       <article className={styles.article}>
         <div className={styles.metaTop}>
           <span className={styles.category}>{article.category}</span>
@@ -93,7 +148,7 @@ const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
             ))}
           </div>
 
-          <div className={styles.share}>
+          {/* <div className={styles.share}>
             <span className={styles.shareLabel}>Compartilhar</span>
             <button
               className={styles.shareBtn}
@@ -142,10 +197,8 @@ const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
               </svg>
             </button>
-          </div>
-
+          </div> */}
         </div>
-
       </article>
     </div>
   );

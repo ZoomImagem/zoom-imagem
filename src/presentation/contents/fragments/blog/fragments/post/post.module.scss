@@ -226,7 +226,7 @@
   margin: 32px 0;
   padding: 24px;
   background: #f3f1ea;
-  border-left: 2px solid $pink ;
+  border-left: 2px solid $pink;
 
   @include respond-to("l") {
     padding: 32px;
@@ -335,5 +335,141 @@
     background: $pink;
     color: #ffffff;
     border-color: $bg;
+  }
+}
+
+// ============================================
+// Cases Section
+// ============================================
+
+.casesSection {
+  padding-top: 38px;
+}
+
+.casesHeader {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.casesEyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 600;
+  color: $yellow;
+  margin-bottom: 12px;
+}
+
+.casesTitle {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+}
+
+.casesGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include respond-to("l") {
+    flex-direction: row;
+  }
+}
+
+.caseCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid #e6e3da;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 94%;
+  height: 398px;
+
+  @include respond-to("l") {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    border-color: #1a1a1a;
+    box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.15);
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c2410c;
+    outline-offset: 4px;
+  }
+
+  &:hover .caseImage {
+    transform: scale(1.04);
+  }
+}
+
+.caseThumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f3f1ea;
+}
+
+.caseImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.caseInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.caseBrand {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 600;
+  color: $pink;
+}
+
+.caseTitle {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+}
+
+.caseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a4a48;
+  letter-spacing: 0.02em;
+
+  svg {
+    flex-shrink: 0;
   }
 }
