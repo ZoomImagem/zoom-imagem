@@ -5,9 +5,8 @@ import Image from "next/image";
 import styles from "./post.module.scss";
 import { Article, ContentBlock } from "./constants/post.types";
 import { ButtonTag } from "@/components";
-import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
+import { FiArrowDownRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 interface ArticlePageProps {
   article: Article;
@@ -106,29 +105,6 @@ const ContentBlockRenderer: React.FC<{ block: ContentBlock }> = ({ block }) => {
         </section>
       );
 
-    case "cta":
-      return (
-        <Link href={block.data.href} className={styles.ctaBlock}>
-          <span className={styles.ctaText}>{block.data.text}</span>
-          <span className={styles.ctaAction}>
-            {block.data.linkLabel}
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </span>
-        </Link>
-      );
     default:
       return null;
   }

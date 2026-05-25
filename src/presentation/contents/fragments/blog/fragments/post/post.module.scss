@@ -207,6 +207,12 @@
 }
 
 .advantageContent {
+  max-width: 268px;
+
+  @include respond-to("l") {
+  max-width: none;
+
+  }
   h3 {
     font-size: 22px;
     font-weight: 500;
@@ -583,6 +589,8 @@
       font-weight: 700;
     }
   }
+
+
 
   .copyDescription {
     width: 100%;

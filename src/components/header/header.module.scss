@@ -40,11 +40,7 @@
       padding: 12px 24px;
       margin-top: 36px;
 
-      .dropMenu {
-        left: calc(-2.2em);
-      }
-
-      .listMenuLi {
+           .listMenuLi {
         font-size: 14px;
        
       }
@@ -152,7 +148,7 @@
 
   & .dropMenu {
     opacity: 1;
-    transform: translateY(10);
+    transform: translateX(-50%) translateY(0);  // ← era: translateY(10)
     visibility: visible;
   }
 }
@@ -275,9 +271,10 @@
 
 .dropMenu {
   position: absolute;
-
-  top: calc(103%);
-  left: calc(0);
+  border: 1px solid red;
+  top: calc(120%);
+  left: 50%;                   
+  transform: translateX(-50%) translateY(-10px);  
   background: $bg;
   border-radius: 12px;
   padding: 8px 0;
@@ -285,16 +282,16 @@
   z-index: 99;
   flex-direction: column;
   opacity: 0;
-  transform: translateY(-10px);
   visibility: hidden;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
     visibility 0.2s;
 
+    box-shadow: 0 0 10px $pink;
+
   li {
     height: 42px;
-
     font-size: 12px;
     width: 100%;
 
@@ -312,6 +309,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 16px;
     }
   }
 }
