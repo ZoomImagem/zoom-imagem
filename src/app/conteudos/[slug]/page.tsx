@@ -10,14 +10,14 @@ export async function generateStaticParams() {
   return conteudos.map((s) => ({ slug: s.slug }));
 }
 
-export default async function Solutions({ params }: Props) {
+export default async function Conteudos({ params }: Props) {
   const { slug } = await params;
 
-  const solucao = conteudos.find((s) => s.slug === slug);
+  const conteudo = conteudos.find((s) => s.slug === slug);
 
-  if (!solucao) notFound();
+  if (!conteudo) notFound();
 
-  const Pagina = solucao!.component;
+  const Pagina = conteudo!.component;
 
   return <Pagina />;
 }

@@ -1,0 +1,154 @@
+"use client";
+
+import React, { useEffect} from "react";
+import styles from "./post.module.scss";
+import { Article, ContentBlock } from "./constants/post.types";
+
+interface ArticlePageProps {
+  article: Article;
+  onBack?: () => void;
+}
+
+const ContentBlockRenderer: React.FC<{ block: ContentBlock }> = ({ block }) => {
+  switch (block.type) {
+    case "paragraph":
+      return <p>{block.text}</p>;
+
+    case "heading":
+      return <h2>{block.text}</h2>;
+
+    case "advantages":
+      return (
+        <div className={styles.advantages}>
+          {block.items.map((adv) => (
+            <div key={adv.number} className={styles.advantage}>
+              <div className={styles.advantageNumber}>{adv.number}</div>
+              <div className={styles.advantageContent}>
+                <h3>{adv.title}</h3>
+                <p>{adv.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "list":
+      return (
+        <ul className={styles.featureList}>
+          {block.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      );
+
+    case "quote":
+      return <div className={styles.closingStatement}>{block.text}</div>;
+
+    default:
+      return null;
+  }
+};
+
+const PostTemplate: React.FC<ArticlePageProps> = ({ article, onBack }) => {
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, [article.id]);
+
+  return (
+    <div className={styles.page}>
+       
+
+      <article className={styles.article}>
+        <div className={styles.metaTop}>
+          <span className={styles.category}>{article.category}</span>
+          <span className={styles.divider} />
+          <span>{article.readingTime}</span>
+        </div>
+
+        <h1 className={styles.title}>{article.title}</h1>
+
+        <p className={styles.lede}>{article.lede}</p>
+
+        <div className={styles.authorInfo}>
+          <div className={styles.avatar}>{article.author.initial}</div>
+          <div className={styles.authorText}>
+            <div className={styles.authorName}>{article.author.name}</div>
+            <div className={styles.authorDate}>{article.publishedAt}</div>
+          </div>
+        </div>
+
+        <div className={styles.body}>
+          {article.content.map((block, index) => (
+            <ContentBlockRenderer key={index} block={block} />
+          ))}
+        </div>
+
+        <div className={styles.articleFooter}>
+          <div className={styles.tags}>
+            {article.tags.map((tag) => (
+              <span key={tag} className={styles.tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className={styles.share}>
+            <span className={styles.shareLabel}>Compartilhar</span>
+            <button
+              className={styles.shareBtn}
+              aria-label="Compartilhar no LinkedIn"
+              type="button"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
+              </svg>
+            </button>
+            <button
+              className={styles.shareBtn}
+              aria-label="Compartilhar no Twitter"
+              type="button"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </button>
+            <button
+              className={styles.shareBtn}
+              aria-label="Copiar link"
+              type="button"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </article>
+    </div>
+  );
+};
+
+export default PostTemplate;

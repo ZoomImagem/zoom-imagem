@@ -40,7 +40,7 @@ const FooterComponent = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FiInstagram size={22} color="#0d101b" />
+                <FiInstagram size={22} color="#000" />
               </a>
             </li>
             <li>

@@ -1,3 +1,4 @@
+
 import { BlogTag } from '@/presentation/contents/fragments/blog'
 import { NewsTag } from '@/presentation/contents/fragments/news'
 import { ComponentType } from 'react'
