@@ -1,15 +1,10 @@
 "use client";
 
-import { ButtonTag } from "@/components";
-import { FiArrowRight } from "react-icons/fi";
-import styles from "./blog.module.scss";
+import { MuralTag } from "./fragments/mural";
+import { articles } from "./fragments/post/constants/posts";
 
 const BlogComponent = () => {
-  return (
-    <>
-    
-    </>
-  );
+  return <MuralTag articles={articles} />;
 };
 
 export default BlogComponent;
