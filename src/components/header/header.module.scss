@@ -1,5 +1,5 @@
-@use "@/styles/mixins.scss" as *;
-@use "sass:color";
+@use '@/styles/mixins.scss' as *;
+@use 'sass:color';
 
 .headerWrapper {
   width: 100%;
@@ -10,7 +10,7 @@
   position: relative;
   padding: 24px;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     position: fixed;
     top: 0;
     left: 0;
@@ -40,12 +40,9 @@
       padding: 12px 24px;
       margin-top: 36px;
 
-      .dropMenu {
-        left: calc(-20%);
-      }
-
-      .listMenuLi {
+           .listMenuLi {
         font-size: 14px;
+       
       }
 
       .header {
@@ -82,13 +79,13 @@
     cursor: pointer;
   }
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: flex;
   }
 }
 
 .header::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 60px;
@@ -123,7 +120,7 @@
 
 .listMenu::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 1px;
   height: 52px;
   background: #4d4444;
@@ -151,7 +148,7 @@
 
   & .dropMenu {
     opacity: 1;
-    transform: translateY(10);
+    transform: translateX(-50%) translateY(0);  // ← era: translateY(10)
     visibility: visible;
   }
 }
@@ -166,7 +163,7 @@
   justify-content: space-between;
   pointer-events: all;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }
@@ -197,7 +194,7 @@
     visibility 300ms ease,
     transform 300ms ease;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }
@@ -271,41 +268,29 @@
   transform: translateY(0);
 }
 
-.dropItem {
-  position: relative;
-  height: 52px;
-  align-items: center;
-  padding: 0 24px;
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: 400;
-  text-align: center;
-}
-
 .dropMenu {
   position: absolute;
-
-  top: calc(103%);
-  left: calc(-10%);
-  right: calc(0);
+  top: calc(125%);
+  left: 50%;                   
+  transform: translateX(-50%) translateY(-10px);  
   background: $bg;
   border-radius: 12px;
   padding: 8px 0;
-  min-width: 180px;
+  min-width: 160px;
   z-index: 99;
   flex-direction: column;
   opacity: 0;
-  transform: translateY(-10px);
   visibility: hidden;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease,
     visibility 0.2s;
 
+    box-shadow: 0 0 4px $ice;
+
   li {
     height: 42px;
-
-    font-size: 14px;
+    font-size: 12px;
     width: 100%;
 
     &:hover {
@@ -322,6 +307,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 16px;
     }
   }
 }
@@ -341,7 +327,7 @@
     visibility 300ms ease,
     transform 300ms ease;
 
-  @include respond-to("l") {
+  @include respond-to('l') {
     display: none;
   }
 }

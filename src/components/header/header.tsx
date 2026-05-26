@@ -1,5 +1,6 @@
 "use client";
 
+import { conteudos } from "@/lib/conteudos/conteudos";
 import { solucoes } from "@/lib/solucoes/solucoes";
 import Image from "next/image";
 import Link from "next/link";
@@ -73,8 +74,14 @@ const HeaderComponent = () => {
             </li>
             <li
               className={styles.listMenuLi}
-              onClick={() => handleClick("/conteudos")}
             >
+              <ul className={styles.dropMenu}>
+                {conteudos.map((s) => (
+                  <li onClick={() => setMenuOpen(false)} key={s.slug}>
+                    <Link href={`/conteudos/${s.slug}`}>{s.label}</Link>
+                  </li>
+                ))}
+              </ul>
               Conteúdos
             </li>
             <li
@@ -138,7 +145,14 @@ const HeaderComponent = () => {
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/sobre")}
           >
-            Sobre nós          </li>
+            Sobre nós
+          </li>
+          <li
+            className={menuOpen ? styles.isOpen : ""}
+            onClick={() => handleClick("/conteudos")}
+          >
+            Conteúdos
+          </li>
           <li
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/contato")}
