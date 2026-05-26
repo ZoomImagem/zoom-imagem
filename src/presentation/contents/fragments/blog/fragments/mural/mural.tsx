@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -21,30 +20,39 @@ const MuralTemplate: React.FC<MuralProps> = ({ articles }) => {
       </header>
 
       <ContentTag colorBottomPosition="right">
+        <div className={styles.timeline}>
+          {articles.map((article, index) => (
+            <div
+              key={article.id}
+              className={`${styles.timelineItem} ${
+                index % 2 === 0 ? styles.left : styles.right
+              }`}
+            >
+              <span className={styles.timelineDot} aria-hidden="true" />
 
-      <div className={styles.grid}>
-        {articles.map((article) => (
-          <Link
-            key={article.id}
-            href={`/conteudos/blog/${article.slug}`}
-            className={styles.card}
-            aria-label={`Abrir artigo: ${article.title}`}
-          >
-            <div className={styles.cardMeta}>
-              <span className={styles.cardCategory}>{article.category}</span>
-              <span className={styles.cardReadingTime}>{article.readingTime}</span>
+              <Link
+                href={`/conteudos/blog/${article.slug}`}
+                className={styles.card}
+                aria-label={`Abrir artigo: ${article.title}`}
+              >
+                <div className={styles.cardMeta}>
+                  <span className={styles.cardCategory}>{article.category}</span>
+                  <span className={styles.cardReadingTime}>
+                    {article.readingTime}
+                  </span>
+                </div>
+
+                <h2 className={styles.cardTitle}>{article.title}</h2>
+                <p className={styles.cardLede}>{article.lede}</p>
+
+                <div className={styles.cardFooter}>
+                  <span className={styles.cardAuthor}>{article.author.name}</span>
+                  <span className={styles.cardDate}>{article.publishedAt}</span>
+                </div>
+              </Link>
             </div>
-
-            <h2 className={styles.cardTitle}>{article.title}</h2>
-            <p className={styles.cardLede}>{article.lede}</p>
-
-            <div className={styles.cardFooter}>
-              <span className={styles.cardAuthor}>{article.author.name}</span>
-              <span className={styles.cardDate}>{article.publishedAt}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          ))}
+        </div>
       </ContentTag>
     </div>
   );

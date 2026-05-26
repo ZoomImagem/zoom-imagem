@@ -43,11 +43,95 @@
   max-width: 600px;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
+// ============================================
+// Timeline
+// ============================================
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1192px;
+  margin: 0 auto;
+  padding: 32px 0;
+
+  @include respond-to("l") {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: $ice;
+      opacity: 0.4;
+      transform: translateX(-50%);
+    }
+  }
 }
+
+.timelineItem {
+  position: relative;
+  width: 100%;
+  margin-bottom: 64px;
+  display: flex;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1023px) {
+    justify-content: flex-start;
+  }
+
+  @include respond-to("l") {
+    &.left {
+      justify-content: flex-start;
+      padding-right: 48px;
+
+      .card {
+        max-width: 520px;
+      }
+    }
+
+    &.right {
+      justify-content: flex-end;
+      padding-left: 48px;
+
+      .card {
+        max-width: 520px;
+      }
+    }
+  }
+}
+
+.timelineDot {
+  display: none;
+
+  @include respond-to("l") {
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $pink;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 0 4px $bg;
+    transition: transform 0.3s ease;
+  }
+}
+
+.timelineItem:hover .timelineDot {
+  @include respond-to("l") {
+    transform: translateX(-50%) scale(1.4);
+  }
+}
+
+// ============================================
+// Card
+// ============================================
 
 .card {
   background: #fff;
@@ -60,20 +144,21 @@
   gap: 24px;
   text-align: left;
   font: inherit;
-  text-decoration: none; // ← adicionar
+  text-decoration: none;
   color: inherit;
+  width: 100%;
+  position: relative;
 
   @include respond-to("l") {
     &:hover,
     &:focus-visible {
       transform: translateY(-2px);
-      border-color: #1a1a1a;
-      box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.25);
       outline: none;
     }
 
     &:focus-visible {
-      outline: 2px solid #c2410c;
+      outline: 2px solid $pink;
       outline-offset: 4px;
     }
   }

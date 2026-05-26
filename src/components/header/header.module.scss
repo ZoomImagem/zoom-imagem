@@ -268,11 +268,9 @@
   transform: translateY(0);
 }
 
-
 .dropMenu {
   position: absolute;
-  border: 1px solid red;
-  top: calc(120%);
+  top: calc(125%);
   left: 50%;                   
   transform: translateX(-50%) translateY(-10px);  
   background: $bg;
@@ -288,7 +286,7 @@
     transform 0.2s ease,
     visibility 0.2s;
 
-    box-shadow: 0 0 10px $pink;
+    box-shadow: 0 0 4px $ice;
 
   li {
     height: 42px;
