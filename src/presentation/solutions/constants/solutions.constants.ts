@@ -25,10 +25,10 @@ export const listSolutions: Solutions[] = [
     image: "/images/projetos-especiais/rexona/rexona3.jpg",
     slug: "projetos-especiais",
   },
-  {
-    title: "Linha ECO",
-    description: "Serviços de aadffasfsadf",
-    image: "/images/senna.jpg",
-    slug: "linha-eco",
-  },
+  // {
+  //   title: "Linha ECO",
+  //   description: "Serviços de aadffasfsadf",
+  //   image: "/images/senna.jpg",
+  //   slug: "linha-eco",
+  // },
 ];

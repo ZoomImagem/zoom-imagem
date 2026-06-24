@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FiFacebook, FiInstagram, FiLinkedin, FiX } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiYoutube } from "react-icons/fi";
 import styles from "./footer.module.scss";
 
 const FooterComponent = () => {
@@ -18,9 +18,8 @@ const FooterComponent = () => {
         <ul className={styles.listInstitucional}>
           <li>Zoom</li>
           <li>Sobre</li>
-          <li>Notícias</li>
+          <li>Saiu na Mídia</li>
           <li>Portifólio</li>
-          <li>Linha Eco</li>
         </ul>
 
         <ul className={styles.listSocialMobile}>
@@ -31,7 +30,7 @@ const FooterComponent = () => {
           </li>
           <li>
             <div>
-              <FiX size={22} color="#000000" />
+              <FiYoutube size={22} color="#000000" />
             </div>
           </li>
           <li>
@@ -39,7 +38,6 @@ const FooterComponent = () => {
               <FiFacebook size={22} color="#000000" />
             </div>
           </li>
-
           <li>
             <div>
               <FiLinkedin size={22} color="#000000" />
@@ -54,13 +52,17 @@ const FooterComponent = () => {
           <br />
           Rua Paulo Emílio Salles Gomes, 45, - Limão São Paulo - SP, 02710-110,
           Brasil
+          <br />
+          <a href="tel:+551135695725">(11) 3569-5725</a>
         </p>
 
         <p>
-          <strong>Lauro de Freitas</strong>
+          <strong>Salvador</strong>
           <br />
           R. Prisco José de Souza, s/n - Lote Amp Recreio Ipitanga, Q 28 - Caji
           - Lauro de Freitas - BA, 42700-130, Brasil
+          <br />
+          <a href="tel:+557136167555">(71) 3616-7555</a>
         </p>
       </div>
 

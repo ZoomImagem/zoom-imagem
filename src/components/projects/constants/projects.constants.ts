@@ -12,7 +12,7 @@ export const categories = [
   "OOH",
   "PDV",
   "Projetos especiais",
-  "Linha ECO",
+  // "Linha ECO",
 ];
 
 export const projects: Project[] = [

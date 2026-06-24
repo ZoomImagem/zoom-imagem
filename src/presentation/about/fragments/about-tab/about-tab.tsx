@@ -6,6 +6,7 @@ import {
   FiArrowDownRight,
   FiClipboard,
   FiEye,
+  FiMapPin,
   FiPlay,
   FiSettings,
 } from "react-icons/fi";
@@ -15,6 +16,8 @@ import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { CtaTag } from "@/components/cta";
+import { ecoFeatures, homologacoes } from "../../contants/about.const";
+import { LuPlaneTakeoff, LuTrainFront } from "react-icons/lu";
 
 interface Stage {
   id: string;
@@ -275,6 +278,69 @@ const AboutTabComponent = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <h2 className={styles.subititles}>RESPONSABILIDADE NA EXECUÇÃO</h2>
+
+      <div className={styles.contentDifferencials}>
+        <div className={styles.ImageWrapper}>
+          <div className={styles.imageCard} />
+          <div className={`${styles.imageCard2} ${styles.imageCardOffset}`} />
+        </div>
+
+        <div className={styles.contentFeatures}>
+          {ecoFeatures.map(({ icon: Icon, title, description }) => (
+            <div key={title} className={styles.featureItem}>
+              <div className={styles.featureIcon}>
+                <Icon size={20} />
+              </div>
+              <div className={styles.featureText}>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className={styles.subititles}>NOSSAS HOMOLOGAÇÕES</h2>
+
+      <div className={styles.contentHomologacoes}>
+        <div className={styles.homologacaoGroup}>
+          <div className={styles.homologacaoGroupHeader}>
+            <LuTrainFront size={22} color="#ED0874" />
+            <h3>Metrô & Trem</h3>
+          </div>
+          <div className={styles.homologacaoCards}>
+            {homologacoes.metro.map(({ label, sublabel }) => (
+              <div key={label} className={styles.homologacaoCard}>
+                <FiMapPin size={16} color="#ED0874" />
+                <div>
+                  <strong>{label}</strong>
+                  <span>{sublabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.homologacaoGroup}>
+          <div className={styles.homologacaoGroupHeader}>
+            <LuPlaneTakeoff size={22} color="#ED0874" />
+            <h3>Aeroportos</h3>
+          </div>
+          <div className={styles.homologacaoCards}>
+            {homologacoes.aeroportos.map(({ label, sublabel }) => (
+              <div key={label} className={styles.homologacaoCard}>
+                <FiMapPin size={16} color="#ED0874" />
+                <div>
+                  <strong>{label}</strong>
+                  <span>{sublabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

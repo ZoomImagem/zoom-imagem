@@ -1,6 +1,6 @@
 // lib/solucoes/solucoes.ts
 
-import { OohTag, PdvTag, EcoTag } from "@/presentation/solutions/fragments";
+import { OohTag, PdvTag } from "@/presentation/solutions/fragments";
 import { ProjectsComponent } from "@/presentation/solutions/fragments/projects";
 import { ComponentType } from "react";
 
@@ -22,5 +22,5 @@ export const solucoes: Solucao[] = [
     slug: "projetos-especiais",
     component: ProjectsComponent,
   },
-  { label: "Linha ECO", slug: "linha-eco", component: EcoTag },
+  // { label: "Linha ECO", slug: "linha-eco", component: EcoTag },
 ];

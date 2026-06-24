@@ -3,7 +3,7 @@ export enum TypeService {
   OOH = "Out of Home",
   PDV = "Ponto de venda",
   SpecialProjects = "Projetos especiais",
-  LinhaEco = "Linha Eco",
+  // LinhaEco = "Linha Eco",
 }
 
 export interface IListServices {
@@ -48,12 +48,12 @@ export const listServices: IListServices[] = [
       "Desenvolvimento e execução de projetos personalizados para campanhas que exigem soluções fora do padrão.",
     listCheck: [],
   },
-  {
-    service: TypeService.LinhaEco,
-    imgDeskt: "/images/ecotela.avif",
-    imgMobile: "/images/ecotela.avif",
-    descriptionJob:
-      "Produção com foco em materiais sustentáveis e soluções com menor impacto ambiental.",
-    listCheck: [],
-  },
+  // {
+  //   service: TypeService.LinhaEco,
+  //   imgDeskt: "/images/ecotela.avif",
+  //   imgMobile: "/images/ecotela.avif",
+  //   descriptionJob:
+  //     "Produção com foco em materiais sustentáveis e soluções com menor impacto ambiental.",
+  //   listCheck: [],
+  // },
 ];
