@@ -30,21 +30,23 @@
   gap: 16px;
 
   h2 {
-    font-size: 28px;
+    font-size: $hall-title-mobile;
   }
 
   p {
-    font-size: 14px;
+    font-size: $hall-subtitle-mobile;
+
     color: $ice;
   }
+
   @include respond-to("l") {
     margin-top: 140px;
     h2 {
-      font-size: 42px;
+      font-size: $hall-title-desktop;
     }
 
     p {
-      font-size: 20px;
+      font-size: $hall-subtitle-desktop;
       color: $ice;
     }
   }

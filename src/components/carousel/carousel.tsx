@@ -4,9 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import styles from "./carousel.module.scss";
-import { ButtonTag } from "../button";
-import { FiArrowDownRight } from "react-icons/fi";
-import { Folder } from "lucide-react";
 
 const CarouselComponent = () => {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -21,6 +18,8 @@ const CarouselComponent = () => {
     "/images/client-logo/bk-branco.png",
     "/images/client-logo/byd-branco.webp",
     "/images/client-logo/itau-branco.png",
+    "/images/client-logo/keeta.png",
+    "/images/client-logo/ambev.png",
     "/images/client-logo/santander-branco.png",
     "/images/client-logo/netflix-branco.png",
     "/images/client-logo/aws-branco.png",
@@ -30,6 +29,8 @@ const CarouselComponent = () => {
     "/images/client-logo/bk-branco.png",
     "/images/client-logo/byd-branco.webp",
     "/images/client-logo/itau-branco.png",
+    "/images/client-logo/keeta.png",
+    "/images/client-logo/ambev.png",
   ];
 
   useEffect(() => {
@@ -78,23 +79,6 @@ const CarouselComponent = () => {
             </div>
           ),
         )}
-      </div>
-
-      <div className={styles.clientesCta}>
-        <ButtonTag
-          label="Fale com a gente"
-          size="lg"
-          variant="primary"
-          icon={<FiArrowDownRight size={24} color="#191919" />}
-          onClick={() => handleClick("/contato")}
-        />
-        <ButtonTag
-          label="Veja nossos projetos"
-          size="lg"
-          variant="primary"
-          icon={<Folder size={20} color="#191919" />}
-          onClick={() => handleClick("/portfolio")}
-        />
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import { FiArrowDown } from "react-icons/fi";
+import { FiArrowDown, FiArrowRight } from "react-icons/fi";
 
 import { ButtonTag, CenterTag } from "@/components";
 import { useRouter } from "next/navigation";
 import styles from "./hall.module.scss";
+import { Folder } from "lucide-react";
 
 const HallComponent = () => {
   const handleScroll = () => {
@@ -38,6 +39,8 @@ const HallComponent = () => {
               label="Fale com a gente"
               size="lg"
               variant="primary"
+              icon={<FiArrowRight size={22} color="#000" />}
+              
               onClick={() => handleClick("/contato")}
             />
 
@@ -45,6 +48,7 @@ const HallComponent = () => {
               label="Veja nossos projetos"
               size="lg"
               variant="primary"
+              icon={<Folder size={22} color="#000" />}
               onClick={() => handleClick("/portfolio")}
             />
           </div>

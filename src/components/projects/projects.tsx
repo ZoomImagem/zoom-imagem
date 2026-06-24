@@ -4,10 +4,11 @@ import { ButtonTag } from "@/components";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import styles from "./projects.module.scss";
 import { categories, Project, projects } from "./constants/projects.constants";
+import { LoadingTag } from "../loading";
 
 type Props = {
   tag: string;
@@ -19,6 +20,20 @@ export default function Projects({ tag }: Props) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const widthMobile = 600;
+  const widthDesktop = 1192;
+
+  const getInitialCount = () => {
+    if (typeof window === "undefined") return 6; // SSR guard
+    const w = window.innerWidth;
+    if (w <= widthMobile) return 4;
+    if (w <= widthDesktop) return 6;
+    return 9;
+  };
+
+  const [visibleCount, setVisibleCount] = useState(getInitialCount);
+
   const getImages = (project: Project): string[] =>
     project.images && project.images.length > 0
       ? project.images
@@ -35,6 +50,7 @@ export default function Projects({ tag }: Props) {
     const imgs = getImages(selectedProject);
     setCarouselIndex((prev) => (prev + 1) % imgs.length);
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -64,16 +80,16 @@ export default function Projects({ tag }: Props) {
     };
   }, [selectedProject, carouselIndex]);
 
-  // Reset carousel index when a new project is selected
   const openProject = (project: Project) => {
     setCarouselIndex(0);
     setSelectedProject(project);
   };
 
-  const filtered =
+  const filtered = (
     activeFilter === "Todos"
       ? projects
-      : projects.filter((project) => project.tag === activeFilter);
+      : projects.filter((project) => project.tag === activeFilter)
+  ).slice(0, visibleCount);
 
   const router = useRouter();
 
@@ -86,9 +102,9 @@ export default function Projects({ tag }: Props) {
       <section className={styles.projects} ref={sectionRef}>
         <div className={styles.projectsContainer}>
           <div className={styles.projectsHeader}>
-            <h2 className={styles.projectsTitle}>
+            {/* <h2 className={styles.projectsTitle}>
               Confira alguns dos nossos trabalhos
-            </h2>
+            </h2> */}
             <p className={styles.projectsSubtitle}>
               Conheça alguns dos projetos desenvolvidos pela nossa equipe para
               diferentes marcas e campanhas.
@@ -106,85 +122,85 @@ export default function Projects({ tag }: Props) {
               </button>
             ))}
           </div>
+          <Suspense fallback={<LoadingTag />}>
+            <div
+              className={`${styles.projectsGrid} ${inView ? styles["projectsGrid--visible"] : ""}`}
+            >
+              {filtered.map((project, i) => (
+                <div
+                  key={project.id}
+                  className={styles.projectsCard}
+                  style={{ animationDelay: `${i * 80}ms` }}
+                  onClick={() => openProject(project)}
+                  aria-label={`Expandir projeto ${project.title}`}
+                >
+                  <div className={styles.projectsImageWrap}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className={styles.projectsImage}
+                      placeholder="empty"
+                      loading="lazy"
+                    />
+                    <div className={styles.projectsOverlay}>
+                      <span className={styles.projectsOverlayTag}>
+                        {project.tag}
+                      </span>
+                      <div className={styles.projectsOverlayContent}>
+                        <h3 className={styles.projectsCardTitle}>
+                          {project.title}
+                        </h3>
+                        <p className={styles.projectsCardCategoty}>
+                          {project.aplication}
+                        </p>
+                      </div>
+                      <button className={styles.projectsOverlayIcon}>
+                        <Expand size={16} />
+                      </button>
+                    </div>
+                  </div>
 
-          <div
-            className={`${styles.projectsGrid} ${inView ? styles["projectsGrid--visible"] : ""}`}
-          >
-            {filtered.map((project, i) => (
-              <div
-                key={project.id}
-                className={styles.projectsCard}
-                style={{ animationDelay: `${i * 80}ms` }}
-                onClick={() => openProject(project)}
-                aria-label={`Expandir projeto ${project.title}`}
-              >
-                <div className={styles.projectsImageWrap}>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className={styles.projectsImage}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className={styles.projectsOverlay}>
-                    <span className={styles.projectsOverlayTag}>
-                      {project.tag}
-                    </span>
-                    <div className={styles.projectsOverlayContent}>
-                      <h3 className={styles.projectsCardTitle}>
+                  <div className={styles.projectsCardFooter}>
+                    <div>
+                      <h3 className={styles.projectsCardFooterTitle}>
                         {project.title}
                       </h3>
-                      <p className={styles.projectsCardCategoty}>
+                      <p className={styles.projectsCardFooterCat}>
                         {project.aplication}
                       </p>
                     </div>
-                    <button className={styles.projectsOverlayIcon}>
-                      <Expand size={16} />
-                    </button>
+                    <span className={styles.projectsCardTag}>
+                      {project.tag}
+                    </span>
                   </div>
                 </div>
-
-                <div className={styles.projectsCardFooter}>
-                  <div>
-                    <h3 className={styles.projectsCardFooterTitle}>
-                      {project.title}
-                    </h3>
-                    <p className={styles.projectsCardFooterCat}>
-                      {project.aplication}
-                    </p>
-                  </div>
-                  <span className={styles.projectsCardTag}>{project.tag}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filtered.length === 0 && (
-            <div className={styles.projectsEmpty}>
-              <p>Nenhum projeto encontrado para este filtro.</p>
+              ))}
             </div>
-          )}
 
-          <div className={styles.projectsCta}>
-            <p className={styles.projectsCtaText}>
-              Quer ver mais projetos ou discutir o seu?
-            </p>
+            {filtered.length === 0 && (
+              <div className={styles.projectsEmpty}>
+                <p>Nenhum projeto encontrado para este filtro.</p>
+              </div>
+            )}
+          </Suspense>
+        </div>
+
+        {visibleCount <= filtered.length && (
+          <div className={styles.btnMore}>
             <ButtonTag
-              label="Falar com a Zoom"
+              label="Carregar mais..."
               size="lg"
               variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
-              onClick={() => handleClick("/contato")}
-            />
-            <ButtonTag
-              label="Ver mais projetos"
-              size="lg"
-              variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
-              onClick={() => handleClick("/portfolio")}
+              onClick={() =>
+                setVisibleCount(
+                  (prev) => prev + (window.innerWidth <= widthMobile ? 4 : 6),
+                )
+              }
             />
           </div>
-        </div>
+        )}
       </section>
 
       {selectedProject &&
@@ -224,9 +240,10 @@ export default function Projects({ tag }: Props) {
                         src={src}
                         alt={`${selectedProject.title} – imagem ${idx + 1}`}
                         fill
+                        sizes="(max-width: 768px) 100vw, 80vw"
                         className={styles.modalImage}
-                        sizes="(max-width: 768px) 100vw, 55vw"
                         priority={idx === 0}
+                        loading={idx === 0 ? "eager" : "lazy"}
                       />
                     </div>
                   ))}
@@ -292,11 +309,11 @@ export default function Projects({ tag }: Props) {
                   </p>
                   <div className={styles.buttonCta}>
                     <ButtonTag
-                      label="Falar com a Zoom"
+                      label="Entre em contato agora"
                       size="lg"
                       variant="primary"
                       onClick={() => handleClick("/contato")}
-                      icon={<FiArrowRight size={24} color="#191919" />}
+                      icon={<FiArrowRight size={22} color="#000" />}
                     />
                   </div>
                 </div>

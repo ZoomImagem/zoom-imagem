@@ -1,4 +1,4 @@
-@use "./mixins";
+@use "@/styles/mixins.scss" as *;
 
 @font-face {
   font-family: "Glancyr Neue";
@@ -11,7 +11,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  // font-family: 'Glancyr Neue', sans-serif;
   font-family: "Outfit", sans-serif;
 }
 
@@ -19,6 +18,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background: #020202;
+  color: #fff;
 
   @media (min-width: 667px) {
     height: 100vh;
@@ -39,3 +39,4 @@ ul {
     color-scheme: dark;
   }
 }
+

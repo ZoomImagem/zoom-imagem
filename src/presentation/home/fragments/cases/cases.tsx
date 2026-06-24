@@ -26,7 +26,7 @@ const CasesComponent = () => {
       <ul className={styles.listCases}>
         {projects.map((item, index) => (
           <li
-            onClick={() => handleClick("/portfolio")}
+            onClick={() => handleClick(`${item.url}`)}
             key={index}
             className={styles.listCaseItem}
             style={{ backgroundImage: `url(${item.image})` }}
@@ -71,9 +71,9 @@ const CasesComponent = () => {
           <ButtonTag
             label="Entrar em contato"
             size="lg"
-            variant="primary"
+            variant="secondary"
             onClick={() => handleClick("/contato")}
-            icon={<FiArrowDownRight size={24} color="#191919" />}
+            icon={<FiArrowDownRight size={24} color="#ee0874" />}
           />
         </div>
       </div>

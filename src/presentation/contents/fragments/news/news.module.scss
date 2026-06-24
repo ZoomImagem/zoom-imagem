@@ -1,0 +1,142 @@
+@use '@/styles/mixins.scss' as *;
+
+.newsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 16px 0;
+  position: relative;
+
+  @include respond-to('l') {
+    padding: 220px 16px 0;
+  }
+}
+
+.hall {
+  text-align: center;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+  align-items: center;
+
+  h1 {
+    font-size: $hall-title-mobile;
+    line-height: 120%;
+  }
+
+  p {
+    font-size: $hall-subtitle-mobile;
+    line-height: 120%;
+  }
+
+  @include respond-to('l') {
+    h1 {
+      font-size: 72px;
+    }
+
+    p {
+      font-size: $hall-subtitle-desktop;
+      max-width: 792px;
+    }
+  }
+}
+
+.newsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 16px;
+  width: 100%;
+  // max-width: 1195px;
+  gap: 32px;
+}
+
+.newsItems {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  width: 100%;
+  height: 528px;
+  max-width: 648px;
+  display: flex;
+  border-radius: 16px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 250ms ease-out;
+
+  @include respond-to('l') {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    &:hover {
+      transform: translateY(-4px);
+      .itemContent {
+        opacity: 1;
+        visibility: visible;
+      }
+      .itemDescription {
+        opacity: 1;
+      }
+
+      .itemTitle {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+.itemTitle {
+  font-size: $cards-title-mobile;
+  line-height: 120%;
+  min-height: 62px;
+  color: $pink;
+  padding: 0 8px;
+  width: 80%;
+  text-align: center;
+
+  
+  @include respond-to('l') {
+    font-size: 36px;
+  }
+}
+
+.itemDescription {
+  font-size: 13px;
+  line-height: 120%;
+  padding: 8px 8px 16px;
+  text-align: justify;
+  height: 100%;
+  
+  transition: 0.3s ease-in-out;
+
+  @include respond-to('l') {
+    font-size: $cards-subtitle-desktop;
+    opacity: 0;
+  }
+}
+
+.itemContent {
+  display: flex;
+  width: 100%;
+  height: 258px;
+  flex-direction: column;
+  background: rgba(#000, 0.95);
+  // linear-gradient(to right, #000, rgba(0, 0, 0, 0.2));
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.buttonLink {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

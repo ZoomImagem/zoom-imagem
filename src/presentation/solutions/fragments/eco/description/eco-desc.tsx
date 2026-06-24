@@ -263,7 +263,6 @@ export const EcoDescription = () => {
                   alt="Equipe Zoom PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
               <div
@@ -274,7 +273,6 @@ export const EcoDescription = () => {
                   alt="Material de PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 200px"
                 />
               </div>
               <div
@@ -285,7 +283,6 @@ export const EcoDescription = () => {
                   alt="Produção PDV"
                   fill
                   className={styles.ctaImg}
-                  sizes="(max-width: 768px) 100vw, 200px"
                 />
               </div>
 
@@ -329,10 +326,10 @@ export const EcoDescription = () => {
 
               <div className={styles.ctaActions}>
                 <ButtonTag
-                  label="Falar com a Zoom"
+                  label="Fale com nossa equipe"
                   size="lg"
                   variant="ecoglass"
-                  icon={<FiArrowRight size={24} color="#111D13" />}
+                  icon={<FiArrowRight size={22} color="#111D13" />}
                   onClick={() => handleClick("/contato")}
                 />
               </div>
@@ -378,7 +375,6 @@ export const EcoDescription = () => {
                         alt=""
                         fill
                         className={styles.modalImage}
-                        sizes="(max-width: 768px) 100vw, 55vw"
                         priority={idx === 0}
                       />
                     </div>

@@ -48,7 +48,7 @@ const CtaComponent = () => {
                 alt="Equipe Zoom PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 300px"
+                
               />
             </div>
             <div
@@ -59,7 +59,6 @@ const CtaComponent = () => {
                 alt="Material de PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>
             <div
@@ -70,7 +69,6 @@ const CtaComponent = () => {
                 alt="Produção PDV"
                 fill
                 className={styles.ctaImg}
-                sizes="(max-width: 768px) 100vw, 200px"
               />
             </div>
 
@@ -115,10 +113,10 @@ const CtaComponent = () => {
 
             <div className={styles.ctaActions}>
               <ButtonTag
-                label="Falar com a Zoom"
+                label="Fale com nossa equipe"
                 size="lg"
                 variant="primary"
-                icon={<FiArrowRight size={24} color="#ee0874" />}
+                icon={<FiArrowRight size={22} color="#000" />}
                 onClick={() => handleClick("/contato")}
               />
             </div>

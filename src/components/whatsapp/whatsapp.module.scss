@@ -1,0 +1,63 @@
+@use "@/styles/mixins.scss" as *;
+
+.whatsappWrapper {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include respond-to("l") {
+    &:hover {
+      .whatsappToast {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.whatsappToast {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 400ms ease,
+    visibility 300ms ease,
+    transform 300ms ease;
+  z-index: -1;
+
+  @include respond-to("l") {
+    width: 190px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 12px;
+    background: $bg;
+    border: 1px solid #25d366;
+    position: fixed;
+    margin-right: 36px;
+    margin-top: -36px;
+    border-radius: 16px;
+  }
+}
+
+.whatsappImage {
+  width: 56px;
+  height: 56px;
+
+  @include respond-to("l") {
+    width: 86px;
+    height: 86px;
+
+    &:hover {
+      transform: scale(1.02);
+
+      cursor: pointer;
+    }
+  }
+}

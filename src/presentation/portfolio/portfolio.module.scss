@@ -28,13 +28,13 @@
     conic-gradient(from 0deg at 10% 10%, $bg 0%, $pink 50%, $pink 100%);
 
   h2 {
-    font-size: 23px;
+    font-size: $content-title-mobile;
     color: #ffffff;
     margin-bottom: 32px;
   }
 
   p {
-    font-size: 14px;
+    font-size: $content-subtitle-mobile;
     color: $ice;
   }
 
@@ -42,13 +42,13 @@
     padding: 240px 128px;
 
     h2 {
-      font-size: 60px;
+      font-size: $hall-title-desktop;
       line-height: 120%;
       margin: 0 auto 32px;
     }
 
     p {
-      font-size: 18px;
+      font-size: $hall-subtitle-desktop;
       color: $ice;
     }
   }

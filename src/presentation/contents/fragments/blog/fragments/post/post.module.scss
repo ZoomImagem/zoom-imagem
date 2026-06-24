@@ -1,0 +1,632 @@
+@use "@/styles/mixins.scss" as *;
+
+// ============================================
+// Page Container
+// ============================================
+
+.page {
+  background: $bg;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  padding: 0 24px 24px;
+}
+
+// ============================================
+// Article Container
+// ============================================
+
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 58px 0px 80px;
+
+  @include respond-to("l") {
+    padding: 220px 0px 120px;
+  }
+}
+
+// ============================================
+// Article Meta (top)
+// ============================================
+
+.metaTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 500;
+  color: $ice;
+}
+
+.category {
+  color: $yellow;
+  font-weight: 600;
+}
+
+.divider {
+  width: 24px;
+  height: 1px;
+  background: $ice;
+}
+
+// ============================================
+// Article Title
+// ============================================
+
+.title {
+  font-family: "Fraunces", "Georgia", serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0 0 32px;
+  color: $pink;
+
+  @include respond-to("l") {
+    font-size: 56px;
+  }
+}
+
+// ============================================
+// Lede / Subtitle
+// ============================================
+
+.lede {
+  font-family: "Fraunces", "Georgia", serif;
+  font-size: 18px;
+  line-height: 140%;
+  color: $ice;
+  font-weight: 300;
+  font-style: italic;
+  margin: 0 0 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e6e3da;
+
+  @include respond-to("l") {
+    font-size: 24px;
+  }
+}
+
+// ============================================
+// Author Info
+// ============================================
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $yellow 0%, $pink 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "Fraunces", "Georgia", serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.authorText {
+  line-height: 1.4;
+}
+
+.authorName {
+  font-size: 14px;
+  font-weight: 600;
+  color: $pink;
+}
+
+.authorDate {
+  font-size: 13px;
+  color: #8a8a85;
+}
+
+// ============================================
+// Article Body
+// ============================================
+
+.body {
+  h2 {
+    font-family: "Fraunces", "Georgia", serif;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 26px;
+    margin-top: 56px;
+    color: $pink;
+
+    @include respond-to("l") {
+      font-size: 32px;
+      margin: 72px 0 24px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin: 0 0 24px;
+    color: $ice;
+    font-size: 18px;
+    line-height: 1.75;
+
+    strong {
+      color: $pink;
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================
+// Advantages Block
+// ============================================
+
+.advantages {
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid $yellow;
+}
+
+.advantage {
+  padding: 28px 0;
+  border-bottom: 1px solid $yellow;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+.advantageNumber {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: $yellow;
+  padding: 6px;
+}
+
+.advantageContent {
+  max-width: 268px;
+
+  @include respond-to("l") {
+  max-width: none;
+
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: $pink;
+  }
+
+  p {
+    margin: 0;
+    color: $ice;
+    font-size: 16px;
+  }
+}
+
+// ============================================
+// Feature List (bulleted block)
+// ============================================
+
+.featureList {
+  list-style: none;
+  margin: 32px 0;
+  padding: 24px;
+  background: #f3f1ea;
+  border-left: 2px solid $pink;
+
+  @include respond-to("l") {
+    padding: 32px;
+  }
+
+  li {
+    padding: 10px 0;
+    color: #4a4a48;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: $pink;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// ============================================
+// Closing Statement
+// ============================================
+
+.closingStatement {
+  margin: 48px 0 0;
+  font-family: "Fraunces", "Georgia", serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $pink;
+  padding: 32px 0;
+  border-top: 1px solid #e6e3da;
+  border-bottom: 1px solid #e6e3da;
+  text-align: center;
+}
+
+// ============================================
+// Article Footer
+// ============================================
+
+.articleFooter {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.share {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.shareLabel {
+  font-size: 13px;
+  color: $yellow;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shareBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid $pink;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $pink;
+  transition: all 0.2s ease;
+  padding: 0;
+
+  &:hover {
+    background: $pink;
+    color: #ffffff;
+    border-color: $bg;
+  }
+}
+
+// ============================================
+// Cases Section
+// ============================================
+
+.casesSection {
+  padding-top: 38px;
+}
+
+.casesHeader {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.casesEyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 600;
+  color: $yellow;
+  margin-bottom: 12px;
+}
+
+.casesTitle {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+}
+
+.casesGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include respond-to("l") {
+    flex-direction: row;
+  }
+}
+
+.caseCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid #e6e3da;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 398px;
+
+  @include respond-to("l") {
+    width: 100%;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      border-color: #1a1a1a;
+      box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.15);
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #c2410c;
+      outline-offset: 4px;
+    }
+
+    &:hover .caseImage {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.caseThumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f3f1ea;
+}
+
+.caseImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.caseInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.caseBrand {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 600;
+  color: $pink;
+}
+
+.caseTitle {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+}
+
+.caseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a4a48;
+  letter-spacing: 0.02em;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// ============================================
+// Internal CTA
+// ============================================
+
+.ctaBlock {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 48px 0;
+  padding: 28px 32px;
+  background: #1a1a1a;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 16px;
+  background: linear-gradient(210deg, $yellow 0%, $pink 100%);
+
+  span {
+    font-weight: 600;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: linear-gradient(210deg, $pink 0%, $yellow 100%);
+    outline: none;
+
+    .ctaAction svg {
+      transform: translateX(4px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+  }
+}
+
+.ctaText {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  flex: 1;
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
+}
+
+.ctaAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+}
+
+.contentCopy {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  padding: 36px 18px;
+  border-radius: 20px;
+  background: linear-gradient(210deg, $yellow 0%, $pink 100%);
+  gap: 64px;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to("l") {
+    padding: 36px;
+  }
+
+  h3 {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 100%;
+    color: #030303;
+    position: relative;
+
+    @include respond-to("l") {
+      font-size: 40px;
+      padding-left: 32px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -24px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #000000;
+
+      @include respond-to("l") {
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 280px;
+        bottom: none;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+
+
+  .copyDescription {
+    width: 100%;
+    max-width: 511px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+    p {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 33.6px;
+      color: #020202;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    .btnCopy {
+      width: 100%;
+      height: 48px;
+      max-width: 219px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      background: #111022;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  }
+}

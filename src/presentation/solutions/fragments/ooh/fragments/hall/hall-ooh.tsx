@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { Folder } from "lucide-react";
 import Image from "next/image";
 
-export const OohHall = () => {
+const OohHall = () => {
   const router = useRouter();
 
   function handleClick(link: string) {
@@ -36,7 +36,6 @@ export const OohHall = () => {
                   fill
                   className={styles.heroImg}
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -46,14 +45,14 @@ export const OohHall = () => {
               label="Ver mais projetos"
               size="lg"
               variant="primary"
-              icon={<Folder size={24} color="#191919" />}
+              icon={<Folder size={22} color="#000" />}
               onClick={() => handleClick("/portfolio")}
             />
             <ButtonTag
-              label="Falar com a zoom"
+              label="Entre em contato agora"
               size="lg"
               variant="primary"
-              icon={<FiArrowRight size={24} color="#191919" />}
+              icon={<FiArrowRight size={22} color="#000" />}
               onClick={() => handleClick("/contato")}
             />
           </div>

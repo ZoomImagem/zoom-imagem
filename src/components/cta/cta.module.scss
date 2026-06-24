@@ -131,14 +131,14 @@
 }
 
 .ctaBadgeTitle {
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
-  line-height: 1.2;
+  line-height: 140%;
 }
 
 .ctaBadgeSub {
-  font-size: 0.72rem;
+  font-size: 12px;
   color: rgba(#fff, 0.45);
 }
 
@@ -147,12 +147,11 @@
 }
 
 .ctaTitle {
-  font-size: 48px;
+  font-size: $hall-title-desktop;
   font-weight: 700;
   color: $pink;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.25rem;
+  line-height: 140%;
+  margin-bottom: 14px;
 }
 
 .ctaTitleHighlight {
@@ -173,11 +172,15 @@
 }
 
 .ctaText {
-  font-size: 1rem;
+  font-size: $hall-subtitle-mobile;
   color: rgba(#fff, 0.5);
-  line-height: 1.75;
+  line-height: 140%;
   max-width: 520px;
   margin-bottom: 2rem;
+
+  @include respond-to("l") {
+    font-size: $hall-subtitle-desktop;
+  }
 }
 
 .ctaFeatures {
@@ -191,7 +194,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.88rem;
+  font-size: 14px;
   color: rgba(#fff, 0.65);
   font-weight: 500;
 }

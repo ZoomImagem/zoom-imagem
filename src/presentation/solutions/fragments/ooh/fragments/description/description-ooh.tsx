@@ -1,26 +1,26 @@
 "use client";
 
+import { ButtonTag } from "@/components";
+import { CtaTag } from "@/components/cta";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { FiArrowRight } from "react-icons/fi";
+import { oohTypes, steps } from "./constants/desc-ooh.constants";
 import styles from "./description-ooh.module.scss";
-import { cities, oohTypes, steps } from "./constants/desc-ooh.constants";
-import { CtaTag } from "@/components/cta";
 
 export const OohDescription = () => {
   const router = useRouter();
-  
-    function handleClick(link: string) {
-      router.push(link);
-    }
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
 
   return (
     <>
-     
       <section className={styles.sectionModal}>
         <div className={styles.contentWhat}>
           <div className={styles.textBlock}>
-           
             <h2>O que é OOH (Out of Home)?</h2>
             <p>
               OOH (Out of Home) é toda forma de publicidade realizada fora de
@@ -35,19 +35,18 @@ export const OohDescription = () => {
           </div>
           <div className={styles.imageBox}>
             <Image
-              src="/images/process/urbano.png"
+              src="/images/ooh/intelbras/intelbras1.webp"
               alt="Mídia OOH em ambiente urbano"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
         </div>
       </section>
 
-  
       <section className={styles.sectionModal}>
-        <Projects tag="OOH"/>
+        <Projects tag="OOH" />
       </section>
 
       <section className={styles.sectionModal}>
@@ -56,13 +55,12 @@ export const OohDescription = () => {
             <Image
               src="/images/projetos-especiais/tartarugas-ninja/tartaruga1.jpg"
               alt="Equipe Zoom executando campanha OOH"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
           <div className={styles.textBlock}>
-          
             <h2>Execução completa de campanhas de OOH</h2>
             <p>
               A Zoom atua na produção e execução de projetos de OOH, garantindo
@@ -75,9 +73,28 @@ export const OohDescription = () => {
             </p>
           </div>
         </div>
+
+        <div className={styles.buttonsCta}>
+          <p className={styles.projectsCtaText}>
+            Quer ver mais projetos ou discutir o seu?
+          </p>
+          <ButtonTag
+            label="Entre em contato agora"
+            size="lg"
+            variant="primary"
+            icon={<FiArrowRight size={22} color="#000" />}
+            onClick={() => handleClick("/contato")}
+          />
+          <ButtonTag
+            label="Ver mais projetos"
+            size="lg"
+            variant="primary"
+            icon={<FiArrowRight size={22} color="#000" />}
+            onClick={() => handleClick("/portfolio")}
+          />
+        </div>
       </section>
 
-   
       <section className={styles.sectionModal}>
         <div className={styles.contentTypes}>
           <div className={styles.sectionHeader}>
@@ -95,7 +112,7 @@ export const OohDescription = () => {
         </div>
       </section>
 
-      <section  className={styles.sectionModal}>
+      <section className={styles.sectionModal}>
         <div className={styles.contentHow}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.titleLight}>
@@ -114,10 +131,12 @@ export const OohDescription = () => {
         </div>
       </section>
 
-       <section className={styles.sectionModal}>
+      <section className={styles.sectionModal}>
         <div className={styles.contentRange}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.titleLight}>Execução de OOH em todo o Brasil</h2>
+            <h2 className={styles.titleLight}>
+              Execução de OOH em todo o Brasil
+            </h2>
             <p>
               Atendemos projetos em diferentes regiões do Brasil, garantindo
               padronização, controle e eficiência mesmo em campanhas de grande
@@ -128,16 +147,9 @@ export const OohDescription = () => {
               cidades com consistência.
             </p>
           </div>
-          <div className={styles.citiesBlock}>
-            {cities.map((c) => (
-              <span key={c} className={styles.cityTag}>
-                {c}
-              </span>
-            ))}
-          </div>
         </div>
 
-        <CtaTag/>
+        <CtaTag />
       </section>
     </>
   );

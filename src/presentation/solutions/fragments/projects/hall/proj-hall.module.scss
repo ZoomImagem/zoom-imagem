@@ -1,30 +1,28 @@
 @use "@/styles/mixins.scss" as *;
 
 .hallWrapper {
-  width: 100%;
-
-  background: red;
-  padding: 16px;
-  height: calc(100vh - 140px);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  min-height: calc(100vh - 100px); // ← min-height em vez de height
+  height: auto;
   background: radial-gradient(circle at 50% 0%, $bg 0%, transparent 65%);
-
   @include respond-to("l") {
     height: 100vh;
-    padding: 140px;
+    min-height: unset;
+    padding: 200px 0 0;
   }
 }
-
 
 .heroSectionContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 16px;
 
   @include respond-to("l") {
-    width: 100%;
+    padding: 0px;
+    max-width: 1192px;
+    margin: auto;
     align-items: center;
   }
 }
@@ -65,22 +63,23 @@
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: $hall-title-mobile;
   font-weight: 700;
   color: #fff;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
+  line-height: 140%;
 
+  @include respond-to("l") {
+    font-size: $hall-title-desktop;
+  }
+}
 .heroText {
   font-size: 0.95rem;
-  color: rgba(#fff, .7);
+  color: rgba(#fff, 0.7);
   line-height: 1.8;
   max-width: 520px;
   margin-top: 24px;
 
   @include respond-to("l") {
-    
     color: rgba(#fff, 0.5);
   }
 }
@@ -102,12 +101,13 @@
   border-radius: 16px;
   overflow: hidden;
   background: rgba(#fff, 0.04);
+  max-width: 768px;
+  max-height: 368px;
 
   margin-top: 16px;
-@include respond-to("l") {
+  @include respond-to("l") {
     margin-top: 0;
   }
-
 }
 
 .heroImg {

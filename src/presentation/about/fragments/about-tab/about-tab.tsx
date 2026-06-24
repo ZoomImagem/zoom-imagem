@@ -4,6 +4,7 @@ import Image from "next/image";
 import { IconType } from "react-icons";
 import {
   FiArrowDownRight,
+  FiArrowRight,
   FiClipboard,
   FiEye,
   FiMapPin,
@@ -12,12 +13,12 @@ import {
 } from "react-icons/fi";
 import styles from "./about-tab.module.scss";
 import { ButtonTag, CarouselTag, ContentTag } from "@/components";
-import { Gauge, Layers, ShieldCheck, Target } from "lucide-react";
-import React from "react";
-import { useRouter } from "next/navigation";
 import { CtaTag } from "@/components/cta";
 import { ecoFeatures, homologacoes } from "../../contants/about.const";
 import { LuPlaneTakeoff, LuTrainFront } from "react-icons/lu";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { clientsMobile, features } from "./constants/about-tab.constants";
 
 interface Stage {
   id: string;
@@ -73,72 +74,6 @@ const Arrow: React.FC = () => (
   </div>
 );
 
-const features = [
-  {
-    icon: ShieldCheck,
-    title: "Execução real",
-    description: "Não dependemos de terceiros.",
-  },
-  {
-    icon: Layers,
-    title: "Consistência",
-    description: "Entrega padronizada.",
-  },
-  {
-    icon: Gauge,
-    title: "Agilidade com controle ",
-    description: "Velocidade com qualidade.",
-  },
-  {
-    icon: Target,
-    title: "Visão prática ",
-    description: "Projetos pensados para funcionar.",
-  },
-];
-
-const clientsMobile = [
-  {
-    name: "byd",
-    src: "/images/client-logo/byd-branco.webp",
-  },
-  {
-    name: "99",
-    src: "/images/client-logo/99-branco.png",
-  },
-  {
-    name: "aws",
-    src: "/images/client-logo/aws-branco.png",
-  },
-  {
-    name: "heineken",
-    src: "/images/client-logo/heineken-branco.png",
-  },
-  {
-    name: "itau",
-    src: "/images/client-logo/itau-branco.png",
-  },
-  {
-    name: "santander",
-    src: "/images/client-logo/santander-branco.png",
-  },
-  {
-    name: "netflix",
-    src: "/images/client-logo/netflix-branco.png",
-  },
-  {
-    name: "vivo",
-    src: "/images/client-logo/vivo-branco.png",
-  },
-  {
-    name: "bk",
-    src: "/images/client-logo/bk-branco.png",
-  },
-  {
-    name: "disney",
-    src: "/images/client-logo/disney3.jpg",
-  },
-];
-
 const AboutTabComponent = () => {
   const router = useRouter();
 
@@ -185,11 +120,11 @@ const AboutTabComponent = () => {
           </p>
           <div className={styles.buttonContact}>
             <ButtonTag
-              variant="secondary"
+              variant="primary"
               label="Impulsionar meu negócio"
               size="lg"
-              color="primary"
-              icon={<FiArrowDownRight size={24} color="#ee0874" />}
+              icon={<FiArrowDownRight size={24} color="#000" />}
+              onClick={() => handleClick("/contato")}
             />
           </div>
         </div>
@@ -362,8 +297,18 @@ const AboutTabComponent = () => {
           </div>
         ))}
       </div>
+
       <div className={styles.carouselDisplay}>
         <CarouselTag />
+      </div>
+      <div className={styles.buttonsCta}>
+        <ButtonTag
+          label="Confira nossos projetos"
+          size="lg"
+          variant="primary"
+          onClick={() => handleClick("/portfolio")}
+          icon={<FiArrowRight size={24} color="#EE0874" />}
+        />
       </div>
 
       <CtaTag />

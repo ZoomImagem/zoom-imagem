@@ -1,32 +1,69 @@
 @use "@/styles/mixins.scss" as *;
 
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+  position: relative;
+}
+
+.hallWrapper {
+  height: 60vh;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background: radial-gradient(circle at 50% -20%, $pink -40%, $bg 40%);
+
+  align-items: center;
+
+  @include respond-to("l") {
+    height: 80vh;
+    background: radial-gradient(circle at 0% 0%, $pink -40%, $bg 40%);
+  }
+}
+
 .contentContact {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 16px 16px 16px;
+
+  strong {
+    font-size: $content-title-desktop;
+    text-align: center;
+  }
+
+  p {
+    font-size: $content-subtitle-desktop;
+    line-height: 140%;
+    text-align: justify;
+    color: $ice;
+    margin: 32px 0 60px;
+  }
 
   @include respond-to("l") {
-    font-size: 16px;
+    strong {
+      font-size: $hall-title-desktop;
+    }
+
+    p {
+      font-size: $hall-subtitle-desktop;
+      margin: 32px 0 100px;
+    }
   }
 }
 
 .contentHeader {
   width: 100%;
-@include respond-to("l") {
-      font-size: 64px;
-      line-height: 75px;
-      margin-bottom: 64px;
-    }
- 
-
+  display: flex;
+  align-items: center;
+  padding: 80px 16px 16px;
+  flex-direction: column;
   h2 {
     width: 100%;
-    max-width: 925px;
     font-weight: 400;
     font-size: 32px;
     color: #fafafab2;
-    margin-bottom: 32px;
 
     strong {
       color: #ffffff;
@@ -35,13 +72,43 @@
 
     @include respond-to("l") {
       font-size: 64px;
-      line-height: 75px;
-      margin: 64px 0;
+      line-height: 140%;
     }
   }
 
   @include respond-to("l") {
-    padding: 00px 20px;
+    padding: 200px 160px 160px;
+    flex-direction: row;
+  }
+}
+
+.contentButtonOvalMobile {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+
+  @include respond-to("l") {
+    margin-top: 0;
+  }
+}
+
+.buttonDown {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $pink;
+  align-self: center;
+  align-self: flex-end;
+  box-shadow:
+    0 0px 60px $pink,
+    0 0px 60px $pink;
+
+  @include respond-to("l") {
+    margin-left: 86px;
   }
 }
 
@@ -67,6 +134,8 @@
 }
 
 .imageWrapper {
+  width: 321px;
+  height: 620px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
@@ -77,13 +146,6 @@
   gap: 24px;
   flex-direction: column;
   width: 100%;
-
-  p {
-    font-size: 16px;
-    line-height: 1.65;
-    align-items: start;
-    color: #8fa3b8;
-  }
 
   @include respond-to("l") {
     p {

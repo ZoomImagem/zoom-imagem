@@ -1,0 +1,291 @@
+@use "@/styles/mixins.scss" as *;
+
+.avaliationsWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to("l") {
+    padding: 0 1.5rem 4rem;
+  }
+}
+
+.contentAvaliations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px 0;
+  gap: 12px;
+  background: rgba(#fff, 0.9);
+  padding: 8px;
+  border-radius: 24px;
+
+  @include respond-to("l") {
+    padding: 16px 0;
+  }
+}
+
+.headerAvaliations {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+
+  h2 {
+    color: $bg;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0.75rem;
+    gap: 12px;
+
+    @include respond-to("l") {
+      flex-direction: row;
+    }
+  }
+
+  @include respond-to("l") {
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
+.googleHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respond-to("l") {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.ratingNumber {
+  font-size: 44px;
+  font-weight: 700;
+  color: $yellow;
+  line-height: 120%;
+
+  @include respond-to("l") {
+    margin-left: 16px;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  font-size: 40px;
+  justify-content: center;
+  margin: 12px 0;
+
+  @include respond-to("l") {
+    margin: 12px 0;
+  }
+
+}
+
+.star {
+  color: #f5a623;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.starEmpty {
+  color: #d4d4d4;
+  font-size: 40px;
+}
+
+.totalRatings {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.carouselOuter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.carouselWrapper {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 12px;
+  gap: 16px;
+  width: max-content;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.card {
+  flex-shrink: 0;
+  width: 280px;
+  height: 368px;
+  border-radius: 16px;
+  border: 1px solid $ice;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 8px 1px rgba(#000, 0.2);
+
+  @include respond-to("l") {
+    height: 268px;
+    width: 368px;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  width: 100%;
+  height: 78px;
+  align-items: center;
+  flex-direction: row;
+  padding: 16px;
+  gap: 16px;
+  background: #d1d2d4;
+  border-radius: 16px;
+}
+
+.ArrowsDisplay {
+  display: none;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  @include respond-to("l") {
+    display: flex;
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatarFallback {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0ede8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a6e64;
+  flex-shrink: 0;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.reviewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to("l") {
+    // gap: 12px;
+  }
+}
+
+.reviewerName {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 120%;
+  color: #000;
+
+  @include respond-to("l") {
+    font-size: 20px;
+  }
+}
+
+.reviewDate {
+  font-size: 0.75rem;
+  color: rgba(#000, 0.5);
+  font-family: "Helvetica Neue", sans-serif;
+  margin-top: 1px;
+}
+
+.cardDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .reviewText {
+    font-size: 16px;
+    color: $bg;
+    flex: 1;
+    line-height: 120%;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #aaa;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+.error {
+  text-align: center;
+  padding: 3rem;
+  color: #c0392b;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dotActive {
+  background: #000;
+}
+
+.buttonsCta {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 16px 0;
+  gap: 16px;
+  justify-content: center;
+}

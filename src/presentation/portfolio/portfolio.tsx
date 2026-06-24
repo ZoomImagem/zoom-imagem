@@ -13,7 +13,7 @@ export const PortfolioComponent = () => {
       <div className={styles.introductionWrapper}>
         <div className={styles.descIntroduction}>
           <h2>
-            Cada projeto responde a uma necessidade específica de <br /> marca,
+            Cada projeto responde a uma necessidade específica de marca,
             ambiente e operação
           </h2>
           <p>

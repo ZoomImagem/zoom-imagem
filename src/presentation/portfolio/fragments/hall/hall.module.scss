@@ -1,7 +1,8 @@
 @use "@/styles/mixins.scss" as *;
 
-.contentHall {
+.hallWrapper {
   width: 100%;
+  height: 540px;
   display: flex;
   flex-direction: row;
   padding: 32px;
@@ -12,7 +13,25 @@
   justify-content: space-around;
 
   @include respond-to("l") {
-    padding: 180px 100px 100px;
+    height: 100vh;
+    padding: 140px 0 0;
+  }
+}
+
+.contentHall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 16px;
+
+  @include respond-to("l") {
+    padding: 0px;
+    max-width: 1192px;
+    margin: auto;
+    align-items: center;
+    flex-direction: row;
   }
 }
 
@@ -20,20 +39,22 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 16px;
+
   justify-content: center;
   max-width: 625px;
 
   h1 {
     color: #fff;
+    font-size: $hall-title-mobile;
 
     @include respond-to("l") {
-      font-size: 42px;
+      font-size: $hall-title-desktop;
     }
   }
 
   p {
     color: $ice;
+    font-size: $hall-subtitle-desktop;
   }
 }
 
@@ -41,7 +62,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 20px;
   min-height: 500px;
 }
 
@@ -50,12 +70,14 @@
   width: 100%;
 
   @include respond-to("l") {
-  display: flex;
-    }
+    display: flex;
+  }
 }
 
 .image {
   width: 100%;
+  max-width: 600px;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 24px 120px;
 }
@@ -96,13 +118,13 @@
 }
 
 .ctaBadgeTitle {
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
 }
 
 .ctaBadgeSub {
-  font-size: 0.72rem;
+  font-size: 12px;
   color: rgba(#fff, 0.45);
 }

@@ -58,10 +58,11 @@
     }
 
     p {
+      text-align: justify;
       font-size: 16px;
       font-weight: 300;
-      line-height: 28px;
       color: $ice;
+      line-height: 140%;
       margin-bottom: 24px;
 
       @include respond-to("l") {
@@ -495,10 +496,11 @@
   max-width: 580px;
 
   p {
-    line-height: 140%;
-    font-size: 18px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 300;
     color: $ice;
-    margin: 16px 0;
+    line-height: 140%;
 
     @include respond-to("l") {
       font-size: 24px;
@@ -617,4 +619,13 @@
   @include respond-to("l") {
     display: flex;
   }
+}
+
+.buttonsCta {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 48px 0;
+  gap: 16px;
+  justify-content: center;
 }

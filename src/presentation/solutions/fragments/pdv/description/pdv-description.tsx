@@ -1,12 +1,22 @@
 "use client";
 
+import { ButtonTag } from "@/components";
+import { CtaTag } from "@/components/cta";
 import { Projects } from "@/components/projects";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { FiArrowRight } from "react-icons/fi";
+import { pdvTypes, steps } from "./constants/pdv-desc.constants";
 import styles from "./pdv-description.module.scss";
-import { CtaTag } from "@/components/cta";
-import { cities, pdvTypes, steps } from "./constants/pdv-desc.constants";
 
 export const PdvDescription = () => {
+
+  const router = useRouter();
+
+  function handleClick(link: string) {
+    router.push(link);
+  }
+
   return (
     <>
       {/* O que é PDV */}
@@ -28,12 +38,16 @@ export const PdvDescription = () => {
             <Image
               src="/images/pdv/herois/heroi3.webp"
               alt="Material de PDV em ambiente de loja"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
         </div>
+      </section>
+
+      <section className={styles.sectionModal}>
+        <Projects tag="PDV" />
       </section>
 
       {/* O que a Zoom faz */}
@@ -41,10 +55,10 @@ export const PdvDescription = () => {
         <div className={styles.contentAtuation}>
           <div className={styles.imageBox}>
             <Image
-              src="/images/senna.jpg"
+              src="/images/pdv/disney/disney2.jpg"
               alt="Equipe Zoom produzindo materiais para PDV"
-              width={260}
-              height={260}
+              width={1920}
+              height={1080}
               className={styles.image}
             />
           </div>
@@ -62,6 +76,25 @@ export const PdvDescription = () => {
           </div>
         </div>
       </section>
+      <div className={styles.buttonsCta}>
+        <p className={styles.projectsCtaText}>
+          Quer ver mais projetos ou discutir o seu?
+        </p>
+        <ButtonTag
+          label="Entre em contato agora"
+          size="lg"
+          variant="primary"
+          icon={<FiArrowRight size={22} color="#000" />}
+          onClick={() => handleClick("/contato")}
+        />
+        <ButtonTag
+          label="Ver mais projetos"
+          size="lg"
+          variant="primary"
+          icon={<FiArrowRight size={22} color="#000" />}
+          onClick={() => handleClick("/portfolio")}
+        />
+      </div>
 
       {/* Tipos de materiais de PDV */}
       <section className={styles.sectionModal}>
@@ -101,6 +134,7 @@ export const PdvDescription = () => {
         </div>
       </section>
 
+
       {/* Atuação em escala */}
       <section className={styles.sectionModal}>
         <div className={styles.contentRange}>
@@ -118,19 +152,11 @@ export const PdvDescription = () => {
               eficiência.
             </p>
           </div>
-          <div className={styles.citiesBlock}>
-            {cities.map((c) => (
-              <span key={c} className={styles.cityTag}>
-                {c}
-              </span>
-            ))}
-          </div>
+
         </div>
       </section>
 
-      <section className={styles.sectionModal}>
-        <Projects tag="PDV" />
-      </section>
+
       <CtaTag />
     </>
   );
