@@ -72,9 +72,7 @@ const HeaderComponent = () => {
             >
               Sobre nós
             </li>
-            <li
-              className={styles.listMenuLi}
-            >
+            <li className={styles.listMenuLi}>
               <ul className={styles.dropMenu}>
                 {conteudos.map((s) => (
                   <li onClick={() => setMenuOpen(false)} key={s.slug}>
@@ -82,7 +80,7 @@ const HeaderComponent = () => {
                   </li>
                 ))}
               </ul>
-              Conteúdos
+              Saiu na Mídia
             </li>
             <li
               className={styles.listMenuLi}

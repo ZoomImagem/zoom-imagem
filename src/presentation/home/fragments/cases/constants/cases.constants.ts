@@ -1,9 +1,4 @@
-import {
-  FiEye,
-  FiMapPin,
-  FiTarget,
-  FiTool,
-} from "react-icons/fi";
+import { FiEye, FiMapPin, FiTarget, FiTool } from "react-icons/fi";
 
 export const steps = [
   {
@@ -34,21 +29,21 @@ export const projects = [
   {
     title: "PDV",
     image: "/images/projetos-especiais/rexona/rexona4.jpg",
-    url:"/solucoes/ponto-de-venda"
+    url: "/solucoes/ponto-de-venda",
   },
   {
     title: "OOH",
     image: "/images/ooh/intelbras/intelbras1.webp",
-    url:"/solucoes/out-of-home"
+    url: "/solucoes/out-of-home",
   },
   {
     title: "Projetos especiais",
     image: "/images/projetos-especiais/stranger-things/stranger2.webp",
-    url:"/solucoes/projetos-especiais"
+    url: "/solucoes/projetos-especiais",
   },
-  {
-    title: "Linha Eco",
-    image: "/images/ooh/bauducco/bauducco1.webp",
-    url:"/solucoes/linha-eco"
-  },
+  // {
+  //   title: "Linha Eco",
+  //   image: "/images/ooh/bauducco/bauducco1.webp",
+  //   url:"/solucoes/linha-eco"
+  // },
 ];

@@ -9,28 +9,28 @@ const CarouselComponent = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const logos = [
-    "/images/client-logo/santander-branco.png",
-    "/images/client-logo/netflix-branco.png",
-    "/images/client-logo/aws-branco.png",
-    "/images/client-logo/99-white.png",
-    "/images/client-logo/vivo-branco.png",
-    "/images/client-logo/heineken-branco.png",
-    "/images/client-logo/bk-branco.png",
-    "/images/client-logo/byd-branco.webp",
-    "/images/client-logo/itau-branco.png",
-    "/images/client-logo/keeta.png",
-    "/images/client-logo/ambev.png",
-    "/images/client-logo/santander-branco.png",
-    "/images/client-logo/netflix-branco.png",
-    "/images/client-logo/aws-branco.png",
-    "/images/client-logo/99-white.png",
-    "/images/client-logo/vivo-branco.png",
-    "/images/client-logo/heineken-branco.png",
-    "/images/client-logo/bk-branco.png",
-    "/images/client-logo/byd-branco.webp",
-    "/images/client-logo/itau-branco.png",
-    "/images/client-logo/keeta.png",
-    "/images/client-logo/ambev.png",
+    { src: "/images/client-logo/santander-branco.png", large: true },
+    { src: "/images/client-logo/netflix-branco.png", large: false },
+    { src: "/images/client-logo/aws-branco.png", large: true },
+    { src: "/images/client-logo/99-white.png", large: false },
+    { src: "/images/client-logo/vivo-branco.png", large: false },
+    { src: "/images/client-logo/heineken-branco.png", large: false },
+    { src: "/images/client-logo/bk-branco.png", large: true },
+    { src: "/images/client-logo/byd-branco.webp", large: false },
+    { src: "/images/client-logo/itau-branco.png", large: true },
+    { src: "/images/client-logo/keeta.png", large: false },
+    { src: "/images/client-logo/ambev.png", large: false },
+    { src: "/images/client-logo/santander-branco.png", large: true },
+    { src: "/images/client-logo/netflix-branco.png", large: false },
+    { src: "/images/client-logo/aws-branco.png", large: true },
+    { src: "/images/client-logo/99-white.png", large: false },
+    { src: "/images/client-logo/vivo-branco.png", large: false },
+    { src: "/images/client-logo/heineken-branco.png", large: false },
+    { src: "/images/client-logo/bk-branco.png", large: true },
+    { src: "/images/client-logo/byd-branco.webp", large: false },
+    { src: "/images/client-logo/itau-branco.png", large: true },
+    { src: "/images/client-logo/keeta.png", large: false },
+    { src: "/images/client-logo/ambev.png", large: false },
   ];
 
   useEffect(() => {
@@ -69,13 +69,19 @@ const CarouselComponent = () => {
         {[...logos, ...logos, ...logos, ...logos, ...logos].map(
           (logo, index) => (
             <div key={index} className={styles.item}>
-              <Image
-                src={logo}
-                alt=""
-                width={140}
-                height={140}
-                onClick={() => handleClick("/portfolio")}
-              />
+              <div
+                className={
+                  logo.large ? styles.logoWrapperLarge : styles.logoWrapper
+                }
+              >
+                <Image
+                  src={logo.src}
+                  alt=""
+                  width={140}
+                  height={140}
+                  onClick={() => handleClick("/portfolio")}
+                />
+              </div>
             </div>
           ),
         )}

@@ -1,13 +1,69 @@
 "use client";
 
+import Image from "next/image";
+import { IconType } from "react-icons";
+import {
+  FiArrowDownRight,
+  FiArrowRight,
+  FiClipboard,
+  FiEye,
+  FiMapPin,
+  FiPlay,
+  FiSettings,
+} from "react-icons/fi";
+import styles from "./about-tab.module.scss";
 import { ButtonTag, CarouselTag, ContentTag } from "@/components";
 import { CtaTag } from "@/components/cta";
-import Image from "next/image";
+import { ecoFeatures, homologacoes } from "../../contants/about.const";
+import { LuPlaneTakeoff, LuTrainFront } from "react-icons/lu";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
-import styles from "./about-tab.module.scss";
-import { clientsMobile, features, stages } from "./constants/about-tab.constants";
+import { clientsMobile, features } from "./constants/about-tab.constants";
+
+interface Stage {
+  id: string;
+  phase?: string;
+  icon: IconType;
+  label: string;
+  tools: string[];
+  color: "bubleColor";
+}
+
+const stages: Stage[] = [
+  {
+    id: "plan",
+    phase: "Planejamento",
+    icon: FiClipboard,
+    label: "Planejamento técnico",
+    tools: ["Cada projeto é pensado para funcionar na prática"],
+    color: "bubleColor",
+  },
+  {
+    id: "prod",
+    phase: "Produção",
+    icon: FiSettings,
+    label: "Produção própria",
+    tools: ["Controle total sobre qualidade, prazo e execução"],
+    color: "bubleColor",
+  },
+
+  {
+    id: "exec",
+    phase: "Execução",
+    icon: FiPlay,
+    label: "Execução em campo",
+    tools: ["Equipe preparada para implementar com padrão"],
+    color: "bubleColor",
+  },
+  {
+    id: "acc",
+    phase: "Acompanhamento",
+    icon: FiEye,
+    label: "Acompanhamento",
+    tools: ["Monitoramento para garantir qualidade"],
+    color: "bubleColor",
+  },
+];
 
 const Arrow: React.FC = () => (
   <div className={styles.arrow}>
@@ -157,6 +213,69 @@ const AboutTabComponent = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <h2 className={styles.subititles}>RESPONSABILIDADE NA EXECUÇÃO</h2>
+
+      <div className={styles.contentDifferencials}>
+        <div className={styles.ImageWrapper}>
+          <div className={styles.imageCard} />
+          <div className={`${styles.imageCard2} ${styles.imageCardOffset}`} />
+        </div>
+
+        <div className={styles.contentFeatures}>
+          {ecoFeatures.map(({ icon: Icon, title, description }) => (
+            <div key={title} className={styles.featureItem}>
+              <div className={styles.featureIcon}>
+                <Icon size={20} />
+              </div>
+              <div className={styles.featureText}>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className={styles.subititles}>NOSSAS HOMOLOGAÇÕES</h2>
+
+      <div className={styles.contentHomologacoes}>
+        <div className={styles.homologacaoGroup}>
+          <div className={styles.homologacaoGroupHeader}>
+            <LuTrainFront size={22} color="#ED0874" />
+            <h3>Metrô & Trem</h3>
+          </div>
+          <div className={styles.homologacaoCards}>
+            {homologacoes.metro.map(({ label, sublabel }) => (
+              <div key={label} className={styles.homologacaoCard}>
+                <FiMapPin size={16} color="#ED0874" />
+                <div>
+                  <strong>{label}</strong>
+                  <span>{sublabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.homologacaoGroup}>
+          <div className={styles.homologacaoGroupHeader}>
+            <LuPlaneTakeoff size={22} color="#ED0874" />
+            <h3>Aeroportos</h3>
+          </div>
+          <div className={styles.homologacaoCards}>
+            {homologacoes.aeroportos.map(({ label, sublabel }) => (
+              <div key={label} className={styles.homologacaoCard}>
+                <FiMapPin size={16} color="#ED0874" />
+                <div>
+                  <strong>{label}</strong>
+                  <span>{sublabel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

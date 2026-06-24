@@ -1,22 +1,20 @@
-import { EcoTag, OohTag, PdvTag } from '@/presentation/solutions/fragments'
-import { ProjectsComponent } from '@/presentation/solutions/fragments/projects'
-import { ComponentType } from 'react'
+import { OohTag, PdvTag } from "@/presentation/solutions/fragments";
+import { ProjectsComponent } from "@/presentation/solutions/fragments/projects";
+import { ComponentType } from "react";
 
 type Page = {
-  label: string
-  slug: string
-  component: ComponentType
-}
+  label: string;
+  slug: string;
+  component: ComponentType;
+};
 
 export const solucoes: Page[] = [
-  { label: 'Out of home - OOH', slug: 'out-of-home', component: OohTag },
-  { label: 'Pontos de venda - PDV',   slug: 'ponto-de-venda',
-    component: PdvTag
-  },
+  { label: "Out of home - OOH", slug: "out-of-home", component: OohTag },
+  { label: "Pontos de venda - PDV", slug: "ponto-de-venda", component: PdvTag },
   {
-    label: 'Projetos especiais',
-    slug: 'projetos-especiais',
-    component: ProjectsComponent
+    label: "Projetos especiais",
+    slug: "projetos-especiais",
+    component: ProjectsComponent,
   },
-  { label: 'Linha ECO', slug: 'linha-eco', component: EcoTag }
-]
+  // { label: "Linha ECO", slug: "linha-eco", component: EcoTag },
+];

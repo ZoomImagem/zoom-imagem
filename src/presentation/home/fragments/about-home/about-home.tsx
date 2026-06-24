@@ -131,7 +131,7 @@ const AboutHomeComponent = () => {
           <li>
             <LuAward size={40} color="#EE0874" className={styles.icons} />
 
-            <span>+24</span>
+            <span>+25</span>
 
             <p>anos de atuação</p>
           </li>
@@ -154,9 +154,8 @@ const AboutHomeComponent = () => {
 
           <div className={styles.copyDescription}>
             <p>
-              Descubra como podemos criar soluções digitais sob medida e
-              impulsionar seu negócio.{" "}
-              <strong>Entre em contato agora mesmo!</strong>
+              Descubra como podemos criar soluções sob medida e impulsionar seu
+              negócio. <strong>Entre em contato agora mesmo!</strong>
             </p>
 
             <ButtonTag

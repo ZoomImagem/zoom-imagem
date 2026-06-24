@@ -34,19 +34,29 @@
 
 .item {
   flex: 0 0 auto;
+  height: 100%;
   width: 170px;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
 
-  & > img {
+.logoWrapper {
+  position: relative;
+
+  img {
     height: auto !important;
+    width: 170px !important;
   }
+}
 
-  &:hover {
-    transform: scale(1.1);
+.logoWrapperLarge {
+  position: relative;
+  img {
+    height: auto !important;
+    width: 90px !important;
   }
 }
 

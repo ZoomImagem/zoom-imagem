@@ -26,6 +26,7 @@ const FooterComponent = () => {
         <ul className={styles.listInstitucional}>
           <li onClick={() => handleClick("/")}>Zoom</li>
           <li onClick={() => handleClick("/sobre")}>Sobre</li>
+          <li onClick={() => handleClick("/conteudos")}>Saiu na Mídia</li>
           <li onClick={() => handleClick("/portfolio")}>Portifólio</li>
           <li onClick={() => handleClick("/contato")}>Contato</li>
         </ul>
@@ -33,7 +34,6 @@ const FooterComponent = () => {
         <div className={styles.socialContent}>
           <span>Nossas redes sociais</span>
           <ul className={styles.listSocialMobile}>
-
             <li>
               <a
                 href="https://instagram.com/zoomimagembr"
@@ -45,13 +45,22 @@ const FooterComponent = () => {
             </li>
             <li>
               <a
+                href="https://www.youtube.com/@zoomimagem8948"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiYoutube size={22} color="#000000" />
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://www.facebook.com/zoomimagembr/?locale2=pt_PT"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FiFacebook size={22} color="#000000" />
               </a>
-            </li> 
+            </li>
 
             <li>
               <a
@@ -60,15 +69,6 @@ const FooterComponent = () => {
                 rel="noopener noreferrer"
               >
                 <FiLinkedin size={22} color="#000000" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@zoomimagem8948"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiYoutube size={22} color="#000000" />
               </a>
             </li>
           </ul>
@@ -81,6 +81,8 @@ const FooterComponent = () => {
           <br />
           Rua Paulo Emílio Salles Gomes, 45, - Limão São Paulo - SP, 02710-110,
           Brasil
+          <br />
+          <a href="tel:+551135695725">(11) 3569-5725</a>
         </p>
 
         <p>
@@ -88,6 +90,8 @@ const FooterComponent = () => {
           <br />
           R. Prisco José de Souza, s/n - Lote Amp Recreio Ipitanga, Q 28 - Caji
           - Lauro de Freitas - BA, 42700-130, Brasil
+          <br />
+          <a href="tel:+557136167555">(71) 3616-7555</a>
         </p>
       </div>
 

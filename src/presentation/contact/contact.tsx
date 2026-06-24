@@ -10,7 +10,7 @@ const ContactComponent = () => {
     "OOH - Out oh home",
     "PDV - Ponto de venda",
     "Projetos especiais",
-    "Linha Eco",
+    // "Linha Eco",
     "Parcerias",
     "Suporte",
     "Outros",
