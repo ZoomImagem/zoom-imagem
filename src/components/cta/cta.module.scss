@@ -147,11 +147,16 @@
 }
 
 .ctaTitle {
-  font-size: $hall-title-desktop;
+  font-size: $hall-title-mobile;
   font-weight: 700;
-  color: $pink;
+  color: #ffffff;
   line-height: 140%;
   margin-bottom: 14px;
+
+  @include respond-to("l") {
+    color: $pink;
+    font-size: $hall-title-desktop;
+  }
 }
 
 .ctaTitleHighlight {

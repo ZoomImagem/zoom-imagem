@@ -83,7 +83,7 @@ export const clientsMobile = [
   },
   {
     name: "99",
-    src: "/images/client-logo/99-branco.png",
+    src: "/images/client-logo/99-white.png",
   },
   {
     name: "aws",
@@ -114,7 +114,7 @@ export const clientsMobile = [
     src: "/images/client-logo/bk-branco.png",
   },
   {
-    name: "disney",
-    src: "/images/client-logo/disney3.jpg",
+    name: "ambev",
+    src: "/images/client-logo/ambev.png",
   },
 ];

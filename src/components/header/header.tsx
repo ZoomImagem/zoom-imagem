@@ -149,13 +149,13 @@ const HeaderComponent = () => {
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/conteudos")}
           >
-            Conteúdos
+            Saiu na Mídia
           </li>
           <li
             className={menuOpen ? styles.isOpen : ""}
             onClick={() => handleClick("/contato")}
           >
-            Fale com a Zoom
+            Contato
           </li>
         </ul>
       </div>

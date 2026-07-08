@@ -49,6 +49,7 @@
   gap: 12px;
   justify-content: center;
   margin-bottom: 42px;
+  z-index: 15;
 }
 
 .projectsFilterBtn {
@@ -62,24 +63,25 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  &:hover {
+    border-color: rgba(#fff, 0.3);
+    color: rgba(#fff, 0.8);
+  }
+  &--active {
+    background: $pink;
+    border-color: $pink;
+    color: #fff;
+
+    &:hover {
+      background: color.adjust($pink, $lightness: -16%);
+      border-color: color.adjust($pink, $lightness: -8%);
+      color: #fff;
+    }
+  }
+
   @include respond-to("l") {
     width: 200px;
     font-size: 18px;
-    &:hover {
-      border-color: rgba(#fff, 0.3);
-      color: rgba(#fff, 0.8);
-    }
-    &--active {
-      background: $pink;
-      border-color: $pink;
-      color: #fff;
-
-      &:hover {
-        background: color.adjust($pink, $lightness: -16%);
-        border-color: color.adjust($pink, $lightness: -8%);
-        color: #fff;
-      }
-    }
   }
 }
 
