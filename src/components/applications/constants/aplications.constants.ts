@@ -61,7 +61,7 @@ export const items: AmbienteItem[] = [
       "/images/ooh/avon/avon2.webp",
       "/images/ooh/shopee/shopee1.jpg",
       "/images/ooh/shopee/shopee2.jpg",
-      "/images/ooh/natura/natura1.png",
+      "/images/ooh/natura/natura1.webp",
     ],
   },
   {

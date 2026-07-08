@@ -104,19 +104,19 @@
 }
 
 .imageAbout {
-  display: none;
-  width: 100% !important;
-  height: 100%;
   border-radius: 16px;
   max-width: 600px !important;
   object-fit: cover;
 
   img {
     border-radius: 16px;
-  }
+    width: 100% !important;
+    height: auto !important;
 
-  @include respond-to("l") {
-    display: flex;
+    @include respond-to("l") {
+      width: auto !important;
+      height: 600px !important;
+    }
   }
 }
 
@@ -276,6 +276,7 @@
   gap: 40px;
   margin-top: 32px;
   width: 100%;
+  margin-bottom: 24px;
 }
 
 .homologacaoGroup {
@@ -356,21 +357,24 @@
 }
 
 .ImageWrapper {
-  position: relative;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 36px;
   height: 100%;
+  width: 100%;
   max-width: 860px;
+  flex-direction: column;
+  margin-bottom: 36px;
 
   @include respond-to("l") {
-    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 36px;
+    margin-bottom: 0;
   }
 }
 
 .imageCard {
-  flex: 1;
   min-width: 360px;
   height: 400px;
   border-radius: 16px;
@@ -385,10 +389,13 @@
   box-shadow:
     inset 0 0 40px rgba(0, 0, 0, 0.25),
     0 8px 32px rgba(0, 0, 0, 0.5);
+
+  @include respond-to("l") {
+    flex: 1;
+  }
 }
 
 .imageCard2 {
-  flex: 1;
   min-width: 360px;
   height: 400px;
   border-radius: 16px;
@@ -403,6 +410,10 @@
   box-shadow:
     inset 0 0 40px rgba(0, 0, 0, 0.25),
     0 8px 32px rgba(0, 0, 0, 0.5);
+
+  @include respond-to("l") {
+    flex: 1;
+  }
 }
 
 .imageCardOffset {
