@@ -74,20 +74,18 @@
   color: #fff;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  @include respond-to('l') {
-      font-size: 64px;
-
+  @include respond-to("l") {
+    font-size: 64px;
   }
 }
 
 .heroSubtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(#fff, 0.65);
   line-height: 1.7;
   max-width: 520px;
-  @include respond-to('l') {
-      font-size: 22px;
-
+  @include respond-to("l") {
+    font-size: 22px;
   }
 }
 

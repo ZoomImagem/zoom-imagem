@@ -106,7 +106,9 @@ export default function Projects({ tag }: Props) {
               Confira alguns dos nossos trabalhos
             </h2> */}
             <p className={styles.projectsSubtitle}>
-              Conheça alguns dos projetos desenvolvidos pela nossa equipe para
+              <strong>
+                Conheça alguns dos projetos desenvolvidos pela nossa equipe para
+              </strong>
               diferentes marcas e campanhas.
             </p>
           </div>

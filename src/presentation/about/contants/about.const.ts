@@ -5,25 +5,25 @@ export const ecoFeatures = [
     icon: FiShield, // ou outro ícone que represente responsabilidade
     title: "Responsabilidade na execução",
     description:
-      "Acreditamos que grandes operações também devem ser conduzidas com responsabilidade. Por isso, buscamos continuamente adotar práticas mais conscientes em nossos processos, equilibrando eficiência operacional, qualidade e cuidado com o impacto gerado pelas nossas atividades.",
+      "Acreditamos que grandes operações também devem ser conduzidas com responsabilidade. Por isso, buscamos constantemente aprimorar nossos processos para unir qualidade, eficiência e consciência ambiental.",
   },
   {
     icon: FiTrash2,
     title: "Descarte responsável",
     description:
-      "Após a conclusão dos projetos, os materiais são destinados de forma adequada, respeitando processos de descarte e encaminhamento compatíveis com cada tipo de resíduo. Nosso compromisso é reduzir desperdícios e incentivar práticas mais responsáveis ao longo da operação.",
+      "Após cada projeto, realizamos o descarte adequado dos materiais, seguindo práticas responsáveis para reduzir impactos e desperdícios.",
   },
   {
     icon: FiPackage,
     title: "Uso consciente de materiais",
     description:
-      "Sempre que possível, avaliamos alternativas que contribuam para a otimização de recursos, redução de perdas e melhor aproveitamento dos insumos utilizados na produção.",
+      "Após cada projeto, realizamos o descarte adequado dos materiais, seguindo práticas responsáveis para reduzir impactos e desperdícios.",
   },
   {
     icon: FiTrendingUp,
     title: "Evolução contínua",
     description:
-      "Entendemos que sustentabilidade é uma jornada de aprimoramento constante. Por isso, seguimos atentos a novas soluções, materiais e práticas que possam contribuir para operações cada vez mais eficientes e responsáveis.",
+      "Seguimos em constante evolução, buscando novas práticas e materiais que tornem nossa operação cada vez mais responsável.",
   },
 ];
 

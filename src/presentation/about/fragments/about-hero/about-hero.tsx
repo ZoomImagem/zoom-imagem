@@ -25,7 +25,7 @@ const AboutHeroComponent = () => {
 
           <div className={styles.ctaButtons}>
             <ButtonTag
-              label="Fale com a Zoom"
+              label="Fale com um Especialista"
               size="lg"
               variant="primary"
               icon={<FiArrowRight size={22} color="#000" />}
