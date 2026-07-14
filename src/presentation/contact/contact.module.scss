@@ -164,6 +164,15 @@
   height: 100%;
 }
 
+.field,
+.fieldFull {
+  input {
+    &::placeholder {
+      color: #ffffff;
+    }
+  }
+}
+
 .fieldFull {
   display: flex;
   flex-direction: column;

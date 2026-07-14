@@ -25,7 +25,7 @@ export default function PortfolofioHall() {
             </p>
             <div className={styles.ctaHall}>
               <ButtonTag
-                label="Fale com a Zoom"
+                label="Impulsione suas ideias "
                 size="lg"
                 variant="primary"
                 icon={<FiArrowRight size={22} color="#000" />}

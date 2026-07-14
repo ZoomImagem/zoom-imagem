@@ -97,10 +97,10 @@ const FooterComponent = () => {
 
       <div className={styles.contentSEO}>
         <ul className={styles.listSEO}>
-          <li>Produção de OOH no Brasil</li>
-          <li>Materiais para PDV</li>
-          <li>Projetos especiais de comunicação visual</li>
-          <li>Execução de campanhas publicitárias</li>
+          <li onClick={() => handleClick("/solucoes/out-of-home")}>Produção de OOH no Brasil</li>
+          <li onClick={() => handleClick("/solucoes/ponto-de-venda")}>Materiais para PDV</li>
+          <li onClick={() => handleClick("/solucoes/projetos-especiais")}>Projetos especiais de comunicação visual</li>
+          {/* <li onClick={() => handleClick("/solucoes/campanhas-publicitarias")}>Execução de campanhas publicitárias</li> */}
         </ul>
       </div>
     </div>
