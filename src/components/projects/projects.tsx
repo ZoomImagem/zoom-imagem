@@ -107,7 +107,8 @@ export default function Projects({ tag }: Props) {
             </h2> */}
             <p className={styles.projectsSubtitle}>
               <strong>
-                Conheça alguns dos projetos desenvolvidos pela nossa equipe para
+                Conheça alguns dos projetos desenvolvidos pela nossa equipe
+                para{" "}
               </strong>
               diferentes marcas e campanhas.
             </p>
